@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* font css to include in your project */
+@font-face {
+    font-family: montserrat-b;
+    src: url(../fonts/Montserrat-Bold.ttf);
+    font-display: swap;
+}
+.font-montserrat-b {
+    font-family: montserrat-b;
+}
+@font-face {
+    font-family: montserrat-m;
+    src: url(../fonts/Montserrat-Medium.otf);
+    font-display: swap;
+}
+.font-montserrat-m {
+    font-family: montserrat-m;
+}
+@font-face {
+    font-family: montserrat-r;
+    src: url(../fonts/Montserrat-Regular.ttf);
+    font-display: swap;
+}
+.font-montserrat-r {
+    font-family: montserrat-r;
+}
+@font-face {
+    font-family: roboto-b;
+    src: url(../fonts/Roboto-Bold.ttf);
+    font-display: swap;
+}
+.font-roboto-b {
+    font-family: roboto-b;
+}
+@font-face {
+    font-family: roboto-m;
+    src: url(../fonts/Roboto-Medium.ttf);
+    font-display: swap;
+}
+.font-roboto-m {
+    font-family: roboto-m;
+}
+@font-face {
+    font-family: roboto-r;
+    src: url(../fonts/Roboto-Regular.ttf);
+    font-display: swap;
+}
+.font-roboto-r {
+    font-family:roboto-r;
+}
+@font-face{
+    font-family: roboto-l;
+    src: url(../fonts/Roboto-Light.ttf);
+    font-display:swap;
+}
+.font-roboto-l{
+    font-family: roboto-l;
+}
+.color-white{
+    color: #FFF;
+}
+
+
+/* CSS used in all the other pages can be added here so that repetition of classes can be avoided */
+/* Example formating of css */
+/*#drawer{
+    -webkit-animation-duration: 0.8s;
+    animation-duration: 0.8s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: slideright;
+    animation-name: slideright;
+}
+@-webkit-keyframes slideright {
+    0% {transform: translate(-100%,0px);}
+    100% {transform: translate(0px,0px);}
+}
+@keyframes slideright {
+    0% {transform: translate(100%,0px);}
+    100% {transform: translate(0%,0px);}
+}*/

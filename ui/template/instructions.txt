@@ -1,0 +1,3 @@
+Templates refer to same code that has to be added in all the files such as headers, footers, different sections.
+
+Differentiate those files and put them here in the template folder. Load those templates using JQUERY
