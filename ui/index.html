@@ -490,19 +490,19 @@
             background-color: pink;
             opacity: 0.9;
             border-radius: 40%;
-            animation: myfirst 5s 1;
+            animation: myfirst 1.5s 1;
             position: relative;
             animation-direction: normal;
         }
 
         @keyframes myfirst {
             0% {
-                left: 0px;
+                left: -200px;
                 top: 0px;
             }
 
             100% {
-                left: 200px;
+                left: 0px;
                 top: 0px;
             }
         }
@@ -520,6 +520,20 @@
             font-size: 30px;
             font-weight: bold;
             color: black;
+            animation: mySecond 1.5s 1;
+            position: relative;
+            animation-direction: normal;
+        }
+        @keyframes mySecond {
+            0% {
+                left: -200px;
+                top: 0px;
+            }
+
+            100% {
+                left: 0px;
+                top: 0px;
+            }
         }
 
         #slider2-center-mid2 {
@@ -555,6 +569,11 @@
         #slider2-button:hover {
             background-color: #24436e;
             color: white;
+        }
+        #slide-effect {
+            animation: mySecond 1.9s 1;
+            position: relative;
+            animation-direction: normal;
         }
     </style>
 </head>
@@ -643,7 +662,7 @@
                                 <p>LOCKDOWN OFFER</p>
                             </div>
                             <div id="slider2-center-mid2">
-                                <p>DATABASE PRICS STARTS
+                                <p><span id="slide-effect">DATABASE PRICE STARTS</span>
                                     From ₹999</p>
                                 <hr>
                                 <br>
