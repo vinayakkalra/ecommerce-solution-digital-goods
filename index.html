@@ -240,7 +240,7 @@
 
         #button-bar {
             height: 50px;
-            margin-top: 50px;
+            margin: 20px auto;
         }
 
         #button-bar-center {
@@ -582,6 +582,20 @@
         .card {
             border: none;
         }
+        #button-color {
+            background-color: #24436e;
+            color: white;
+            animation-fill-mode: forwards;
+        }
+        #button-color:hover {
+            animation-name: move;
+            animation-duration: 1s;
+            position: relative;
+        }
+        @keyframes move {
+            0% { bottom: 10px; }
+            100% { bottom: 10px; }
+        }
     </style>
 </head>
 
@@ -796,7 +810,7 @@
         </div>
         <div id="button-bar" class="container-fluid">
             <div id="button-bar-center" class="container">
-                <button type="button" class="btn btn-success">SHOW ALL</button>
+                <button type="button" class="btn" id="button-color">SHOW ALL</button>
             </div>
         </div>
 
