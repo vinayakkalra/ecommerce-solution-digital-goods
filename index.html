@@ -286,11 +286,21 @@
 
         .f img {
             width: 70px;
-            margin-left: 13%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .f {
+            text-align: center;
+
         }
 
         .g {
             background-color: gray;
+            margin-top: 50px;
+            padding: 5px;
+            padding-bottom: 0px;
+            padding-left: 0px;
         }
 
         .k {
@@ -621,6 +631,7 @@
             margin-left: auto;
             margin-right: auto;
         }
+
         #cbody {
             margin-top: 40%;
             background-color: gray;
@@ -630,28 +641,77 @@
             padding: auto;
             font-size: 15px;
         }
-        .hv2:hover > #cbody {
+
+        .hv2:hover>#cbody {
             animation-name: up;
             animation-duration: 1s;
             padding-top: auto;
             animation-fill-mode: forwards;
         }
+
         @keyframes up {
             100% {
                 margin-top: 35%;
             }
         }
-        .hv2:hover > #main-img {
+
+        .hv2:hover>#main-img {
             webkit-filter: blur(4px);
             filter: blur(4px);
-            animation-name:zoom;
+            animation-name: zoom;
             animation-duration: 1s;
             animation-fill-mode: forwards;
         }
+
         @keyframes zoom {
             100% {
                 transform: scale(1.2);
             }
+        }
+
+        .card {
+            margin: 20px;
+        }
+
+        #jtext {
+            color: white;
+            font-size: 12px;
+            text-align: justify;
+        }
+
+        #bhead {
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        #footbg {
+            background-color: #5b5b5b;
+            height: 80px;
+            margin-bottom: 0px;
+        }
+        #foot-mid {
+            margin 0px auto;
+            width: 80%;
+            height: 100%;
+        }
+        #foot-mid-left {
+            height: 100%;
+            width: 25%;
+            color:rgba(153, 143, 143, 0.979);
+            font-weight: bold;
+            padding: 8px;
+            font-size: 70%;
+            float: left; 
+        }
+        #foot-mid-right {
+            height: 100%;
+            width: 30%;
+            float: right;
+        }
+        #foot-mid-right img {
+            width: 90%;
+            padding: 10px;
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -941,7 +1001,7 @@
         </div>
 
         <div id="card-bar" class="container-fluid">
-            <div id="card-bar-center1" class="container">
+            <div id="card-bar-center" class="container">
                 <div class="card-group">
                     <div class="card f">
                         <img class="card-img-top center" src="./img/f.PNG" alt="Card image cap">
@@ -972,42 +1032,58 @@
         </div>
 
         <div class="jumbotron g">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm">
-                        <h5>Popular Databases</h5>
-                        <p>All India Complete Database</p>
-                        <p>B2B / B2C Indian Companies Database</p>
-                        <p>Government Employees Database</p>
-                        <p>All India Students Database</p>
-                        <p>All India Students Database</p>
+            <div id="card-bar-one" class="container-fluid">
+                <div id="card-bar-center-one" class="container">
+                    <div class="row" id="jtext">
+                        <div class="col-sm">
+                            <p id="bhead">Popular Databases
+                            <p>
+                            <p>All India Complete Database</p>
+                            <p>B2B / B2C Indian Companies Database</p>
+                            <p>Government Employees Database</p>
+                            <p>All India Students Database</p>
+                            <p>All India Students Database</p>
+                        </div>
+                        <div class="col-sm">
+                            <p id="bhead">Important Links
+                            <p>
+                            <p>Shop</p>
+                            <p>Cart</p>
+                            <p>About Us</p>
+                            <p>Blog</p>
+                        </div>
+                        <div class="col-sm">
+                            <p id="bhead">Other Links</p>
+                            <p>Privacy Policy</p>
+                            <p>Terms & Conditions</p>
+                            <p>Refund & Cancellation Policy</p>
+                            <p>Contact Us</p>
+                            <p>Why Choose Us?</p>
+                        </div>
+                        <div class="col-sm">
+                            <p id="bhead">DATABASE CATEGORIES</p>
+                            <p>B2B / B2C Indian Companies Database</p>
+                            <p>Government Employees Database</p>
+                            <p>Facebook Users Database</p>
+                            <p>OLX Users Database</p>
+                            <p>IT Professionals Database</p>
+                        </div>
                     </div>
-                    <div class="col-sm">
-                        <h5>Important Links</h5>
-                        <p>Shop</p>
-                        <p>Cart</p>
-                        <p>About Us</p>
-                        <p>Blog</p>
+                </div>
+            </div>
+            <div class="container-fluid" id="footbg">
+                <div class="container" id="foot-mid"> 
+                    <div id="foot-mid-left" class="container">
+                        <p> ABOUT US CONTACT US SHOP</p>
+                        <p>Copyright 2020 © Data Export</p>
                     </div>
-                    <div class="col-sm">
-                        <h5>Other Links</h5>
-                        <p>Privacy Policy</p>
-                        <p>Terms & Conditions</p>
-                        <p>Refund & Cancellation Policy</p>
-                        <p>Contact Us</p>
-                        <p>Why Choose Us?</p>
-                    </div>
-                    <div class="col-sm">
-                        <h5>DATABASE CATEGORIES</h5>
-                        <p>B2B / B2C Indian Companies Database</p>
-                        <p>Government Employees Database</p>
-                        <p>Facebook Users Database</p>
-                        <p>OLX Users Database</p>
-                        <p>IT Professionals Database</p>
+                    <div id="foot-mid-right" class="container">
+                        <img src="./img/foot.PNG">  
                     </div>
                 </div>
             </div>
         </div>
+
 
     </div>
 
