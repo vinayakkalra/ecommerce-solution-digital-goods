@@ -129,7 +129,7 @@
 
         #second-bar-left {
             background-color: white;
-           
+
             width: 20%;
             float: left;
         }
@@ -257,6 +257,7 @@
             text-align: center;
             font-weight: bold;
             font-size: 20px;
+            margin-bottom: 40px;
         }
 
         .carousel-control-prev-icon,
@@ -373,6 +374,7 @@
             text-align: center;
             margin-left: 15px;
         }
+
         .s {
             height: 10px;
         }
@@ -574,27 +576,82 @@
             text-align: center;
             margin-top: 10px;
         }
+
         #text-bg {
             background-color: #24436e;
             width: 100%;
             height: 50px;
         }
+
         .card {
             border: none;
         }
+
         #button-color {
             background-color: #24436e;
             color: white;
             animation-fill-mode: forwards;
         }
+
         #button-color:hover {
             animation-name: move;
             animation-duration: 1s;
             position: relative;
         }
+
         @keyframes move {
-            0% { bottom: 10px; }
-            100% { bottom: 10px; }
+            0% {
+                bottom: 10px;
+            }
+
+            100% {
+                bottom: 10px;
+            }
+        }
+
+        #card-style {
+            color: white;
+            text-align: center;
+            height: 50px;
+            margin-bottom: 20px;
+            background-color: gray;
+        }
+
+        #main-img {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #cbody {
+            margin-top: 40%;
+            background-color: gray;
+            text-align: center;
+            color: white;
+            opacity: 0.8;
+            padding: auto;
+            font-size: 15px;
+        }
+        .hv2:hover > #cbody {
+            animation-name: up;
+            animation-duration: 1s;
+            padding-top: auto;
+            animation-fill-mode: forwards;
+        }
+        @keyframes up {
+            100% {
+                margin-top: 35%;
+            }
+        }
+        .hv2:hover > #main-img {
+            webkit-filter: blur(4px);
+            filter: blur(4px);
+            animation-name:zoom;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes zoom {
+            100% {
+                transform: scale(1.2);
+            }
         }
     </style>
 </head>
@@ -694,10 +751,10 @@
                                     </div>
                                     <div class="s"></div>
                                 </div>
-                                <div id = "text-bg">
+                                <div id="text-bg">
                                     <div class="text">QUICK VIEW</div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -710,7 +767,7 @@
                                 </div>
                                 <div class="s"></div>
                             </div>
-                            <div id = "text-bg">
+                            <div id="text-bg">
                                 <div class="text">QUICK VIEW</div>
                             </div>
                         </div>
@@ -724,7 +781,7 @@
                                 </div>
                                 <div class="s"></div>
                             </div>
-                            <div id = "text-bg">
+                            <div id="text-bg">
                                 <div class="text">QUICK VIEW</div>
                             </div>
                         </div>
@@ -759,7 +816,7 @@
                                 </div>
                                 <div class="s"></div>
                             </div>
-                            <div id = "text-bg">
+                            <div id="text-bg">
                                 <div class="text">QUICK VIEW</div>
                             </div>
                         </div>
@@ -773,7 +830,7 @@
                                 </div>
                                 <div class="s"></div>
                             </div>
-                            <div id = "text-bg">
+                            <div id="text-bg">
                                 <div class="text">QUICK VIEW</div>
                             </div>
                         </div>
@@ -787,7 +844,7 @@
                                 </div>
                                 <div class="s"></div>
                             </div>
-                            <div id = "text-bg">
+                            <div id="text-bg">
                                 <div class="text">QUICK VIEW</div>
                             </div>
                         </div>
@@ -818,84 +875,71 @@
             <p>BROWSE BY CATEGORIES</p>
         </div>
 
-        <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="card-group">
-                        <div class="card bimg hv1">
-                            <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                            <div class="over1">
-                                <div class="text1">WHATSAPP NUMBER DATABASE</div>
-                            </div>
-                            <div class="card-body">
-
-                            </div>
-                        </div>
-                        <div class="card bimg hv1">
-                            <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                            <div class="over1">
-                                <div class="text1">CRIDIT CARD HOLDERS DATABASE</div>
-                            </div>
-                            <div class="card-body">
-
-                            </div>
-                        </div>
-                        <div class="card bimg hv1">
-                            <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                            <div class="over1">
-                                <div class="text1">WHATSAPP NUMBER DATABASE</div>
-                            </div>
-                            <div class="card-body">
-
+        <div id="card-bar" class="container-fluid">
+            <div id="card-bar-center" class="container">
+                <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="card-group">
+                                <div class="card hv2">
+                                    <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
+                                    <div class="card-img-overlay" id="cbody">
+                                        <p class="card-title">WHATSAPP NUMBER DATABASE</p>
+                                    </div>
+                                </div>
+                                <div class="card hv2">
+                                    <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
+                                    <div class="card-img-overlay" id="cbody">
+                                        <p class="card-title">WHATSAPP NUMBER DATABASE</p>
+                                    </div>
+                                </div>
+                                <div class="card hv2">
+                                    <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
+                                    <div class="card-img-overlay" id="cbody">
+                                        <p class="card-title">WHATSAPP NUMBER DATABASE</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card-group">
-                        <div class="card bimg hv1">
-                            <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                            <div class="over1">
-                                <div class="text1">WHATSAPP NUMBER DATABASE</div>
-                            </div>
-                            <div class="card-body">
-
-                            </div>
-                        </div>
-                        <div class="card bimg hv1">
-                            <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                            <div class="over1">
-                                <div class="text1">WHATSAPP NUMBER DATABASE</div>
-                            </div>
-                            <div class="card-body">
-
-                            </div>
-                        </div>
-                        <div class="card bimg hv1">
-                            <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                            <div class="over1">
-                                <div class="text1">WHATSAPP NUMBER DATABASE</div>
-                            </div>
-                            <div class="card-body">
-
+                        <div class="carousel-item">
+                            <div class="card-group">
+                                <div class="card hv2">
+                                    <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
+                                    <div class="card-img-overlay" id="cbody">
+                                        <p class="card-title">WHATSAPP NUMBER DATABASE</p>
+                                    </div>
+                                </div>
+                                <div class="card hv2">
+                                    <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
+                                    <div class="card-img-overlay" id="cbody">
+                                        <p class="card-title">WHATSAPP NUMBER DATABASE</p>
+                                    </div>
+                                </div>
+                                <div class="card hv2">
+                                    <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
+                                    <div class="card-img-overlay" id="cbody">
+                                        <p class="card-title">WHATSAPP NUMBER DATABASE</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
+
         <div id="card-bar" class="container-fluid">
             <div id="card-bar-center1" class="container">
                 <div class="card-group">
