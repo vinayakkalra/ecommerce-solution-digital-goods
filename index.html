@@ -784,6 +784,192 @@
         }
 
         /* Hamburder Css End */
+
+        /* slider css start */
+
+        /* slider slide1 css start */
+
+        #slide1-center-mob {
+            height: 50px;
+            width: 100%;
+            margin: 5px;
+            padding: 15px;
+            padding-bottom: 100px;
+            animation: animate 2s linear;
+        }
+
+        @keyframes animate {
+            0% {
+                transform:
+                    perspective(300px) rotateY(-100deg);
+            }
+
+            50% {
+                transform:
+
+                    rotateY(0deg);
+            }
+
+            100% {
+                transform:
+
+                    rotateY(0deg);
+            }
+        }
+
+        #slider1-center-top-mob {
+            height: 20px;
+            width: 100%;
+            margin-top: 5px;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            font-size: 10px;
+        }
+
+        #slider1-center-mid1-mob {
+            height: 30px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        #slider1-center-mid2-mob {
+            height: 30px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        #slider1-center-mid2-mob hr {
+            border-top: 2px solid gray;
+            width: 20px;
+        }
+
+        #slider1-center-footer-mob {
+            height: 10px;
+            font-weight: bold;
+            font-size: 5px;
+        }
+
+        #slider-button-mob {
+            height: 20px;
+            width: 40px;
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+            margin: 10px;
+        }
+
+        #slider-button-mob:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* slider slide1 css end */
+
+        /* slider slide2 css start */
+
+        #slide2-center-mob {
+            height: 110px;
+            width: 160px;
+            margin: 2px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 15px;
+            /* padding-bottom: 120px;
+            margin-bottom: 50px; */
+            background-color: rgba(234, 212, 212, 0.87);
+            opacity: 0.9;
+            border-radius: 40%;
+            animation: myfirst 1.5s 1;
+            position: relative;
+            animation-direction: normal;
+        }
+
+        @keyframes myfirst {
+            0% {
+                left: -200px;
+                top: 0px;
+            }
+
+            100% {
+                left: 0px;
+                top: 0px;
+            }
+        }
+
+        #slider2-center-top-mob {
+            height: 15px;
+            width: 100%;
+            margin-top: 5px;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            color: black;
+            font-size: 10px;
+        }
+
+        #slider2-center-mid1-mob {
+            height: 12px;
+            font-size: 10px;
+            font-weight: bold;
+            color: black;
+            animation: mySecond 1.5s 1;
+            position: relative;
+            animation-direction: normal;
+        }
+
+        @keyframes mySecond {
+            0% {
+                left: -200px;
+                top: 0px;
+            }
+
+            100% {
+                left: 0px;
+                top: 0px;
+            }
+        }
+
+        #slider2-center-mid2-mob {
+            height: 15px;
+            font-size: 10px;
+            font-weight: bold;
+            color: black;
+        }
+
+        #slider2-center-mid2-mob hr {
+            border-top: 2px solid gray;
+            width: 40px;
+            margin-bottom: 200px;
+        }
+
+        #slider2-center-footer-mob {
+            height: 10px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        #slider2-button-mob {
+            height: 20px;
+            width: 50px;
+            background-color: pink;
+            color: white;
+            border: 2px solid #24436e;
+            margin: 10px;
+            color: #24436e;
+            font-weight: bold;
+            font-size:5px;
+        }
+
+        #slider2-button-mob:hover {
+            background-color: #24436e;
+            color: white;
+        }
+        #slide-effect-mob {
+            animation: mySecond 1.9s 1;
+            position: relative;
+            animation-direction: normal;
+        }
+
+        /* slider slide2 css end */
+
+        /* slider css end */
     </style>
 </head>
 
@@ -1114,6 +1300,7 @@
     <div class="d-lg-none position-relative">
         <!-- Enter Code for Mobile UI here -->
         <!-- header-->
+
         <!-- Top Bar- Start -->
         <div class="container-fluid" style="background-color:#24436e; height: auto;">
             <div class="container-sm" style="margin: auto;">
@@ -1130,7 +1317,7 @@
         <div class="container-fluid" style=" height: auto;">
             <div class="container">
                 <div class="row row-cols-3" style="padding: 2%;">
-                    <div class="col-sm" style="padding-left: 0px;">
+                    <div class="col-sm" style="padding-left: 0px; z-index: 50;">
                         <!-- Hamburger Menu-Start -->
                         <!--Navbar-->
                         <nav class="navbar navbar-light navbar-1 white">
@@ -1144,7 +1331,7 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent15" style="padding-left: 20px;background-color: white;">
 
                                 <!-- Links -->
-                                <ul class="navbar-nav mr-auto" style="color: gray; font-weight: bold; font-size: 100%;">
+                                <ul class="navbar-nav mr-auto" style="color: gray; font-weight: bold; font-size: 100%; z-index: 50;">
                                     <li class="nav-item active">
                                         <a class="nav-link" href="#">HOME<span class="sr-only">(current)</span></a>
                                     </li>
@@ -1198,11 +1385,75 @@
             </div>
         </div>
         <!-- Second Bar End -->
-        <div>
-            <h1>hello world</h1>
-        </div>
 
         <!-- end header -->
+
+        <!-- Slider Start -->
+        <div class="container-fluid">
+            <div class="row">
+                <div id="carouselExampleIndicators8" class="carousel slide" data-ride="carousel">
+                    
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" style="">
+                            <img class="d-block w-100" src="./img/slide1.PNG" alt="First slide">
+                            <div class="carousel-caption">
+                                <div id="slide1-center-mob">
+                                    <div id="slider1-center-top-mob">
+                                        <p>
+                                            It has finally started
+                                        </p>
+                                    </div>
+                                    <div id="slider1-center-mid1-mob">
+                                        <p>HUGE SALE</p>
+                                    </div>
+                                    <div id="slider1-center-mid2-mob">
+                                        <p>60% OFF</p>
+                                        <hr>
+                                    </div>
+                                    <div id="slider1-center-footer-mob">
+                                        <input type="button" id="slider-button-mob" value="BUY NOW">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="">
+                            <img class="d-block w-100" src="./img/slide2.PNG" alt="Second slide">
+                            <div class="carousel-caption">
+                                <div id="slide2-center-mob">
+                                    <div id="slider2-center-top-mob">
+                                        <p>
+                                            Mega Discount
+                                        </p>
+                                    </div>
+                                    <div id="slider2-center-mid1-mob">
+                                        <p>LOCKDOWN OFFER</p>
+                                    </div>
+                                    <div id="slider2-center-mid2-mob">
+                                        <p><span id="slide-effect-mob">DATABASE PRICE STARTS</span><br>
+                                            From ₹999</p>
+                                        <br>
+                                    </div>
+                                    <div id="slider2-center-footer-mob">
+                                        <input type="button" id="slider2-button-mob" value="SHOP NOW">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators8" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators8" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+          </div>
+        <!-- Slider End -->
+
+        
 
 
 
