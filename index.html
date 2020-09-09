@@ -794,7 +794,7 @@
         #slide1-center-mob {
             height: 100%;
             width: 100%;
-            
+
             animation: animate 2s linear;
         }
 
@@ -1055,6 +1055,72 @@
         }
 
         /* card css end */
+        /* sider bar css start */
+        /* The side navigation menu */
+        .sidenav {
+            height: 100%;
+            /* 100% Full-height */
+            width: 0;
+            /* 0 width - change this with JavaScript */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Stay on top */
+            top: 0;
+            /* Stay at the top */
+            left: 0;
+            background-color:white;
+            /* Black*/
+            overflow-x: hidden;
+            /* Disable horizontal scroll */
+            padding-top: 60px;
+            /* Place content 60px from the top */
+            transition: 0.5s;
+            /* 0.5 second transition effect to slide in the sidenav */
+        }
+
+        /* The navigation menu links */
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        /* When you mouse over the navigation links, change their color */
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        /* Position and style the close button (top right corner) */
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+        #main {
+            transition: margin-left .5s;
+            padding: 20px;
+        }
+
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        /* sider bar css end */
     </style>
 </head>
 
@@ -1073,7 +1139,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active" id="high">
                     <img class="d-block w-100" src="./img/slide1.PNG" alt="First slide">
-                    <div class="carousel-caption" style="display: flex; align-items: center; bottom: none;" >
+                    <div class="carousel-caption" style="display: flex; align-items: center; bottom: none;">
                         <div id="slide1-center">
                             <div id="slider1-center-top">
                                 <h3>
@@ -1095,7 +1161,8 @@
                 </div>
                 <div class="carousel-item" id="high">
                     <img class="d-block w-100" src="./img/slide2.PNG" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block" style="right: 50%;display:flex !important;align-items: center; transform: translateY(-50%);position:absolute;right: none; bottom: none; top:50%;left:15%;z-index:10;padding-top:none;padding-bottom: none; text-align: center;">
+                    <div class="carousel-caption d-none d-md-block"
+                        style="right: 50%;display:flex !important;align-items: center; transform: translateY(-50%);position:absolute;right: none; bottom: none; top:50%;left:15%;z-index:10;padding-top:none;padding-bottom: none; text-align: center;">
                         <div id="slide2-center">
                             <div id="slider2-center-top">
                                 <h3>
@@ -1385,93 +1452,8 @@
     <div class="d-lg-none">
         <!-- Enter Code for Mobile UI here -->
         <!-- header-->
+        <div id="header-mob"></div>
 
-        <!-- Top Bar- Start -->
-        <div class="container-fluid" style="background-color:#24436e; height: auto;">
-            <div class="container-sm" style="margin: auto;">
-                <div class="row" style="color:white; text-align: center; padding: 2px; font-weight: bold;">
-                    <div class="col-sm">
-                        SAVE 25% COUPON : <u>FLAT25</u>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Top Bar- End -->
-
-        <!-- Second Bar-Start -->
-        <div class="container-fluid" style=" height: auto; padding:0;">
-            <div class="container" style=" width: 100%;">
-                <div class="row row-cols-3" style="padding: 2%;">
-                    <div class="col-sm" style="padding-left: 0px; z-index: 50;">
-                        <!-- Hamburger Menu-Start -->
-                        <!--Navbar-->
-                        <nav class="navbar navbar-light navbar-1 white">
-                            <!-- Collapse button -->
-                            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                data-target="#navbarSupportedContent15" aria-controls="navbarSupportedContent15"
-                                aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"
-                                    style="width: 20px; height: 20px;"></span></button>
-
-                            <!-- Collapsible content -->
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent15"
-                                style="padding-left: 20px;background-color: white;">
-
-                                <!-- Links -->
-                                <ul class="navbar-nav mr-auto"
-                                    style="color: gray; font-weight: bold; font-size: 100%; z-index: 50;">
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="#">HOME<span class="sr-only">(current)</span></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">B2B & B2C</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">GOVERNMENT</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">STUDENTS</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">JOB SEEKERS</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">ALL INDIA</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">OTHER DATABASES</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">ABOUT US</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">CONTACT US</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">SHOP</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">LOGIN</a>
-                                    </li>
-                                </ul>
-                                <!-- Links -->
-
-                            </div>
-                            <!-- Collapsible content -->
-
-                        </nav>
-                        <!--/.Navbar-->
-                        <!-- Hamburger Menu-End -->
-                    </div>
-                    <div class="col-sm" style="padding: 0; padding-top: 12px;">
-                        <img src="./img/logo.png" width="70%" height="70%">
-                    </div>
-                    <div class="col-sm" style="padding-left: 70px; padding-top: 13px;">
-                        <img src="./img/mob.PNG" style="height: 70%; width: 70%;">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Second Bar End -->
 
         <!-- end header -->
 
@@ -1483,7 +1465,8 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active" style="height: 100%;">
                             <img class="d-block w-100" src="./img/slide1.PNG" alt="First slide">
-                            <div class="carousel-caption" style="bottom:none; padding-top:none;padding-bottom: none; transform : translateY(-50%);position: absolute; right: 15%; top:30%;left:15%;z-index: 10; height: 100px;">
+                            <div class="carousel-caption"
+                                style="bottom:none; padding-top:none;padding-bottom: none; transform : translateY(-50%);position: absolute; right: 15%; top:30%;left:15%;z-index: 10; height: 100px;">
                                 <div id="slide1-center-mob">
                                     <div id="slider1-center-top-mob">
                                         <p>
@@ -1505,7 +1488,8 @@
                         </div>
                         <div class="carousel-item" style="height: 100%;">
                             <img class="d-block w-100" src="./img/slide2.PNG" alt="Second slide">
-                            <div class="carousel-caption" style="bottom:none; padding-top:none;padding-bottom: none; transform : translateY(-50%);position: absolute; right: 15%; top:30%;left:15%;z-index: 10; height: 100px;">
+                            <div class="carousel-caption"
+                                style="bottom:none; padding-top:none;padding-bottom: none; transform : translateY(-50%);position: absolute; right: 15%; top:30%;left:15%;z-index: 10; height: 100px;">
                                 <div id="slide2-center-mob">
                                     <div id="slider2-center-top-mob">
                                         <p>
@@ -1777,7 +1761,8 @@
                             <div class="card f">
                                 <img class="card-img-top" src="./img/f.PNG" alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="#" style="color: black;">Cheapest Price Ever</a></h5>
+                                    <h5 class="card-title"><a href="#" style="color: black;">Cheapest Price Ever</a>
+                                    </h5>
                                     <p class="card-text">We are offering the cheapest price ever on the web for such a
                                         huge
                                         data. You are getting more than 50% OFF than any competitor found on the web.
@@ -1805,71 +1790,10 @@
 
         </div>
         <!-- footer cards end -->
-        <!-- footer text start -->
-        <div class="jumbotron g" style="margin-bottom:0px;">
-            <div class="container-fluid">
-                <div id="card-bar-center-one" class="container" style="margin-left: 0; margin-top: 20px; margin-bottom: 20px;">
-                    <div class="row" style="color: white;">
-                        <div class="col-sm">
-                            <p id="bhead">Popular Databases
-                            <p>
-                            <p>All India Complete Database</p>
-                            <p>B2B / B2C Indian Companies Database</p>
-                            <p>Government Employees Database</p>
-                            <p>All India Students Database</p>
-                            <p>All India Students Database</p>
-                        </div>
-                        <div class="col-sm">
-                            <p id="bhead">Important Links
-                            <p>
-                            <p>Shop</p>
-                            <p>Cart</p>
-                            <p>About Us</p>
-                            <p>Blog</p>
-                        </div>
-                        <div class="col-sm">
-                            <p id="bhead">Other Links</p>
-                            <p>Privacy Policy</p>
-                            <p>Terms & Conditions</p>
-                            <p>Refund & Cancellation Policy</p>
-                            <p>Contact Us</p>
-                            <p>Why Choose Us?</p>
-                        </div>
-                        <div class="col-sm">
-                            <p id="bhead">DATABASE CATEGORIES</p>
-                            <p>B2B / B2C Indian Companies Database</p>
-                            <p>Government Employees Database</p>
-                            <p>Facebook Users Database</p>
-                            <p>OLX Users Database</p>
-                            <p>IT Professionals Database</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid" id="footbg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col" style="text-align: center;">
-                            <img src="./img/foot.PNG" width="20%">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col"
-                            style="font-size: 10px; text-align: center; font-weight: bold; color: rgba(153, 143, 143, 0.979); height: 18px;">
-                            <p> ABOUT US CONTACT US SHOP</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col"
-                            style="font-size: 12px; text-align: center; font-weight: bold; color: rgba(153, 143, 143, 0.979); ">
-                            <p>Copyright 2020 © Data Export</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- footer text end -->
+        <!-- footer text start-->
 
+        <!-- footer text end -->
+        <div id="footer-mob"></div>
 
 
 
@@ -1902,7 +1826,19 @@
     <script>
         $("#header-desktop").load('template/header.html');
         $("#footer-desktop").load('template/footer.html');
+        $("#footer-mob").load('template/footerMob.html');
+        $("#header-mob").load('template/headerMob.html');
         // Add custom javascript and jquery here
+        // nav var js
+        /* Set the width of the side navigation to 250px */
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        /* Set the width of the side navigation to 0 */
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
 
     </script>
 </body>
