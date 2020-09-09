@@ -125,6 +125,7 @@
             background-color: white;
             height: 100%;
             width: 80%;
+            margin-left: 92px;
         }
 
         #second-bar-left {
@@ -412,12 +413,13 @@
         }
 
         #slide1-center {
-            height: 500px;
+            /* height: 100%; */
             width: 100%;
             margin: 5px;
             padding: 15px;
-            padding-top: 130px;
+            /* padding-top: 130px; */
             animation: animate 2s linear;
+            position: relative;
         }
 
         @keyframes animate {
@@ -485,12 +487,12 @@
         #slide2-center {
             height: 300px;
             width: 400px;
-            margin: 2px;
-            margin-left: auto;
-            margin-right: auto;
+            /* margin: 2px; */
+            /* margin-left: auto; */
+            /* margin-right: auto; */
             padding: 15px;
-            padding-bottom: 120px;
-            margin-bottom: 50px;
+            /* padding-bottom: 120px; */
+            /* margin-bottom: 50px; */
             background-color: rgba(234, 212, 212, 0.87);
             opacity: 0.9;
             border-radius: 40%;
@@ -1071,7 +1073,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active" id="high">
                     <img class="d-block w-100" src="./img/slide1.PNG" alt="First slide">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption" style="display: flex; align-items: center; bottom: none;" >
                         <div id="slide1-center">
                             <div id="slider1-center-top">
                                 <h3>
@@ -1093,7 +1095,7 @@
                 </div>
                 <div class="carousel-item" id="high">
                     <img class="d-block w-100" src="./img/slide2.PNG" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block" style="right: 50%;">
+                    <div class="carousel-caption d-none d-md-block" style="right: 50%;display:flex !important;align-items: center; transform: translateY(-50%);position:absolute;right: none; bottom: none; top:50%;left:15%;z-index:10;padding-top:none;padding-bottom: none; text-align: center;">
                         <div id="slide2-center">
                             <div id="slider2-center-top">
                                 <h3>
