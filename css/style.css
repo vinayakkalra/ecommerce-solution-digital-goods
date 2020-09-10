@@ -265,6 +265,7 @@ body {
     background-color: white;
     height: 100%;
     width: 100%;
+    padding: none;
 }
 
 #second-bar-left {
@@ -293,7 +294,7 @@ body {
 }
 
 #second-bar-mid {
-    font-size: 13px;
+    font-size: 14px;
     word-spacing: 4px;
     padding-top: 40px;
     font-weight: bold;
