@@ -140,7 +140,7 @@
     font-display: swap;
 }
 .font-Lato-Thin {
-    font-family: montserrat-b;
+    font-family: Lato-Thin;
 }
 
 @font-face {
@@ -150,6 +150,47 @@
 }
 .font-Lato-ThinItalic {
     font-family: Lato-ThinItalic;
+}
+
+@font-face {
+    font-family: DancingScript-Bold;
+    src: url(../fonts/DancingScript-Bold.ttf);
+    font-display: swap;
+}
+.font-DancingScript-Bold {
+    font-family: DancingScript-Bold;
+}
+@font-face {
+    font-family: DancingScript-Medium;
+    src: url(../fonts/DancingScript-Medium.ttf);
+    font-display: swap;
+}
+.font-DancingScript-Medium {
+    font-family: DancingScript-Medium;
+}
+@font-face {
+    font-family: DancingScript-Regular;
+    src: url(../fonts/DancingScript-Regular.ttf);
+    font-display: swap;
+}
+.font-DancingScript-Regular {
+    font-family: DancingScript-Regular;
+}
+@font-face {
+    font-family: DancingScript-SemiBold;
+    src: url(../fonts/DancingScript-SemiBold.ttf);
+    font-display: swap;
+}
+.font-DancingScript-SemiBold {
+    font-family: DancingScript-SemiBold;
+}
+@font-face {
+    font-family: DancingScript-VariableFont_wght;
+    src: url(../fonts/DancingScript-VariableFont_wght.ttf);
+    font-display: swap;
+}
+.font-DancingScript-VariableFont_wght {
+    font-family: DancingScript-VariableFont_wght;
 }
 /* CSS used in all the other pages can be added here so that repetition of classes can be avoided */
 /* Example formating of css */
