@@ -317,6 +317,152 @@ body {
 }
 /* desktop header css end */
 
+/* desktop footer css */
+#card-bar {
+    height: 250px;
+    margin-top: 20px;
+}
+
+#card-bar-center {
+    height: 100%;
+    width: 80%;
+
+}
+
+#card-bar-one {
+    height: 250px;
+    margin-top: 20px;
+}
+
+#card-bar-center-one {
+    height: 100%;
+    width: 80%;
+
+
+}
+.g {
+    background-color: gray;
+    margin-top: 50px;
+    padding: 5px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+#jtext {
+    color: white;
+    font-size: 12px;
+    text-align: justify;
+}
+#bhead {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#footbg {
+    background-color: #5b5b5b;
+    height: 80px;
+    margin-bottom: 0px;
+}
+
+#foot-mid {
+    margin: 0px auto;
+    width: 80%;
+    height: 100%;
+}
+
+#foot-mid-left {
+    height: 100%;
+    width: 25%;
+    color: rgba(153, 143, 143, 0.979);
+    font-weight: bold;
+    padding: 8px;
+    font-size: 70%;
+    float: left;
+}
+
+#foot-mid-right {
+    height: 100%;
+    width: 30%;
+    float: right;
+}
+
+#foot-mid-right img {
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+}
+/* desktop footer css end */
+
+/* mobile header css start */
+.sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1000;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: white;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+/* sider bar css end */
+/* mobile header css end */
+
+/* mobile view footer start */
+
+/* mobile view footer end */
+
 
 /* CSS used in all the other pages can be added here so that repetition of classes can be avoided */
 /* Example formating of css */
