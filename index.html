@@ -315,16 +315,17 @@
 
         .text {
             color: white;
-            font-size: 20px;
-            position: absolute;
+            font-size: 15px;
+            padding:5px;
+            /* position: absolute;
             top: 50%;
             left: 50%;
             -webkit-transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); */
             text-align: center;
-            height: 50px;
-            margin-top: 40px;
+            /* height: 50px; */
+            /* margin-top: 40px; */
         }
 
         .over {
@@ -340,7 +341,7 @@
         }
 
         .hv:hover .over {
-            height: 40%;
+            height: 100%;
         }
 
         .over1 {
@@ -595,7 +596,7 @@
         #text-bg {
             background-color: #24436e;
             width: 100%;
-            height: 50px;
+            /* height: 50px; */
         }
 
         .card {
@@ -986,23 +987,25 @@
 
         /* Slider2 css start */
         #cbody-mob {
-            margin-top: 90%;
             background-color: gray;
             text-align: center;
             color: white;
+            position: absolute;
+            bottom: 0 !important;
             opacity: 0.8;
-            height: 25%;
+            /* height: 25%; */
             font-size: 5px;
-            height: 100%;
-
-            padding-top: 10px;
+            width: 100%;
+            /* height: 0; */
+            transition: .5s ease;
         }
 
         .hv2-mob:hover>#cbody-mob {
-            animation-name: up-mob;
-            animation-duration: 1s;
-            padding-top: auto;
-            animation-fill-mode: forwards;
+            /* animation-name: up-mob; */
+            /* animation-duration: 1s; */
+            height: 25%;
+            /* padding-top: auto; */
+            /* animation-fill-mode: forwards; */
         }
 
         .hv2-mob:hover>#main-img {
@@ -1143,6 +1146,20 @@
                 padding-left: 0;
                 padding-right: 0;
             }
+            .card-title{
+            font-size: 7px !important;
+        }
+        }
+        .card-img-overlay{
+            
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+
+        }
+        .card-title{
+            font-size: 15px;
         }
     </style>
 </head>
@@ -1234,15 +1251,17 @@
                             <div class="col">
                                 <div class="hv">
                                     <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                                    <div class="over">
-                                        <div class="icon-bg">
-                                            <div class="icon">
-                                                <img src="./img/icon.PNG">
+                                    <div class="over" style="display: flex;align-items: flex-end;">
+                                        <div style="width: 100%;">
+                                            <div class="icon-bg" >
+                                                <div class="icon">
+                                                    <img src="./img/icon.PNG" style="width: 30px;">
+                                                </div>
+                                                <div class="s"></div>
                                             </div>
-                                            <div class="s"></div>
-                                        </div>
-                                        <div id="text-bg">
-                                            <div class="text">QUICK VIEW</div>
+                                            <div id="text-bg" style="display: flex;align-items: center;text-align: center;justify-content: center;">
+                                                <div class="text">QUICK VIEW</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1285,19 +1304,19 @@
                                 <div class="card hv2">
                                     <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
                                     <div class="card-img-overlay" id="cbody">
-                                        <p class="card-title">WHATSAPP NUMBER DATABASE</p>
+                                        <p class="mb-0 card-title">WHATSAPP NUMBER DATABASE</p>
                                     </div>
                                 </div>
                                 <div class="card hv2">
                                     <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
                                     <div class="card-img-overlay" id="cbody">
-                                        <p class="card-title">WHATSAPP NUMBER DATABASE</p>
+                                        <p class="mb-0 card-title">WHATSAPP NUMBER DATABASE</p>
                                     </div>
                                 </div>
                                 <div class="card hv2">
                                     <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
                                     <div class="card-img-overlay" id="cbody">
-                                        <p class="card-title">WHATSAPP NUMBER DATABASE</p>
+                                        <p class="mb-0 card-title">WHATSAPP NUMBER DATABASE</p>
                                     </div>
                                 </div>
                             </div>
@@ -1307,19 +1326,19 @@
                                 <div class="card hv2">
                                     <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
                                     <div class="card-img-overlay" id="cbody">
-                                        <p class="card-title">WHATSAPP NUMBER DATABASE</p>
+                                        <p class="mb-0 card-title">WHATSAPP NUMBER DATABASE</p>
                                     </div>
                                 </div>
                                 <div class="card hv2">
                                     <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
                                     <div class="card-img-overlay" id="cbody">
-                                        <p class="card-title">WHATSAPP NUMBER DATABASE</p>
+                                        <p class="mb-0 card-title">WHATSAPP NUMBER DATABASE</p>
                                     </div>
                                 </div>
                                 <div class="card hv2">
                                     <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
                                     <div class="card-img-overlay" id="cbody">
-                                        <p class="card-title">WHATSAPP NUMBER DATABASE</p>
+                                        <p class="mb-0 card-title">WHATSAPP NUMBER DATABASE</p>
                                     </div>
                                 </div>
                             </div>
@@ -1569,8 +1588,8 @@
                                             <div class="card hv2-mob">
                                                 <img class="card-img" src="./img/data.png" alt="Card image"
                                                     id="main-img">
-                                                <div class="card-img-overlay" id="cbody-mob">
-                                                    <p class="card-title">WHATSAPP NUMBER DATABASE</p>
+                                                <div  id="cbody-mob">
+                                                    <p class="card-title mb-0" style="padding: 10px;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">WHATSAPP NUMBER DATABASE</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1578,8 +1597,8 @@
                                             <div class="card hv2-mob">
                                                 <img class="card-img" src="./img/data.png" alt="Card image"
                                                     id="main-img">
-                                                <div class="card-img-overlay" id="cbody-mob">
-                                                    <p class="card-title">WHATSAPP NUMBER DATABASE</p>
+                                                <div  id="cbody-mob">
+                                                    <p class="card-title mb-0" style="padding: 10px;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">WHATSAPP NUMBER DATABASE</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1593,8 +1612,8 @@
                                             <div class="card hv2-mob">
                                                 <img class="card-img" src="./img/data.png" alt="Card image"
                                                     id="main-img">
-                                                <div class="card-img-overlay" id="cbody-mob">
-                                                    <p class="card-title">WHATSAPP NUMBER DATABASE</p>
+                                                <div  id="cbody-mob">
+                                                    <p class="card-title mb-0" style="padding: 10px;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">WHATSAPP NUMBER DATABASE</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1602,8 +1621,8 @@
                                             <div class="card hv2-mob">
                                                 <img class="card-img" src="./img/data.png" alt="Card image"
                                                     id="main-img">
-                                                <div class="card-img-overlay" id="cbody-mob">
-                                                    <p class="card-title">WHATSAPP NUMBER DATABASE</p>
+                                                <div  id="cbody-mob">
+                                                    <p class="card-title mb-0 " style="padding: 10px;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">WHATSAPP NUMBER DATABASE</p>
                                                 </div>
                                             </div>
                                         </div>
