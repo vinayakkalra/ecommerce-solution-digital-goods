@@ -330,7 +330,7 @@ body {
 }
 
 #card-bar-one {
-    height: 250px;
+    height: auto;
     margin-top: 20px;
 }
 
