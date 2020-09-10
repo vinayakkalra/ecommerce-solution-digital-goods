@@ -192,6 +192,132 @@
 .font-DancingScript-VariableFont_wght {
     font-family: DancingScript-VariableFont_wght;
 }
+
+
+/* desktop header css start */
+body {
+    font-family: "Lato", sans-serif;
+}
+
+#top-bar {
+    background-color: #24436e;
+    height: 30px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+#top-bar-center {
+    background-color: #24436e;
+    height: 100%;
+    width: 80%;
+
+}
+
+#top-bar-left {
+    background-color: #24436e;
+    height: 100%;
+    width: 25%;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    font-size: 12px;
+    float: left;
+}
+
+#top-bar-right {
+    background-color: #24436e;
+    height: 100%;
+    width: 30%;
+    float: right;
+}
+
+#top-bar-right a {
+    color: #dae7fa;
+    border-right: 1px solid white;
+    padding: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+#top-bar-right :hover {
+    color: white;
+}
+
+#shop {
+    border-right: none !important;
+}
+
+#c {
+    clear: both;
+}
+
+#second-bar {
+    background-color: white;
+    height: 100px;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+
+}
+
+#second-bar-center {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+}
+
+#second-bar-left {
+    background-color: white;
+
+    width: 20%;
+    float: left;
+}
+
+#second-bar-mid {
+    background-color: white;
+    width: 60%;
+    float: left;
+}
+
+#second-bar-right {
+    background-color: white;
+    width: 20%;
+    float: right;
+}
+
+#second-bar-left img {
+    width: 90%;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+#second-bar-mid {
+    font-size: 13px;
+    word-spacing: 4px;
+    padding-top: 40px;
+    font-weight: bold;
+    padding-left: none;
+    padding-right: none;
+}
+
+#second-bar-mid a {
+    color: gray;
+    text-decoration: none;
+}
+
+#second-bar-mid :hover {
+    color: black;
+    border-top: 2px solid #24436e;
+}
+
+#second-bar-right img {
+    width: 100%;
+    padding-top: 15px;
+}
+/* desktop header css end */
+
+
 /* CSS used in all the other pages can be added here so that repetition of classes can be avoided */
 /* Example formating of css */
 /*#drawer{
