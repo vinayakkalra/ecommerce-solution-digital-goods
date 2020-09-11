@@ -143,6 +143,7 @@
                 </h1>
             </div> 
         </div>
+        <!-- side links -->
         <div class="container" style="padding:0">
             <div style="width:100%;display:flex;">
                 <div style="width:30%" id="link">
@@ -216,6 +217,38 @@
         <div id="header-mob"></div>
         <!-- mobile view header end -->
 
+        <!-- second bar start -->
+        <div class="container" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;" >
+            <div style="width:100%; text-align: center;">
+                <h1 style="color: rgba(102,102,102,0.7); font-size: 18.4px;" class="font-Lato-Regular">
+                    HOME /
+                    <span style="color: #222222; font-weight: 550;">
+                        ALL INDIA DATABASE
+                    </span>    
+                </h1>
+            </div> 
+        </div>
+        <!-- product  -->
+        <div class="container" style="padding:0; padding-left: 15px;">
+            <div style="width:100%;display:flex;">
+                <div style="width:70%">
+                    <h1 style="color: #282828; font-size: 16px; margin:0px 0px 20.8px;" class="font-Lato-Regular">All India Database</h1>
+                    <div class="row" style="margin-left: 15px;">
+                        <div class="col-8">
+                            <div class="row">
+                                <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
+                            </div>
+                            <div class="row">
+                                <p style="text-align: left; font-size: 12px; font-weight: bold; color:black;"class="text font-Lato-Regular" ><a href="#">All India
+                                        Complete
+                                        Database</a><br>₹1,299.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- second bar end -->
         <!-- mobile view footer -->
         <div id="footer-mob"></div>
         <!-- mobile view footer end -->
@@ -236,6 +269,16 @@
         $("#footer-desktop").load('template/footer.html');
         $("#footer-mob").load('template/footerMob.html');
         $("#header-mob").load('template/headerMob.html');
+
+        // mobile view nav bar js
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        /* Set the width of the side navigation to 0 */
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
     </script>
 </body>
 </html>
