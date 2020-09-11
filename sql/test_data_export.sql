@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2020 at 03:37 PM
+-- Generation Time: Sep 11, 2020 at 03:47 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.2.32
 
@@ -66,10 +66,10 @@ CREATE TABLE `government` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `job-seekers`
+-- Table structure for table `job_seekers`
 --
 
-CREATE TABLE `job-seekers` (
+CREATE TABLE `job_seekers` (
   `id` int(200) NOT NULL,
   `image` varchar(3000) NOT NULL,
   `description` varchar(3000) NOT NULL,
@@ -154,9 +154,9 @@ ALTER TABLE `government`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `job-seekers`
+-- Indexes for table `job_seekers`
 --
-ALTER TABLE `job-seekers`
+ALTER TABLE `job_seekers`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -206,9 +206,9 @@ ALTER TABLE `government`
   MODIFY `id` int(200) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `job-seekers`
+-- AUTO_INCREMENT for table `job_seekers`
 --
-ALTER TABLE `job-seekers`
+ALTER TABLE `job_seekers`
   MODIFY `id` int(200) NOT NULL AUTO_INCREMENT;
 
 --
