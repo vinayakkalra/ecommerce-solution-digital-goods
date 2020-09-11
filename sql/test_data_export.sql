@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2020 at 04:22 PM
+-- Generation Time: Sep 11, 2020 at 05:01 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.2.32
 
@@ -40,7 +40,10 @@ CREATE TABLE `all_india_database` (
 --
 
 INSERT INTO `all_india_database` (`id`, `image`, `description`, `original price`, `discounted price`) VALUES
-(1, './img/data.png', 'ALL INDIA DATABASE', 12890, 1299);
+(1, './img/data.png', 'ALL INDIA DATABASE', 12890, 1299),
+(2, './img/data.png', 'ALL INDIA DATABASE', 12890, 1299),
+(3, './img/data.png', 'ALL INDIA DATABASE', 12890, 1299),
+(4, './img/data.png', 'ALL INDIA DATABASE', 12890, 1299);
 
 -- --------------------------------------------------------
 
@@ -61,7 +64,10 @@ CREATE TABLE `b2b` (
 --
 
 INSERT INTO `b2b` (`id`, `image`, `description`, `original price`, `discounted price`) VALUES
-(1, './img/data.png', ' B2B / B2C INDIAN COMPANIES DATABASE', 599, 599);
+(1, './img/data.png', ' B2B / B2C INDIAN COMPANIES DATABASE', 599, 599),
+(2, './img/data.png', ' B2B / B2C INDIAN COMPANIES DATABASE', 599, 599),
+(3, './img/data.png', ' B2B / B2C INDIAN COMPANIES DATABASE', 599, 599),
+(4, './img/data.png', ' B2B / B2C INDIAN COMPANIES DATABASE', 599, 599);
 
 -- --------------------------------------------------------
 
@@ -82,7 +88,10 @@ CREATE TABLE `government` (
 --
 
 INSERT INTO `government` (`id`, `image`, `description`, `original price`, `discounted price`) VALUES
-(1, './img/data.png', 'GOVERNMENT EMPLOYEES DATABASE', 299, 299);
+(1, './img/data.png', 'GOVERNMENT EMPLOYEES DATABASE', 299, 299),
+(2, './img/data.png', 'GOVERNMENT EMPLOYEES DATABASE', 299, 299),
+(3, './img/data.png', 'GOVERNMENT EMPLOYEES DATABASE', 299, 299),
+(4, './img/data.png', 'GOVERNMENT EMPLOYEES DATABASE', 299, 299);
 
 -- --------------------------------------------------------
 
@@ -103,7 +112,10 @@ CREATE TABLE `job_seekers` (
 --
 
 INSERT INTO `job_seekers` (`id`, `image`, `description`, `original price`, `discounted price`) VALUES
-(1, './img/data.png', 'JOB SEEKERS DATABASE', 599, 599);
+(1, './img/data.png', 'JOB SEEKERS DATABASE', 599, 599),
+(2, './img/data.png', 'JOB SEEKERS DATABASE', 599, 599),
+(3, './img/data.png', 'JOB SEEKERS DATABASE', 599, 599),
+(4, './img/data.png', 'JOB SEEKERS DATABASE', 599, 599);
 
 -- --------------------------------------------------------
 
@@ -124,7 +136,10 @@ CREATE TABLE `other_databases` (
 --
 
 INSERT INTO `other_databases` (`id`, `image`, `description`, `original price`, `discounted price`) VALUES
-(1, './img/data.png', 'OTHER DATABASES', 299, 299);
+(1, './img/data.png', 'OTHER DATABASES', 299, 299),
+(2, './img/data.png', 'Advocates / Lawyers Database', 299, 299),
+(3, './img/data.png', 'Agents Database', 299, 299),
+(4, './img/data.png', 'Apparel / Garments Exporters Database', 299, 299);
 
 -- --------------------------------------------------------
 
@@ -145,7 +160,10 @@ CREATE TABLE `policy_bazaar` (
 --
 
 INSERT INTO `policy_bazaar` (`id`, `image`, `description`, `original price`, `discounted price`) VALUES
-(1, './img/data.png', 'POLICY BAZAAR DATABASE', 399, 399);
+(1, './img/data.png', 'POLICY BAZAAR DATABASE', 399, 399),
+(2, './img/data.png', 'POLICY BAZAAR DATABASE', 399, 399),
+(3, './img/data.png', 'POLICY BAZAAR DATABASE', 399, 399),
+(4, './img/data.png', 'POLICY BAZAAR DATABASE', 399, 399);
 
 -- --------------------------------------------------------
 
@@ -178,7 +196,10 @@ CREATE TABLE `students_database` (
 --
 
 INSERT INTO `students_database` (`id`, `image`, `description`, `original price`, `discounted price`) VALUES
-(1, './img/data.png', 'STUDENTS DATABASE', 599, 599);
+(1, './img/data.png', 'STUDENTS DATABASE', 599, 599),
+(2, './img/data.png', 'STUDENTS DATABASE', 599, 599),
+(3, './img/data.png', 'STUDENTS DATABASE', 599, 599),
+(4, './img/data.png', 'STUDENTS DATABASE', 599, 599);
 
 --
 -- Indexes for dumped tables
@@ -240,37 +261,37 @@ ALTER TABLE `students_database`
 -- AUTO_INCREMENT for table `all_india_database`
 --
 ALTER TABLE `all_india_database`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `b2b`
 --
 ALTER TABLE `b2b`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `government`
 --
 ALTER TABLE `government`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `job_seekers`
 --
 ALTER TABLE `job_seekers`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `other_databases`
 --
 ALTER TABLE `other_databases`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `policy_bazaar`
 --
 ALTER TABLE `policy_bazaar`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -282,7 +303,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `students_database`
 --
 ALTER TABLE `students_database`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
