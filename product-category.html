@@ -69,15 +69,55 @@
         #link a {
             font-size: 16px;
             font-family:Lato-Regular;
+            padding: 6px 0px;
         }
         #link a:hover {
             color: #000000;
+            text-decoration: none;
         }
         .active {
             font-weight: bold;
             color: black;
         }
         /*  side links css end */
+
+        /* product css start */
+        .hv:hover .over {
+            height: 100%;
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+        .over {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            transition: .5s ease;
+            opacity: 0.8;
+        }
+        .icon {
+            width: 15%;
+            height: 20%;
+            text-align: center;
+            margin-left: 15px;
+        }
+        .s {
+            height: 10px;
+        }
+        #text-bg {
+            background-color: #24436e;
+            width: 100%;
+            color: white;
+            /* height: 50px; */
+        }
+        /* product css end */
         /* desktop view css end */
     </style>
 </head>
@@ -93,7 +133,7 @@
         <!-- desktop header end -->
 
         <!-- second bar header start -->
-        <div class="container" style="padding : 0; border-top: 1px solid rgb(221, 221, 221);" >
+        <div class="container" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;" >
             <div style="width:100%;">
                 <h1 style="color: rgba(102,102,102,0.7); font-size: 18.4px;" class="font-Lato-Regular">
                     HOME /
@@ -107,6 +147,7 @@
             <div style="width:100%;display:flex;">
                 <div style="width:30%" id="link">
                     <p style="font-size: 16px; color: #282828;" class="font-Lato-Regular">BROWSE ALL DATABASES</p>
+                    <div style="margin-top: .66em;height: 3px;display: block;background-color: rgba(0,0,0,0.1);margin: 1em 0 1em;width: 100%;max-width: 30px;"><hr></div>
                     <p><a href="#" class="active">All India Database</a></p>
                     <p><a href="#">B2B / B2C Indian Companies Database</a></p>
                     <p><a href="#">Government Employees Database</a></p>
@@ -116,19 +157,44 @@
                     <p><a href="#">Students Database</a></p>
                 </div>
                 <div style="width:70%">
-                    <h1>product</h1>
+                    <h1 style="color: #282828; font-size: 16px; margin:0px 0px 20.8px;" class="font-Lato-Regular">All India Database</h1>
                     <div class="row">
                         <div class="col-4">
-                            hello world
+                            <div class="row">
+                                <div class="col">
+                                    <div class="hv">
+                                        <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
+                                        <div class="over" style="display: flex;align-items: flex-end;">
+                                            <div style="width: 100%;">
+                                                <div class="icon-bg">
+                                                    <div class="icon">
+                                                        <img src="./img/icon.PNG" style="width: 30px;">
+                                                    </div>
+                                                    <div class="s"></div>
+                                                </div>
+                                                <div id="text-bg"
+                                                    style="display: flex;align-items: center;text-align: center;justify-content: center;">
+                                                    <div class="text font-Lato-Regular">QUICK VIEW</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                            </div>
+                            <div class="row mt-2">
+                                <h6 style="text-align: left;"><a href="#" class="font-Lato-Regular">All India Complete Database</a><br>₹1,299.00</h6>
+                            </div>
+
                         </div>
                         <div class="col-4">
-                            hello world
+                            
                         </div>
                         <div class="col-4">
-                            hello world
+                            
                         </div>
                         <div class="col-4">
-                            hello world
+                            
                         </div>
                     </div>
                 </div>
