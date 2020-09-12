@@ -392,23 +392,28 @@
         }
 
         $(document).ready(function(){
-            var data = <?= $index ?>; 
+            var data = <?= $index ?>;
             if (data == 1) {
                 $("#one").addClass("active");
-                
+                $("#one1").addClass("active1");
             } else if(data == 2) {
                 $("#two").addClass("active");
-                
+                $("#two2").addClass("active1");
             } else if(data==3) {
                 $("#three").addClass("active");
+                $("#three3").addClass("active1");
             } else if(data==4) {
                 $("#four").addClass("active");
+                $("#four4").addClass("active1");
             } else if(data==5) {
                 $("#five").addClass("active");
+                $("#five5").addClass("active1");
             } else if (data==6) {
                 $("#six").addClass("active");
+                
             } else if (data==7) {
                 $("#seven").addClass("active");
+                $("#six6").addClass("active1");
             }
         }); 
         
