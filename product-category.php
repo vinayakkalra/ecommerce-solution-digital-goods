@@ -7,7 +7,7 @@
      
          $Product = $_GET['Product'];
       }
-      $index = $Product -1;
+      $index = $Product;
       $query = "SELECT * FROM `Product`  WHERE `id` =  $Product";
       if ($result = mysqli_query($conn, $query)) {
         if( ! mysqli_num_rows($result) ) {
@@ -189,13 +189,13 @@
                         style="margin-top: .66em;height: 3px;display: block;background-color: rgba(0,0,0,0.1);margin: 1em 0 1em;width: 100%;max-width: 30px;">
                         <hr>
                     </div>
-                    <p><a href="product-category?Product=1" class="active">All India Database</a></p>
-                    <p><a href="product-category?Product=2">B2B / B2C Indian Companies Database</a></p>
-                    <p><a href="product-category?Product=3">Government Employees Database</a></p>
-                    <p><a href="product-category?Product=4">Job Seekers Database </a></p>
-                    <p><a href="product-category?Product=5">Other Databases</a></p>
-                    <p><a href="product-category?Product=6">Policy Bazaar Database</a></p>
-                    <p><a href="product-category?Product=7">Students Database</a></p>
+                    <p><a href="product-category?Product=1" id="one">All India Database</a></p>
+                    <p><a href="product-category?Product=2" id="two">B2B / B2C Indian Companies Database</a></p>
+                    <p><a href="product-category?Product=3" id="three">Government Employees Database</a></p>
+                    <p><a href="product-category?Product=4" id="four">Job Seekers Database </a></p>
+                    <p><a href="product-category?Product=5" id="five">Other Databases</a></p>
+                    <p><a href="product-category?Product=6" id="six">Policy Bazaar Database</a></p>
+                    <p><a href="product-category?Product=7" id="seven">Students Database</a></p>
                 </div>
                 <div style="width:70%">
                     <h1 style="color: #282828; font-size: 16px; margin:0px 0px 20.8px; font-weight: 400;"
@@ -390,6 +390,24 @@
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
         }
+        // jquery
+        var data = <?= $_GET['Product'] ?>;
+        if (data == 1) {
+            $("#one").addClass("active");
+        } else if(data == 2) {
+            $("#two").addClass("active");
+        } else if(data==3) {
+            $("#three").addClass("active");
+        } else if(data==4) {
+            $("#four").addClass("active");
+        } else if(data==5) {
+            $("#five").addClass("active");
+        } else if (data==6) {
+            $("#six").addClass("active");
+        } else if (data==7) {
+            $("#seven").addClass("active");
+        }
+        
     </script>
 </body>
 
