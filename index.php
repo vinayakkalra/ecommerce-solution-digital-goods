@@ -1718,10 +1718,10 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script>
-        $("#header-desktop").load('template/header.html');
-        $("#footer-desktop").load('template/footer.html');
-        $("#footer-mob").load('template/footerMob.html');
-        $("#header-mob").load('template/headerMob.html');
+        $("#header-desktop").load('template/header.php');
+        $("#footer-desktop").load('template/footer.php');
+        $("#footer-mob").load('template/footerMob.php');
+        $("#header-mob").load('template/headerMob.php');
         // Add custom javascript and jquery here
         // nav var js
         /* Set the width of the side navigation to 250px */
