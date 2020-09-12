@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2020 at 05:01 PM
+-- Generation Time: Sep 12, 2020 at 09:22 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.2.32
 
@@ -177,6 +177,19 @@ CREATE TABLE `product` (
   `table_name` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `product_category`, `table_name`) VALUES
+(1, 'All India Database', 'all_india_database'),
+(2, 'B2B / B2C Indian Companies Database', 'b2b'),
+(3, 'Government Employees Database', 'government'),
+(4, 'Job Seekers Database', 'job_seekers'),
+(5, 'Other Databases', 'other_databases'),
+(6, 'Policy Bazaar Database', 'policy_bazaar'),
+(7, 'Students Database', 'students_database');
+
 -- --------------------------------------------------------
 
 --
@@ -297,7 +310,7 @@ ALTER TABLE `policy_bazaar`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `students_database`
