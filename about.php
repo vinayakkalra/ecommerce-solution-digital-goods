@@ -132,7 +132,7 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    
+    <script src="js/custom_mobile_header.js"></script>
     <script>
 
         // Add custom javascript and jquery here
@@ -142,15 +142,7 @@
         $("#footer-mob").load('template/footerMob.php');
         $("#header-mob").load('template/headerMob.php');
 
-        // mobile view nav bar js
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
-
-        /* Set the width of the side navigation to 0 */
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
+     
     </script>
 </body>
 </html>

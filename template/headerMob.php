@@ -23,13 +23,13 @@
                 <!-- Hamburger Menu-Start -->
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="index.php" class="text font-Lato-Regular" style="text-align: left;">HOME</a>
-                    <a href="product-category?Product=2" class="text font-Lato-Regular" style="text-align: left;">B2B & B2C</a>
-                    <a href="product-category?Product=3" class="text font-Lato-Regular" style="text-align: left;">GOVERNMENT</a>
-                    <a href="product-category?Product=7" class="text font-Lato-Regular" style="text-align: left;">STUDENTS</a>
+                    <a href="index" class="text font-Lato-Regular" style="text-align: left;">HOME</a>
+                    <a href="product-category?Product=1" class="text font-Lato-Regular" style="text-align: left;">B2B & B2C</a>
+                    <a href="product-category?Product=2" class="text font-Lato-Regular" style="text-align: left;">GOVERNMENT</a>
+                    <a href="product-category?Product=3" class="text font-Lato-Regular" style="text-align: left;">STUDENTS</a>
                     <a href="product-category?Product=4" class="text font-Lato-Regular" style="text-align: left;">JOB SEEKERS</a>
-                    <a href="product-category?Product=1" class="text font-Lato-Regular" style="text-align: left;">ALL INDIA</a>
-                    <a href="product-category?Product=5" class="text font-Lato-Regular" style="text-align: left;">OTHER DATABASES</a>
+                    <a href="product-category?Product=5" class="text font-Lato-Regular" style="text-align: left;">ALL INDIA</a>
+                    <a href="product-category?Product=6" class="text font-Lato-Regular" style="text-align: left;">OTHER DATABASES</a>
                     <a href="about.php" class="text font-Lato-Regular" style="text-align: left;">ABOUT US</a>
                     <a href="#" class="text font-Lato-Regular" style="text-align: left;">CONTACT US</a>
                     <a href="#" class="text font-Lato-Regular" style="text-align: left;">SHOP</a>

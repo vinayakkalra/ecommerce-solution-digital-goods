@@ -173,7 +173,7 @@
             <div style="width:100%;">
                 <h1 style="color: rgba(102,102,102,0.7); font-size: 18.4px;" class="font-Lato-Regular">
                     HOME /
-                    <span style="color: #222222; font-weight: bold;">
+                    <span style="color: #222222; font-weight: bold;text-transform: uppercase;">
                         <?=$product_category ?>
                     </span>
                 </h1>
@@ -189,13 +189,26 @@
                         style="margin-top: .66em;height: 3px;display: block;background-color: rgba(0,0,0,0.1);margin: 1em 0 1em;width: 100%;max-width: 30px;">
                         <hr>
                     </div>
-                    <p><a href="product-category?Product=1" id="one">All India Database</a></p>
-                    <p><a href="product-category?Product=2" id="two">B2B / B2C Indian Companies Database</a></p>
-                    <p><a href="product-category?Product=3" id="three">Government Employees Database</a></p>
-                    <p><a href="product-category?Product=4" id="four">Job Seekers Database </a></p>
-                    <p><a href="product-category?Product=5" id="five">Other Databases</a></p>
-                    <p><a href="product-category?Product=6" id="six">Policy Bazaar Database</a></p>
-                    <p><a href="product-category?Product=7" id="seven">Students Database</a></p>
+                    <?php
+                        $querysec = "SELECT * FROM `Product` ";
+                        if ($result = mysqli_query($conn, $querysec)) {
+                          if( ! mysqli_num_rows($result) ) {
+                            //   header("Location: index");
+                          } else {
+                              while( $row = mysqli_fetch_array($result)){
+                                  ?>
+                            <p><a href="product-category?Product=<?=$row['id']?>" class = "list-group-itemss" ><?=$row['product_category']?></a></p>
+                                  <?php
+                              }
+                          }
+                        }
+                    ?>
+                    <!-- <p><a href="product-category?Product=3" class = "list-group-itemss" id="three">Government Employees Database</a></p>
+                    <p><a href="product-category?Product=7" class = "list-group-itemss" id="seven">Students Database</a></p>
+                    <p><a href="product-category?Product=4" class = "list-group-itemss" id="four">Job Seekers Database </a></p>
+                    <p><a href="product-category?Product=1" class = "list-group-itemss" id="one">All India Database</a></p>
+                    <p><a href="product-category?Product=5" class = "list-group-itemss" id="five">Other Databases</a></p>
+                    <p><a href="product-category?Product=6" class = "list-group-itemss" id="six">Policy Bazaar Database</a></p> -->
                 </div>
                 <div style="width:70%">
                     <h1 style="color: #282828; font-size: 16px; margin:0px 0px 20.8px; font-weight: 400;"
@@ -240,7 +253,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <p style="font-size: .65em;opacity: .7;margin-top: .1em;
+                                    <p style="font-size: 11px;opacity: .7;margin-top: .1em;
                                         margin-bottom: .1em;font-weight: 400; color: #282828;" class="font-Lato-Regular">
                                         <?=$des ?>
                                     </p>
@@ -248,11 +261,11 @@
                                 <div class="w-100"></div>
                                 <div class="col">
                                     <h6 style="text-align: left;" id="product-link">
-                                        <a href="#" class="font-Lato-Regular">
+                                        <a href="#" class="font-Lato-Regular" style="font-size: 13px;">
                                             <?=$des ?>
                                         </a>
-                                        <br>
-                                        <p style="font-weight:bold; color:#111;font-size: .9em;" class="font-Lato-Regular">
+                                       
+                                        <p style="font-weight:bold; color:#111;font-size: 14px;margin-top:5px;" class="font-Lato-Regular">
                                             <span
                                                 style="margin-right: 10px; font-weight: normal; color: #282828;opacity: .7"><s>₹<?=$o_price ?></s></span>₹<?=$d_price ?>
                                         <p>
@@ -293,7 +306,7 @@
             <div style="width:100%; text-align: center;">
                 <h1 style="color: rgba(102,102,102,0.7); font-size: 16px;" class="font-Lato-Regular">
                     HOME /
-                    <span style="color: #222222; font-weight: bold;">
+                    <span style="color: #222222; font-weight: bold;text-transform: uppercase;">
                         <?=$product_category ?>
                     </span>
                 </h1>
@@ -329,19 +342,18 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <p style="font-size: .75em; opacity: 0.7;margin-top: .1em;
+                                    <p style="font-size: 10px; opacity: 0.7;margin-top: .1em;
                                 margin-bottom: .1em;font-weight: 400; color: #282828;" class="font-Lato-Regular">
                                         <?=$des ?>
                                     </p>
                                 </div>
                                 <div class="w-100"></div>
                                 <div class="col">
-                                    <h6 style="text-align: left; font-size: 85%;" id="product-link">
+                                    <h6 style="text-align: left; font-size: 12px;" id="product-link">
                                         <a href="#" class="font-Lato-Regular">
                                             <?=$des ?>
                                         </a>
-                                        <br>
-                                        <p style="font-weight:bold; color:#111;font-size: .9em;"
+                                        <p style="font-weight:bold; color:#111;font-size: .9em;margin-top:5px;"
                                             class="font-Lato-Regular"><span
                                                 style="margin-right: 5px; font-weight: normal; color: #282828;opacity: .7"><s>₹<?=$o_price ?></s></span>₹<?=$d_price ?>
                                         <p>
@@ -370,7 +382,7 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
+    <script src="js/custom_mobile_header.js"></script>
     <script>
 
         // Add custom javascript and jquery here
@@ -381,40 +393,37 @@
             $("#footer-mob").load('template/footerMob.php');
             $("#header-mob").load('template/headerMob.php');
 
-        // mobile view nav bar js
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
-
-        /* Set the width of the side navigation to 0 */
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
+       
 
         $(document).ready(function(){
             var data = <?= $index ?>;
-            if (data == 1) {
-                $("#one1").addClass("active1");
-                $("#one").addClass("active");
-            } else if(data == 2) {
-                $("#two2").addClass("active1");
-                $("#two").addClass("active");
-            } else if(data==3) {
-                $("#three3").addClass("active1");
-                $("#three").addClass("active");
-            } else if(data==4) {
-                $("#four4").addClass("active1");
-                $("#four").addClass("active");
-            } else if(data==5) {
-                $("#five5").addClass("active1");
-                $("#five").addClass("active");
-            } else if (data==6) {
-                $("#six").addClass("active");
+            var classno = data - 1 ;
+            addactiveclass = document.getElementsByClassName('list-group-itemss');
+            addactiveclass[classno].classList.add('active');
+            addactiveclass = document.getElementsByClassName('list-group-itemssheader');
+            addactiveclass[classno].classList.add('active1');
+            // if (data == 1) {
+            //     $("#one1").addClass("active1");
+            //     $("#one").addClass("active");
+            // } else if(data == 2) {
+            //     $("#two2").addClass("active1");
+            //     $("#two").addClass("active");
+            // } else if(data==3) {
+            //     $("#three3").addClass("active1");
+            //     $("#three").addClass("active");
+            // } else if(data==4) {
+            //     $("#four4").addClass("active1");
+            //     $("#four").addClass("active");
+            // } else if(data==5) {
+            //     $("#five5").addClass("active1");
+            //     $("#five").addClass("active");
+            // } else if (data==6) {
+            //     $("#six").addClass("active");
                 
-            } else if (data==7) {
-                $("#six6").addClass("active1");
-                $("#seven").addClass("active");
-            }
+            // } else if (data==7) {
+            //     $("#six6").addClass("active1");
+            //     $("#seven").addClass("active");
+            // }
         }); 
         
        // jquery for top links 
