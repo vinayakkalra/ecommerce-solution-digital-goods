@@ -311,6 +311,12 @@ body {
     color: black;
     border-top: 2px solid #24436e;
 }
+.active1 {
+    text-decoration: none;
+    color: black;
+    border-top: 2px solid #24436e;
+}
+
 
 #second-bar-right img {
     width: 100%;
@@ -464,6 +470,7 @@ body {
 
 /* mobile view footer end */
 
+/*second - bar active link css*/
 
 /* CSS used in all the other pages can be added here so that repetition of classes can be avoided */
 /* Example formating of css */

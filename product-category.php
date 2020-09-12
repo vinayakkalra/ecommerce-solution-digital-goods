@@ -377,9 +377,9 @@
 
         // including header footer
         $("#header-desktop").load('template/header.php');
-        $("#footer-desktop").load('template/footer.php');
-        $("#footer-mob").load('template/footerMob.php');
-        $("#header-mob").load('template/headerMob.php');
+            $("#footer-desktop").load('template/footer.php');
+            $("#footer-mob").load('template/footerMob.php');
+            $("#header-mob").load('template/headerMob.php');
 
         // mobile view nav bar js
         function openNav() {
@@ -390,24 +390,29 @@
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
         }
-        // jquery
-        var data = <?= $_GET['Product'] ?>;
-        if (data == 1) {
-            $("#one").addClass("active");
-        } else if(data == 2) {
-            $("#two").addClass("active");
-        } else if(data==3) {
-            $("#three").addClass("active");
-        } else if(data==4) {
-            $("#four").addClass("active");
-        } else if(data==5) {
-            $("#five").addClass("active");
-        } else if (data==6) {
-            $("#six").addClass("active");
-        } else if (data==7) {
-            $("#seven").addClass("active");
-        }
+
+        $(document).ready(function(){
+            var data = <?= $index ?>; 
+            if (data == 1) {
+                $("#one").addClass("active");
+                
+            } else if(data == 2) {
+                $("#two").addClass("active");
+                
+            } else if(data==3) {
+                $("#three").addClass("active");
+            } else if(data==4) {
+                $("#four").addClass("active");
+            } else if(data==5) {
+                $("#five").addClass("active");
+            } else if (data==6) {
+                $("#six").addClass("active");
+            } else if (data==7) {
+                $("#seven").addClass("active");
+            }
+        }); 
         
+       // jquery for top links 
     </script>
 </body>
 
