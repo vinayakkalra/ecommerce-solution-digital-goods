@@ -1,3 +1,25 @@
+<?php
+    session_start();
+    require_once('./php/config.php');
+    if(!isset($_GET['Product'] )){
+        $Product = 1 ;
+      }else{
+     
+         $Product = $_GET['Product'];
+      }
+      $index = $Product -1;
+      $query = "SELECT * FROM `Product`  WHERE `id` =  $Product";
+      if ($result = mysqli_query($conn, $query)) {
+        if( ! mysqli_num_rows($result) ) {
+            header("Location: index");
+        } else {
+            while( $row = mysqli_fetch_array($result)){
+                $table_name = $row['table_name'];
+                $product_category = $row['product_category'];
+            }
+        }
+      }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -152,7 +174,7 @@
                 <h1 style="color: rgba(102,102,102,0.7); font-size: 18.4px;" class="font-Lato-Regular">
                     HOME /
                     <span style="color: #222222; font-weight: bold;">
-                        ALL INDIA DATABASE
+                        <?=$product_category ?>
                     </span>
                 </h1>
             </div>
@@ -177,13 +199,27 @@
                 </div>
                 <div style="width:70%">
                     <h1 style="color: #282828; font-size: 16px; margin:0px 0px 20.8px; font-weight: 400;"
-                        class="font-Lato-Regular">All India Database</h1>
+                        class="font-Lato-Regular"><?=$product_category ?></h1>
                     <div class="row mx-md-n5">
+
+                        <?php
+                            $query = "SELECT * FROM `$table_name` ";
+                            if ($result = mysqli_query($conn, $query)) {
+                                if( ! mysqli_num_rows($result) ) {
+                                    header("Location: index");
+                                }else{
+                                    while( $row = mysqli_fetch_array($result)){
+                                        $img= $row['image'];
+                                        $des = $row['description'];
+                                        $o_price = $row['original price'];
+                                        $d_price = $row['discounted price']
+                        ?>
+
                         <div class="col-4 px-md-5" style="margin-top: 5px; margin-bottom: 5px;">
                             <div class="row">
                                 <div class="col">
                                     <div class="hv">
-                                        <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
+                                        <img class="card-img-top center" src="<?=$img ?>" alt="Card image cap">
                                         <div class="over" style="display: flex;align-items: flex-end;">
                                             <div style="width: 100%;">
                                                 <div class="icon-bg">
@@ -203,223 +239,35 @@
 
                             </div>
                             <div class="row mt-2">
-                                <p style="font-size: .75em;opacity: .7;margin-top: .1em;
-                                margin-bottom: .1em;font-weight: 400; color: #282828;" class="font-Lato-Regular">
-                                    ALL INDIA DATABASE
-                                </p>
-                                <h6 style="text-align: left;" id="product-link">
-                                    <a href="#" class="font-Lato-Regular">
-                                        All India Complete Database
-                                    </a>
-                                    <br>
-                                    <p style="font-weight:bold; color:#111;font-size: .9em;" class="font-Lato-Regular">
-                                        <span
-                                            style="margin-right: 10px; font-weight: normal; color: #282828;opacity: .7"><s>₹1,299.00</s></span>₹1,299.00
-                                    <p>
-                                </h6>
-                            </div>
-
-                        </div>
-                        <div class="col-4 px-md-5" style="margin-top: 5px; margin-bottom: 5px;">
-                            <div class="row">
                                 <div class="col">
-                                    <div class="hv">
-                                        <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                                        <div class="over" style="display: flex;align-items: flex-end;">
-                                            <div style="width: 100%;">
-                                                <div class="icon-bg">
-                                                    <div class="icon">
-                                                        <img src="./img/icon.PNG" style="width: 30px;">
-                                                    </div>
-                                                    <div class="s"></div>
-                                                </div>
-                                                <div id="text-bg"
-                                                    style="display: flex;align-items: center;text-align: center;justify-content: center;">
-                                                    <div class="text font-Lato-Regular">QUICK VIEW</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <p style="font-size: .65em;opacity: .7;margin-top: .1em;
+                                        margin-bottom: .1em;font-weight: 400; color: #282828;" class="font-Lato-Regular">
+                                        <?=$des ?>
+                                    </p>
                                 </div>
-
-                            </div>
-                            <div class="row mt-2">
-                                <p style="font-size: .75em;opacity: .7;margin-top: .1em;
-                                margin-bottom: .1em;font-weight: 400; color: #282828;" class="font-Lato-Regular">
-                                    ALL INDIA DATABASE
-                                </p>
-                                <h6 style="text-align: left;" id="product-link">
-                                    <a href="#" class="font-Lato-Regular">
-                                        All India Complete Database
-                                    </a>
-                                    <br>
-                                    <p style="font-weight:bold; color:#111;font-size: .9em;" class="font-Lato-Regular">
-                                        <span
-                                            style="margin-right: 10px; font-weight: normal; color: #282828;opacity: .7"><s>₹1,299.00</s></span>₹1,299.00
-                                    <p>
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="col-4 px-md-5" style="margin-top: 5px; margin-bottom: 5px;">
-                            <div class="row">
+                                <div class="w-100"></div>
                                 <div class="col">
-                                    <div class="hv">
-                                        <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                                        <div class="over" style="display: flex;align-items: flex-end;">
-                                            <div style="width: 100%;">
-                                                <div class="icon-bg">
-                                                    <div class="icon">
-                                                        <img src="./img/icon.PNG" style="width: 30px;">
-                                                    </div>
-                                                    <div class="s"></div>
-                                                </div>
-                                                <div id="text-bg"
-                                                    style="display: flex;align-items: center;text-align: center;justify-content: center;">
-                                                    <div class="text font-Lato-Regular">QUICK VIEW</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <h6 style="text-align: left;" id="product-link">
+                                        <a href="#" class="font-Lato-Regular">
+                                            <?=$des ?>
+                                        </a>
+                                        <br>
+                                        <p style="font-weight:bold; color:#111;font-size: .9em;" class="font-Lato-Regular">
+                                            <span
+                                                style="margin-right: 10px; font-weight: normal; color: #282828;opacity: .7"><s>₹<?=$o_price ?></s></span>₹<?=$d_price ?>
+                                        <p>
+                                    </h6>
                                 </div>
-
-                            </div>
-                            <div class="row mt-2">
-                                <p style="font-size: .75em;opacity: .7;margin-top: .1em;
-                                margin-bottom: .1em;font-weight: 400; color: #282828;" class="font-Lato-Regular">
-                                    ALL INDIA DATABASE
-                                </p>
-                                <h6 style="text-align: left;" id="product-link">
-                                    <a href="#" class="font-Lato-Regular">
-                                        All India Complete Database
-                                    </a>
-                                    <br>
-                                    <p style="font-weight:bold; color:#111;font-size: .9em;" class="font-Lato-Regular">
-                                        <span
-                                            style="margin-right: 10px; font-weight: normal; color: #282828;opacity: .7"><s>₹1,299.00</s></span>₹1,299.00
-                                    <p>
-                                </h6>
+                                
                             </div>
                         </div>
-                        <div class="col-4 px-md-5" style="margin-top: 5px; margin-bottom: 5px;">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="hv">
-                                        <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                                        <div class="over" style="display: flex;align-items: flex-end;">
-                                            <div style="width: 100%;">
-                                                <div class="icon-bg">
-                                                    <div class="icon">
-                                                        <img src="./img/icon.PNG" style="width: 30px;">
-                                                    </div>
-                                                    <div class="s"></div>
-                                                </div>
-                                                <div id="text-bg"
-                                                    style="display: flex;align-items: center;text-align: center;justify-content: center;">
-                                                    <div class="text font-Lato-Regular">QUICK VIEW</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                            </div>
-                            <div class="row mt-2">
-                                <p style="font-size: .75em;opacity: .7;margin-top: .1em;
-                                margin-bottom: .1em;font-weight: 400; color: #282828;" class="font-Lato-Regular">
-                                    ALL INDIA DATABASE
-                                </p>
-                                <h6 style="text-align: left;" id="product-link">
-                                    <a href="#" class="font-Lato-Regular">
-                                        All India Complete Database
-                                    </a>
-                                    <br>
-                                    <p style="font-weight:bold; color:#111;font-size: .9em;" class="font-Lato-Regular">
-                                        <span
-                                            style="margin-right: 10px; font-weight: normal; color: #282828;opacity: .7"><s>₹1,299.00</s></span>₹1,299.00
-                                    <p>
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="col-4 px-md-5" style="margin-top: 5px; margin-bottom: 5px;">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="hv">
-                                        <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                                        <div class="over" style="display: flex;align-items: flex-end;">
-                                            <div style="width: 100%;">
-                                                <div class="icon-bg">
-                                                    <div class="icon">
-                                                        <img src="./img/icon.PNG" style="width: 30px;">
-                                                    </div>
-                                                    <div class="s"></div>
-                                                </div>
-                                                <div id="text-bg"
-                                                    style="display: flex;align-items: center;text-align: center;justify-content: center;">
-                                                    <div class="text font-Lato-Regular">QUICK VIEW</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <?php
+                                    }}}
+                        ?>
+                        
 
-                            </div>
-                            <div class="row mt-2">
-                                <p style="font-size: .75em;opacity: .7;margin-top: .1em;
-                                margin-bottom: .1em;font-weight: 400; color: #282828;" class="font-Lato-Regular">
-                                    ALL INDIA DATABASE
-                                </p>
-                                <h6 style="text-align: left;" id="product-link">
-                                    <a href="#" class="font-Lato-Regular">
-                                        All India Complete Database
-                                    </a>
-                                    <br>
-                                    <p style="font-weight:bold; color:#111;font-size: .9em;" class="font-Lato-Regular">
-                                        <span
-                                            style="margin-right: 10px; font-weight: normal; color: #282828;opacity: .7"><s>₹1,299.00</s></span>₹1,299.00
-                                    <p>
-                                </h6>
-                            </div> 
-                        </div>
-                        <div class="col-4 px-md-5" style="margin-top: 5px; margin-bottom: 5px;">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="hv">
-                                        <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                                        <div class="over" style="display: flex;align-items: flex-end;">
-                                            <div style="width: 100%;">
-                                                <div class="icon-bg">
-                                                    <div class="icon">
-                                                        <img src="./img/icon.PNG" style="width: 30px;">
-                                                    </div>
-                                                    <div class="s"></div>
-                                                </div>
-                                                <div id="text-bg"
-                                                    style="display: flex;align-items: center;text-align: center;justify-content: center;">
-                                                    <div class="text font-Lato-Regular">QUICK VIEW</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="row mt-2">
-                                <p style="font-size: .75em;opacity: .7;margin-top: .1em;
-                                margin-bottom: .1em;font-weight: 400; color: #282828;" class="font-Lato-Regular">
-                                    ALL INDIA DATABASE
-                                </p>
-                                <h6 style="text-align: left;" id="product-link">
-                                    <a href="#" class="font-Lato-Regular">
-                                        All India Complete Database
-                                    </a>
-                                    <br>
-                                    <p style="font-weight:bold; color:#111;font-size: .9em;" class="font-Lato-Regular">
-                                        <span
-                                            style="margin-right: 10px; font-weight: normal; color: #282828;opacity: .7"><s>₹1,299.00</s></span>₹1,299.00
-                                    <p>
-                                </h6>
-                            </div> 
-                        </div>
+        
                     </div>
                 </div>
             </div>
