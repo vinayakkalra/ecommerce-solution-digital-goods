@@ -267,7 +267,14 @@ body {
     width: 100%;
     padding: none;
 }
-
+@media only screen and (min-width: 1920px) {
+    .hello {
+        height: 600px;
+    }
+}
+.hello {
+    height: auto;
+}
 #second-bar-left {
     background-color: white;
 
