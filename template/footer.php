@@ -2,38 +2,38 @@
     <div id="card-bar-one" class="container-fluid">
         <div id="card-bar-center-one" class="container">
             <div class="row" id="jtext" style="font-size: 1em;">
-                <div class="col-sm">
+                <div class="col-sm" id="footlink">
                     <p id="bhead" class="font-Lato-Regular">Popular Databases
                     </p>
-                    <p class="font-Lato-Regular">All India Complete Database</p>
-                    <p class="font-Lato-Regular">B2B / B2C Indian Companies Database</p>
-                    <p class="font-Lato-Regular">Government Employees Database</p>
-                    <p class="font-Lato-Regular">All India Students Database</p>
-                    <p class="font-Lato-Regular">All India Students Database</p>
+                    <p class="font-Lato-Regular"><a href="">All India Complete Database</a></p>
+                    <p class="font-Lato-Regular" style="font-size:15px"><a href="">B2B/B2C Indian Companies Database</a></p>
+                    <p class="font-Lato-Regular"><a href="">Government Employees Database</a></p>
+                    <p class="font-Lato-Regular"><a href="">All India Students Database</a></p>
+                    <p class="font-Lato-Regular"><a href="">All India Students Database</a></p>
                 </div>
-                <div class="col-sm">
+                <div class="col-sm" id="footlink">
                     <p id="bhead" class="font-Lato-Regular">Important Links
                     </p>
-                    <p class="font-Lato-Regular">Shop</p>
-                    <p class="font-Lato-Regular">Cart</p>
-                    <p class="font-Lato-Regular">About Us</p>
-                    <p class="font-Lato-Regular">Blog</p>
+                    <p class="font-Lato-Regular"><a  href="">Shop</a></p>
+                    <p class="font-Lato-Regular"><a href="">Cart</a></p>
+                    <p class="font-Lato-Regular"><a href="">About Us</a></p>
+                    <p class="font-Lato-Regular"><a href="">Blog</a></p>
                 </div>
-                <div class="col-sm">
-                    <p id="bhead" class="font-Lato-Regular">Other Links</p>
-                    <p class="font-Lato-Regular">Privacy Policy</p>
-                    <p class="font-Lato-Regular">Terms & Conditions</p>
-                    <p class="font-Lato-Regular">Refund & Cancellation Policy</p>
-                    <p class="font-Lato-Regular">Contact Us</p>
-                    <p class="font-Lato-Regular">Why Choose Us?</p>
+                <div class="col-sm" id="footlink">
+                    <p id="bhead" class="font-Lato-Regular">Other Links</a></p>
+                    <p class="font-Lato-Regular"><a href="policy">Privacy Policy</a></p>
+                    <p class="font-Lato-Regular"><a href="term">Terms & Conditions</a></p>
+                    <p class="font-Lato-Regular"><a href="refund">Refund & Cancellation Policy</a></p>
+                    <p class="font-Lato-Regular"><a href="">Contact Us</a></p>
+                    <p class="font-Lato-Regular"><a href="why">Why Choose Us?</a></p>
                 </div>
-                <div class="col-sm">
+                <div class="col-sm" id="footlink">
                     <p id="bhead" class="font-Lato-Regular">DATABASE CATEGORIES</p>
-                    <p class="font-Lato-Regular">B2B / B2C Indian Companies Database</p>
-                    <p class="font-Lato-Regular">Government Employees Database</p>
-                    <p class="font-Lato-Regular">Facebook Users Database</p>
-                    <p class="font-Lato-Regular">OLX Users Database</p>
-                    <p class="font-Lato-Regular">IT Professionals Database</p>
+                    <p class="font-Lato-Regular" style="font-size:15px"><a href="">B2B/B2C Indian Companies Database</a></p>
+                    <p class="font-Lato-Regular"><a href="">Government Employees Database</a></p>
+                    <p class="font-Lato-Regular"><a href="">Facebook Users Database</a></p>
+                    <p class="font-Lato-Regular"><a href="">OLX Users Database</a></p>
+                    <p class="font-Lato-Regular"><a href="">IT Professionals Database</a></p>
                 </div>
             </div>
         </div>

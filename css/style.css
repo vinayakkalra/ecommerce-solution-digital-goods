@@ -385,6 +385,10 @@ body {
     font-size: 70%;
     float: left;
 }
+#footlink a {
+    color : white;
+    text-decoration: none;
+}
 
 #foot-mid-right {
     height: 100%;

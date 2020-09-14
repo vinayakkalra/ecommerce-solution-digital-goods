@@ -3,38 +3,38 @@
     <div class="container-fluid">
         <div id="card-bar-center-one" class="container" style="margin-left: 0; margin-top: 20px; margin-bottom: 20px; text-align: left;">
             <div class="row" style="color: white;">
-                <div class="col-sm mt-2">
+                <div class="col-sm mt-2" id="footlink">
                     <p id="bhead" class="text font-Lato-Regular" style="text-align: left;">Popular Databases
                     </p>
-                    <p class="text font-Lato-Regular" style="text-align: left;">All India Complete Database</p>
-                    <p class="text font-Lato-Regular" style="text-align: left;">B2B / B2C Indian Companies Database</p>
-                    <p class="text font-Lato-Regular" style="text-align: left;">Government Employees Database</p>
-                    <p class="text font-Lato-Regular" style="text-align: left;">All India Students Database</p>
-                    <p class="text font-Lato-Regular" style="text-align: left;">All India Students Database</p>
+                    <p class="font-Lato-Regular"><a href="">All India Complete Database</a></p>
+                    <p class="font-Lato-Regular"><a href="">B2B/B2C Indian Companies Database</a></p>
+                    <p class="font-Lato-Regular"><a href="">Government Employees Database</a></p>
+                    <p class="font-Lato-Regular"><a href="">All India Students Database</a></p>
+                    <p class="font-Lato-Regular"><a href="">All India Students Database</a></p>
                 </div>
-                <div class="col-sm mt2">
+                <div class="col-sm mt2" id="footlink">
                     <p id="bhead" class="text font-Lato-Regular" style="text-align: left;">Important Links
                     </p>
-                    <p class="text font-Lato-Regular" style="text-align: left;">Shop</p>
-                    <p class="text font-Lato-Regular" style="text-align: left;">Cart</p>
-                    <p class="text font-Lato-Regular" style="text-align: left;">About Us</p>
-                    <p class="text font-Lato-Regular" style="text-align: left;">Blog</p>
+                    <p class="font-Lato-Regular"><a  href="">Shop</a></p>
+                    <p class="font-Lato-Regular"><a href="">Cart</a></p>
+                    <p class="font-Lato-Regular"><a href="">About Us</a></p>
+                    <p class="font-Lato-Regular"><a href="">Blog</a></p>
                 </div>
-                <div class="col-sm mt-2">
+                <div class="col-sm mt-2" id="footlink">
                     <p id="bhead" class="text font-Lato-Regular" style="text-align: left;">Other Links</p>
-                    <p class="text font-Lato-Regular" style="text-align: left;">Privacy Policy</p>
-                    <p class="text font-Lato-Regular" style="text-align: left;">Terms & Conditions</p>
-                    <p class="text font-Lato-Regular" style="text-align: left;">Refund & Cancellation Policy</p>
-                    <p class="text font-Lato-Regular" style="text-align: left;">Contact Us</p>
-                    <p class="text font-Lato-Regular" style="text-align: left;">Why Choose Us?</p>
+                    <p class="font-Lato-Regular"><a href="policy">Privacy Policy</a></p>
+                    <p class="font-Lato-Regular"><a href="term">Terms & Conditions</a></p>
+                    <p class="font-Lato-Regular"><a href="refund">Refund & Cancellation Policy</a></p>
+                    <p class="font-Lato-Regular"><a href="">Contact Us</a></p>
+                    <p class="font-Lato-Regular"><a href="why">Why Choose Us?</a></p>
                 </div>
-                <div class="col-sm mt-2">
+                <div class="col-sm mt-2" id="footlink">
                     <p id="bhead" class="text font-Lato-Regular" style="text-align: left;">DATABASE CATEGORIES</p>
-                    <p class="text font-Lato-Regular" style="text-align: left;">B2B / B2C Indian Companies Database</p>
-                    <p class="text font-Lato-Regular" style="text-align: left;">Government Employees Database</p>
-                    <p class="text font-Lato-Regular" style="text-align: left;">Facebook Users Database</p>
-                    <p class="text font-Lato-Regular" style="text-align: left;">OLX Users Database</p>
-                    <p class="text font-Lato-Regular" style="text-align: left;">IT Professionals Database</p>
+                    <p class="font-Lato-Regular" style="font-size:15px"><a href="">B2B/B2C Indian Companies Database</a></p>
+                    <p class="font-Lato-Regular"><a href="">Government Employees Database</a></p>
+                    <p class="font-Lato-Regular"><a href="">Facebook Users Database</a></p>
+                    <p class="font-Lato-Regular"><a href="">OLX Users Database</a></p>
+                    <p class="font-Lato-Regular"><a href="">IT Professionals Database</a></p>
                 </div>
             </div>
         </div>
