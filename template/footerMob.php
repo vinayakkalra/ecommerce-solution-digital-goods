@@ -17,7 +17,7 @@
                     </p>
                     <p class="font-Lato-Regular"><a  href="">Shop</a></p>
                     <p class="font-Lato-Regular"><a href="">Cart</a></p>
-                    <p class="font-Lato-Regular"><a href="">About Us</a></p>
+                    <p class="font-Lato-Regular"><a href="about">About Us</a></p>
                     <p class="font-Lato-Regular"><a href="">Blog</a></p>
                 </div>
                 <div class="col-sm mt-2" id="footlink">

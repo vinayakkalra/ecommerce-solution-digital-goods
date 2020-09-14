@@ -76,7 +76,7 @@
         <!-- desktop header end -->
         <!-- second bar start -->
         <div class="container" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;">
-            <div style="width:100%;" class="hello">
+            <div style="width:100%;" >
                 <p class="font-Lato-Regular" style="color:#2b2b2b; margin:0px 0px 20.8px;margin-top: 50px;">
                     Last updated: May 17, 2020 Buy Marketing Database (“us”, “we”, or “our”) operates the Buy Marketing Database website (the “Service”).
                 </p>
