@@ -191,31 +191,88 @@
         $("#footer-mob").load('template/footerMob.php');
         $("#header-mob").load('template/headerMob.php');
         $(document).ready(function () {
-            var flag = false;
+            // var flag = false;
+            
             $("#buttong").click(function () {
+
+
+                var name = $("#name").val();
+                var mail = $("#mail").val();
+                var Textarea = $("#Textarea").val();
+                // var notes = $("#notes").val();
+                var error = "";
+
+                function validateEmail() {
+                var email = $("#mail").val();
+                var emailReg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+                if (emailReg.test(email)) {
+                    return true;
+                } else {
+                    return false;
+                }
+                }
+
                 if ($("#name").val() == "") {
                     $("#name").css("border", "1px solid #b20000");
-                    flag = true;
+                    // flag = true;
+                    error = error + 'name';
                 } else {
-                    $("#name").css("border", "");
-                    flag = false;
+                    // $("#name").css("border", "");
+                    // flag = false;
                 }
-                if ($("#mail").val() == "") {
-                    $("#mail").css("border", "1px solid #b20000");
-                    flag = true;
+                if (validateEmail()) {
+                // $("#mail").css('border-color', 'white');
+                // $("#mail").css('border-width', '1px');
+
                 } else {
-                    $("#mail").css("border", "");
-                    flag = false;
+                    $("#mail").css("border", "1px solid #b20000");
+                    // $("#mail").css('border-color', 'red');
+                    // $("#mail").css('border-width', '2px');
+                    // $("#mail").attr('placeholder', 'Required Field');
+                    error = error + 'email';
                 }
                 if ($("#Textarea").val() == "") {
                     $("#Textarea").css("border", "1px solid #b20000");
-                    flag = true;
+                    error = error + 'msg';
                 } else {
-                    $("#Textarea").css("border", "");
-                    flag = false;
+                    // $("#Textarea").css("border", "");
+                    // flag = false;
                 }
-                if (flag == false) {
-                    // when input is valid
+                if (error == "") {
+                    $.ajax({
+                    type: 'POST',
+                    url: 'php/contact-form.php',
+                    dataType: "json",
+                    data: {
+                        "name": name,
+                        "mail": mail,
+                        "Textarea": Textarea,
+
+                    },
+
+                    success: function (data) {
+
+                        if (data.status == 201) {
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({ 'event': 'contact-form' });
+                            window.location = 'ThankYou1';
+
+                            // $("#contact-success-desktop").css('display','block');
+                            // $("#contact-form-desktop").css('display','none');
+                            // $("#ticket-id-desktop").html('#'+data.id);
+                            // scrollTo(0,0);
+
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            alert("problem with query");
+                        } else {
+
+                        }
+                        alert("Your form has been successfully submitted.")
+                    }
+                });
+                }else{
+                    alert('There are error in the form. Please check your submissions');
                 }
             });
 
