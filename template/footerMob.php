@@ -25,7 +25,7 @@
                     <p class="font-Lato-Regular"><a href="policy">Privacy Policy</a></p>
                     <p class="font-Lato-Regular"><a href="term">Terms & Conditions</a></p>
                     <p class="font-Lato-Regular"><a href="refund">Refund & Cancellation Policy</a></p>
-                    <p class="font-Lato-Regular"><a href="">Contact Us</a></p>
+                    <p class="font-Lato-Regular"><a href="contact">Contact Us</a></p>
                     <p class="font-Lato-Regular"><a href="why">Why Choose Us?</a></p>
                 </div>
                 <div class="col-sm mt-2" id="footlink">

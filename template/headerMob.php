@@ -31,7 +31,7 @@
                     <a href="product-category?Product=5" class="text font-Lato-Regular" style="text-align: left;">ALL INDIA</a>
                     <a href="product-category?Product=6" class="text font-Lato-Regular" style="text-align: left;">OTHER DATABASES</a>
                     <a href="about.php" class="text font-Lato-Regular" style="text-align: left;">ABOUT US</a>
-                    <a href="#" class="text font-Lato-Regular" style="text-align: left;">CONTACT US</a>
+                    <a href="contact" class="text font-Lato-Regular" style="text-align: left;">CONTACT US</a>
                     <a href="#" class="text font-Lato-Regular" style="text-align: left;">SHOP</a>
                     <a href="#" class="text font-Lato-Regular" style="text-align: left;">LOGIN</a>
                   </div>
