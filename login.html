@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <!-- Enter a proper page title here -->
     <title>Template | Example with all standards</title>
 
@@ -63,6 +63,12 @@
             overflow: hidden;
             margin-right: 20px;
         }*/
+        #login-mail {
+            font-family: Font Awesome\ 5 Free;
+        }
+        #login-password {
+            font-family: Font Awesome\ 5 Free;
+        }  
     </style>
 </head>
 
@@ -74,10 +80,35 @@
         <div id="header-desktop"></div>
         <!-- desktop header end -->
         <!-- second bar start -->
-        <!-- Button trigger modal -->
-
-        <!-- Modal -->
-        
+        <div class="container" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;">
+            <div style="width:100%;" class="hello">
+                <h1 style="color:#2b2b2b; font-size: 1.25em;border-bottom: 2px solid rgba(0,0,0,0.1);padding-bottom: 7.5px; font-weight:700; margin:0px 0px 24px;"
+                    class="font-Lato-Regular">
+                    LOG IN
+                </h1>
+            </div>
+            <div style="width:100%; margin-top: 30px;" class="hello">
+                <div style="width:45%; margin:auto;">
+                    <form>
+                        <div class="form-group">
+                            <div>
+                                <input type="email" class="form-control" id="login-mail" placeholder="&#xf0e0; Email">   
+                            </div>
+                            <div>
+                                <input type="password" class="form-control" id="login-password"
+                                placeholder="&#xf2b6; Password">
+                            </div>
+                            <div>
+                                <button type="button" class="btn form-control"
+                                style="background-color:#24436e;color:white;">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                    <p style="text-align:center;">or <a href="">Forgot Password</a></p>
+                    <p style="text-align:center;">Don't have an account? <a href="">Sign up</a></p>
+                </div>
+            </div>
+        </div>
         <!-- second bar end -->
 
 
@@ -93,57 +124,35 @@
         <!-- mobile view header end -->
         <!-- second bar start -->
         <div class="container" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;">
-            <div style="width:100%;padding: 0 15px 30px;">
-                <div style="text-align: center;margin:5px;font-weight: bold;margin-bottom:10%;" class="font-Lato-Regular"><h4>MY ACCOUNT</h4></div>
-                <div class="row">
-                    <div class="col font-Lato-Regular" style="font-weight:bold;">
-                        <h3 style="font-size:20px">LOGIN</h3>
-                        <div style="font-size:14.4px;">
-                            <form>
-                                <div class="form-group">
-                                    <label for="login-mail">Username or email address*</label>
-                                    <input type="email" class="form-control" id="login-mail" aria-describedby="emailHelp">
-            
-                                </div>
-                                <div class="form-group">
-                                    <label for="login-password">Password</label>
-                                    <input type="password" class="form-control" id="login-password" placeholder="Password">
-                                </div>
-                                <div class="form-group form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                                </div>
-                                <button type="button" class="btn" style="background-color:#24436e; color:white;">LOG IN</button>
-                                <p style="margin-top:10px;"><a href="">Lost your password</a></p>
-                            </form>            
-                        </div>  
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="col font-Lato-Regular"  style="font-weight:bold;">
-                        <h3 style="font-size:20px">REGISTER</h3>
-                        <div style="font-size:14.4px;">
-                            <form>
-                                <div class="form-group">
-                                    <label for="register-mail">Email address*</label>
-                                    <input type="email" class="form-control" id="register-mail" aria-describedby="emailHelp">
-            
-                                </div>
-                                <p>A password will be sent to your email address.</p>
-                                <div class="form-group form-check">
-                                    <input type="checkbox" class="form-check-input" id="registerCheck">
-                                    <label class="form-check-label" for="registerCheck">Subscribe to our newsletter</label>
-                                </div>
-                                <p>
-                                Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our 
-                                <a href="policy">privacy policy.</a>
-                                </p>
-                                <button type="button" class="btn" style="background-color:#24436e; color:white;">REGISTER</button>
-                            </form>            
+            <div style="width:100%;" class="hello">
+                <h1 style="color:#2b2b2b; font-size: 1.25em;border-bottom: 2px solid rgba(0,0,0,0.1);padding-bottom: 7.5px; font-weight:700; margin:0px 0px 24px;"
+                    class="font-Lato-Regular">
+                    LOG IN
+                </h1>
+            </div>
+            <div style="width:100%; margin-top: 30px;" class="hello">
+                <div style="width:45%; margin:auto;">
+                    <form>
+                        <div class="form-group">
+                            <div>
+                                <input type="email" class="form-control" id="login-mail" placeholder="&#xf0e0; Email">   
+                            </div>
+                            <div>
+                                <input type="password" class="form-control" id="login-password"
+                                placeholder="&#xf2b6; Password">
+                            </div>
+                            <div>
+                                <button type="button" class="btn form-control"
+                                style="background-color:#24436e;color:white;">Submit</button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
+                    <p style="text-align:center;">or <a href="">Forgot Password</a></p>
+                    <p style="text-align:center;">Don't have an account? <a href="">Sign up</a></p>
                 </div>
             </div>
         </div>
+        <!-- second bar end -->
 
         <!-- mobile view footer -->
         <div id="footer-mob"></div>
@@ -156,6 +165,7 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/custom_mobile_header.js"></script>
+    
     <script>
 
         // Add custom javascript and jquery here
