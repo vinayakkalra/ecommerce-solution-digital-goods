@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <!-- Enter a proper page title here -->
     <title>Template | Example with all standards</title>
 
@@ -66,15 +65,18 @@
         #login-mail {
             font-family: Font Awesome\ 5 Free;
         }
+
         #login-password {
             font-family: Font Awesome\ 5 Free;
         }
+
         #login-button:hover {
             background-color: #24436e;
-        } 
+        }
+
         #login-button {
-            background-color:#2f507e;
-        } 
+            background-color: #2f507e;
+        }
     </style>
 </head>
 
@@ -88,25 +90,31 @@
         <!-- second bar start -->
         <div class="container" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;">
             <div style="width:100%;" class="hello">
-                <h1 style="color:#2b2b2b; font-size: 1.25em;border-bottom: 2px solid rgba(0,0,0,0.1);padding-bottom: 7.5px; font-weight:700; margin:0px 0px 24px;"
+                <h1 style="color:#2b2b2b; text-align:center; font-size: 1.25em;border-bottom: 2px solid rgba(0,0,0,0.1);padding-bottom: 7.5px; font-weight:700; margin:0px 0px 24px; width:20%; margin:auto;"
                     class="font-Lato-Regular">
-                    LOG IN
+                    Log In to Your Account!
                 </h1>
             </div>
             <div style="width:100%; margin-top: 30px;" class="hello">
                 <div style="width:45%; margin:auto;">
                     <form>
+                        <fieldset class="form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text iconradius"> <i class="fa fa-envelope"></i> </span>
+                                <input class="form-control textradius" type="email" name="email" placeholder="Email" style="height: auto;">
+                            </div>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text iconradius"> <i class="fa fa-lock" aria-hidden="true"></i> </span>
+                                <input class="form-control textradius" type="password" name="email"
+                                    placeholder="password">
+                            </div>
+                        </fieldset>
                         <div class="form-group">
                             <div>
-                                <input type="email" class="form-control" id="login-mail" placeholder="&#xf0e0; Email">   
-                            </div>
-                            <div>
-                                <input type="password" class="form-control" id="login-password"
-                                placeholder="&#xf2b6; Password">
-                            </div>
-                            <div>
-                                <button type="button" class="btn form-control"
-                                style="color:white;" id="login-button">LOGIN</button>
+                                <button type="button" class="btn form-control" style="color:white;"
+                                    id="login-button">LOGIN</button>
                             </div>
                         </div>
                     </form>
@@ -131,25 +139,31 @@
         <!-- second bar start -->
         <div class="container" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;">
             <div style="width:100%;" class="hello">
-                <h1 style="color:#2b2b2b; font-size: 1.25em;border-bottom: 2px solid rgba(0,0,0,0.1);padding-bottom: 7.5px; font-weight:700; margin:0px 0px 24px;"
+                <h1 style="color:#2b2b2b; text-align:center; font-size: 1.25em;border-bottom: 2px solid rgba(0,0,0,0.1);padding-bottom: 7.5px; font-weight:700; margin:0px 0px 24px; width:20%; margin:auto;"
                     class="font-Lato-Regular">
-                    LOG IN
+                    Log In to Your Account!
                 </h1>
             </div>
             <div style="width:100%; margin-top: 30px;" class="hello">
-                <div style="width:45%; margin:auto;">
+                <div style="width:100%; margin:auto;">
                     <form>
+                        <fieldset class="form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text iconradius"> <i class="fa fa-envelope"></i> </span>
+                                <input class="form-control textradius" type="email" name="email" placeholder="Email" style="height: auto;">
+                            </div>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text iconradius"> <i class="fa fa-lock" aria-hidden="true"></i> </span>
+                                <input class="form-control textradius" type="password" name="email"
+                                    placeholder="password">
+                            </div>
+                        </fieldset>
                         <div class="form-group">
                             <div>
-                                <input type="email" class="form-control" id="login-mail" placeholder="&#xf0e0; Email">   
-                            </div>
-                            <div>
-                                <input type="password" class="form-control" id="login-password"
-                                placeholder="&#xf2b6; Password">
-                            </div>
-                            <div>
-                                <button type="button" class="btn form-control"
-                                style="color:white;" id="login-button">LOGIN</button>
+                                <button type="button" class="btn form-control" style="color:white;"
+                                    id="login-button">LOGIN</button>
                             </div>
                         </div>
                     </form>
@@ -171,7 +185,8 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/custom_mobile_header.js"></script>
-    
+    <script src="https://use.fontawesome.com/ebc80d226d.js"></script>
+
     <script>
 
         // Add custom javascript and jquery here
