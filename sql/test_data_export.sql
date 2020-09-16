@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2020 at 05:05 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Generation Time: Sep 16, 2020 at 09:59 AM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.2.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -69,6 +68,23 @@ INSERT INTO `b2b` (`id`, `image`, `description`, `original price`, `discounted p
 (2, './img/data.png', ' B2B / B2C INDIAN COMPANIES DATABASE', 599, 599),
 (3, './img/data.png', ' B2B / B2C INDIAN COMPANIES DATABASE', 599, 599),
 (4, './img/data.png', ' B2B / B2C INDIAN COMPANIES DATABASE', 599, 599);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contactus`
+--
+
+CREATE TABLE `contactus` (
+  `ID` int(200) NOT NULL,
+  `Name` text NOT NULL,
+  `Phone` int(200) NOT NULL,
+  `Email` varchar(200) NOT NULL,
+  `MSG` varchar(200) NOT NULL,
+  `time` varchar(200) NOT NULL,
+  `from_ip` varchar(200) NOT NULL,
+  `from_browser` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -232,6 +248,12 @@ ALTER TABLE `b2b`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `contactus`
+--
+ALTER TABLE `contactus`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `government`
 --
 ALTER TABLE `government`
@@ -284,6 +306,12 @@ ALTER TABLE `b2b`
   MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `contactus`
+--
+ALTER TABLE `contactus`
+  MODIFY `ID` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `government`
 --
 ALTER TABLE `government`
@@ -311,7 +339,7 @@ ALTER TABLE `policy_bazaar`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `students_database`

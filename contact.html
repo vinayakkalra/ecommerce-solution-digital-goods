@@ -96,6 +96,11 @@
                                 <input type="email" class="form-control" id="mail">
                             </div>
                             <div class="form-group">
+                                <label for="phone">Enter a phone number(required)</label>
+                                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                                    class="form-control">
+                            </div>
+                            <div class="form-group">
                                 <label for="Textarea">Your Message(required)</label>
                                 <textarea class="form-control" id="Textarea" rows="3"></textarea>
                             </div>
@@ -151,6 +156,11 @@
                                 <input type="email" class="form-control" id="mail-mob">
                             </div>
                             <div class="form-group">
+                                <label for="phone-mob">Enter a phone number(required)</label>
+                                <input type="tel" id="phone-mob" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                                    class="form-control">
+                            </div>
+                            <div class="form-group">
                                 <label for="Textarea-mob">Your Message(required)</label>
                                 <textarea class="form-control" id="Textarea-mob" rows="3"></textarea>
                             </div>
@@ -192,24 +202,25 @@
         $("#header-mob").load('template/headerMob.php');
         $(document).ready(function () {
             // var flag = false;
-            
+
             $("#buttong").click(function () {
 
 
                 var name = $("#name").val();
                 var mail = $("#mail").val();
                 var Textarea = $("#Textarea").val();
+                var phone = $("#phone").val();
                 // var notes = $("#notes").val();
                 var error = "";
 
                 function validateEmail() {
-                var email = $("#mail").val();
-                var emailReg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
-                if (emailReg.test(email)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                    var email = $("#mail").val();
+                    var emailReg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+                    if (emailReg.test(email)) {
+                        return true;
+                    } else {
+                        return false;
+                    }
                 }
 
                 if ($("#name").val() == "") {
@@ -221,8 +232,8 @@
                     // flag = false;
                 }
                 if (validateEmail()) {
-                // $("#mail").css('border-color', 'white');
-                // $("#mail").css('border-width', '1px');
+                    // $("#mail").css('border-color', 'white');
+                    // $("#mail").css('border-width', '1px');
 
                 } else {
                     $("#mail").css("border", "1px solid #b20000");
@@ -238,40 +249,47 @@
                     // $("#Textarea").css("border", "");
                     // flag = false;
                 }
+                if ($("#phone").val() == "") {
+                    $("#phone").css("border", "1px solid #b20000");
+                    error = error + 'phone';
+                } else {
+
+                }
                 if (error == "") {
                     $.ajax({
-                    type: 'POST',
-                    url: 'php/contact-form.php',
-                    dataType: "json",
-                    data: {
-                        "name": name,
-                        "mail": mail,
-                        "Textarea": Textarea,
+                        type: 'POST',
+                        url: 'php/contact-form.php',
+                        dataType: "json",
+                        data: {
+                            "name": name,
+                            "mail": mail,
+                            "Textarea": Textarea,
+                            "phone": phone,
 
-                    },
+                        },
 
-                    success: function (data) {
+                        success: function (data) {
 
-                        if (data.status == 201) {
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({ 'event': 'contact-form' });
-                            window.location = 'ThankYou1';
+                            if (data.status == 201) {
+                                window.dataLayer = window.dataLayer || [];
+                                window.dataLayer.push({ 'event': 'contact-form' });
+                                window.location = 'ThankYou1';
 
-                            // $("#contact-success-desktop").css('display','block');
-                            // $("#contact-form-desktop").css('display','none');
-                            // $("#ticket-id-desktop").html('#'+data.id);
-                            // scrollTo(0,0);
+                                // $("#contact-success-desktop").css('display','block');
+                                // $("#contact-form-desktop").css('display','none');
+                                // $("#ticket-id-desktop").html('#'+data.id);
+                                // scrollTo(0,0);
 
-                        } else if (data.status == 601) {
-                            console.log(data.error);
-                            alert("problem with query");
-                        } else {
+                            } else if (data.status == 601) {
+                                console.log(data.error);
+                                alert("problem with query");
+                            } else {
 
+                            }
+                            alert("Your form has been successfully submitted.")
                         }
-                        alert("Your form has been successfully submitted.")
-                    }
-                });
-                }else{
+                    });
+                } else {
                     alert('There are error in the form. Please check your submissions');
                 }
             });
@@ -280,29 +298,91 @@
 
             var flag_mob = false;
             $("#buttong-mob").click(function () {
+                var name = $("#name-mob").val();
+                var mail = $("#mail-mob").val();
+                var Textarea = $("#Textarea-mob").val();
+                var phone = $("#phone-mob").val();
+                // var notes = $("#notes").val();
+                var error = "";
+
+                function validateEmail() {
+                    var email = $("#mail-mob").val();
+                    var emailReg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+                    if (emailReg.test(email)) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+
                 if ($("#name-mob").val() == "") {
                     $("#name-mob").css("border", "1px solid #b20000");
-                    flag_mob = true;
+                    // flag = true;
+                    error = error + 'name';
                 } else {
-                    $("#name-mob").css("border", "");
-                    flag_mob = false;
+                    // $("#name").css("border", "");
+                    // flag = false;
                 }
-                if ($("#mail-mob").val() == "") {
-                    $("#mail-mob").css("border", "1px solid #b20000");
-                    flag_mob = true;
+                if (validateEmail()) {
+                    // $("#mail").css('border-color', 'white');
+                    // $("#mail").css('border-width', '1px');
+
                 } else {
-                    $("#mail-mob").css("border", "");
-                    flag_mob = false;
+                    $("#mail-mob").css("border", "1px solid #b20000");
+                    // $("#mail").css('border-color', 'red');
+                    // $("#mail").css('border-width', '2px');
+                    // $("#mail").attr('placeholder', 'Required Field');
+                    error = error + 'email';
                 }
                 if ($("#Textarea-mob").val() == "") {
                     $("#Textarea-mob").css("border", "1px solid #b20000");
-                    flag_mob = true;
+                    error = error + 'msg';
                 } else {
-                    $("#Textarea-mob").css("border", "");
-                    flag_mob = false;
+                    // $("#Textarea").css("border", "");
+                    // flag = false;
                 }
-                if (flag_mob == false) {
-                    // when input is valid
+                if ($("#phone-mob").val() == "") {
+                    $("#phone-mob").css("border", "1px solid #b20000");
+                    error = error + 'phone';
+                } else {
+
+                }
+                if (error == "") {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'php/contact-form.php',
+                        dataType: "json",
+                        data: {
+                            "name": name,
+                            "mail": mail,
+                            "Textarea": Textarea,
+                            "phone": phone,
+
+                        },
+
+                        success: function (data) {
+
+                            if (data.status == 201) {
+                                window.dataLayer = window.dataLayer || [];
+                                window.dataLayer.push({ 'event': 'contact-form' });
+                                window.location = 'ThankYou1';
+
+                                // $("#contact-success-desktop").css('display','block');
+                                // $("#contact-form-desktop").css('display','none');
+                                // $("#ticket-id-desktop").html('#'+data.id);
+                                // scrollTo(0,0);
+
+                            } else if (data.status == 601) {
+                                console.log(data.error);
+                                alert("problem with query");
+                            } else {
+
+                            }
+                            alert("Your form has been successfully submitted.")
+                        }
+                    });
+                } else {
+                    alert('There are error in the form. Please check your submissions');
                 }
             });
         });

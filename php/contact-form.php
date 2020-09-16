@@ -13,7 +13,8 @@ if(isset($_POST['name'])){
    
     $name =  mysqli_real_escape_string($conn, $_POST['name']) ;
     $mail =  mysqli_real_escape_string($conn, $_POST['mail']) ;
-    $Textarea =  mysqli_real_escape_string($conn, $_POST['Textarea']) ;
+    $Textarea =  mysqli_real_escape_string($conn, $_POST['Textarea']);
+    $Phone = mysqli_real_escape_string($conn, $_POST['phone']);
 
     // $notes = "";
     // if(isset($_POST['notes'])){
@@ -31,7 +32,7 @@ if(isset($_POST['name'])){
     }
     $id = $id + 1;
 
-    $query = "INSERT INTO `contactus` (ID, `Name`, `Phone`, `Email`, `MSG` , `time`, `from_ip`, `from_browser` ) VALUES ($id, '$name', '$Phone', '$mail','$Textarea', '$date_now', '$from_ip', '$from_browser' )";
+    $query = "INSERT INTO `contactus` (`ID`,`Name`, `Phone`, `Email`, `MSG` , `time`, `from_ip`, `from_browser` ) VALUES ($id, '$name', '$Phone', '$mail','$Textarea', '$date_now', '$from_ip', '$from_browser' )";
 
    
     if(!$result = $conn->query($query)){
