@@ -1,3 +1,17 @@
+<?php
+    if (array_key_exists("signup-button",$_POST)) {
+        $error = "";
+        if (!$_POST['signup-name']) {
+            $error .= "Name is requried<br>";
+        } else if (!$_POST['signup-email']) {
+            $error .= "Email is requried<br>";
+        }
+
+        if ($error != "") {
+            $error = "<p>There were error(s) in your form:</p>".$error;
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -126,7 +140,7 @@
                 </div>
                 <div style="width:100%; margin-top: 30px;">
                     <div style="width:35%; margin:auto;">
-                        <form>
+                        <form method="post">
                             <fieldset class="form-group">
                                 <div class="input-group-prepend" id="field-outerDiv">
                                     <span class="input-group-text iconradius" id="logobg"><i class="fa fa-user"
@@ -174,7 +188,7 @@
                             </div>
                             <div class="form-group">
                                 <div>
-                                    <button type="button" class="btn form-control" style="color:white;"
+                                    <button type="button" class="btn form-control" name="signup-button" style="color:white;"
                                         id="login-button">Create a Account</button>
                                 </div>
                             </div>
@@ -182,6 +196,7 @@
                         <p style="text-align:center;">By signing up, you agree to our <a href="term">Terms of Use</a>
                             and<a href="policy"> Privacy Policy.</a></p>
                         <p style="text-align:center;">Already have an account?<a href="#" class="more">Login in</a></p>
+                        <div id="error"><?php echo $error; ?></div>
                     </div>
                 </div>
             </div>
