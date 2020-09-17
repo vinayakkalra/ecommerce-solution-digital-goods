@@ -7,7 +7,7 @@
             </p>
         </div>
         <div id="top-bar-right" class="container-sm">
-            <a href="login" class="font-Lato-Regular">Login</a>
+            <a href="signup" class="font-Lato-Regular">Login</a>
             <a href="about.php" role="button" class="font-Lato-Regular">About us</a>
             <a href="contact" role="button" class="font-Lato-Regular">Contace us</a>
             <a id="shop" href="#" role="button" class="font-Lato-Regular">Shop</a>

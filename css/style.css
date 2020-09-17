@@ -408,6 +408,25 @@ body {
     padding: 10px;
     margin-top: 5px;
 }
+/* input fields css start */
+    #field-outerDiv {
+        border: 1px solid #8a92a3;
+        padding: 2px;
+    }
+    #logobg {
+        border: none;
+        background-color: white;
+    }
+    #iconFormat {
+        color: #cacbcc;
+    }
+    #inputField {
+        height: auto;
+        border: none;
+        box-shadow: none;
+    }
+/* input fields css end */
+
 /* desktop footer css end */
 
 /* mobile header css start */

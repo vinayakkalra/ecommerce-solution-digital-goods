@@ -33,7 +33,7 @@
                     <a href="about.php" class="text font-Lato-Regular" style="text-align: left;">ABOUT US</a>
                     <a href="contact" class="text font-Lato-Regular" style="text-align: left;">CONTACT US</a>
                     <a href="#" class="text font-Lato-Regular" style="text-align: left;">SHOP</a>
-                    <a href="login" class="text font-Lato-Regular" style="text-align: left;">LOGIN</a>
+                    <a href="signup" class="text font-Lato-Regular" style="text-align: left;">LOGIN</a>
                   </div>
                   
                   <!-- Use any element to open the sidenav -->
