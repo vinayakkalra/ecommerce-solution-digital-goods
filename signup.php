@@ -389,7 +389,7 @@
                 </div>
                 <div style="width:100%; margin-top: 30px;">
                     <div style="width:90%; margin:auto;">
-                        <form>
+                        <form method="post">
                             <fieldset class="form-group">
                                 <div class="input-group-prepend" id="field-outerDiv">
                                     <span class="input-group-text iconradius" id="logobg"> <i class="fa fa-envelope"
@@ -408,8 +408,8 @@
                             </fieldset>
                             <div class="form-group">
                                 <div>
-                                    <button type="button" class="btn form-control" style="color:white;"
-                                        id="login-button">LOGIN</button>
+                                    <button type="submit" class="btn form-control" style="color:white;"
+                                        id="login-button" name="login-buttong">LOGIN</button>
                                 </div>
                             </div>
                         </form>
