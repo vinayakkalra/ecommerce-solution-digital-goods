@@ -1,14 +1,64 @@
 <?php
+// register form
+    include("./php/config.php");
+    $error = "";
     if (array_key_exists("signup-button",$_POST)) {
-        $error = "";
+        
         if (!$_POST['signup-name']) {
             $error .= "Name is requried<br>";
-        } else if (!$_POST['signup-email']) {
+        }
+        if (!$_POST['signup-email']) {
             $error .= "Email is requried<br>";
         }
-
+        if (!$_POST['signup-phone']) {
+            $error .= "Phone number is requried<br>";
+        }
+        if (!$_POST['signup-password']) {
+            $error .= "Password is requried<br>";
+        }
+        if (!$_POST['confirm-password']) {
+            $error .= "Confirm password is requried<br>";
+        }
+        if ($_POST['confirm-password'] != $_POST['signup-password']) {
+            $error .= "Password and confirm not match<br>";
+        }
         if ($error != "") {
-            $error = "<p>There were error(s) in your form:</p>".$error;
+            $error = "<p>There were error(s) in your form</p>".$error;
+        } else {
+            $query = "SELECT id FROM `user` WHERE email = '".mysqli_real_escape_string($conn,$_POST['signup-email'])."' ";
+            $result = mysqli_query($conn,$query);
+            if (mysqli_num_rows($result) > 0) {
+                $error = "email is already taken";
+            } else {
+                $query = "INSERT INTO `user`(`name`,`email`,`number`,`password`,`confirm password`) VALUES ('".mysqli_real_escape_string($conn,$_POST['signup-name'])."','".mysqli_real_escape_string($conn,$_POST['signup-email'])."','".mysqli_real_escape_string($conn,$_POST['signup-phone'])."','".mysqli_real_escape_string($conn,$_POST['signup-password'])."','".mysqli_real_escape_string($conn,$_POST['confirm-password'])."') ";
+                if(!mysqli_query($conn,$query)) {
+                    $error = "<p>could not sign you up</p>";
+                } else {
+                    $error = "<p>form submitted</p>";
+                }
+            }
+        }
+    }
+    // register form end
+    
+    // login form
+    if (array_key_exists("login-buttong",$_POST)) {
+        if (!$_POST['login-email']) {
+            $error .= "Email is requried<br>";
+        }
+        if (!$_POST['login-password']) {
+            $error .= "Password is requried<br>";
+        }
+        if ($error != "") {
+            $error = "<p>There were error(s) in your login form</p>".$error;
+        } else {
+            $query = "SELECT id FROM `user` WHERE email = '".mysqli_real_escape_string($conn,$_POST['login-email'])."' AND password = '".mysqli_real_escape_string($conn,$_POST['login-password'])."'  ";
+            $result = mysqli_query($conn,$query);
+            if (mysqli_num_rows($result) > 0) {
+                $error = "login done";
+            } else {
+                $error = "invalid email and password";
+            }
         }
     }
 ?>
@@ -129,6 +179,10 @@
         <!-- desktop header start -->
         <div id="header-desktop"></div>
         <!-- desktop header end -->
+
+        <!-- error div -->
+        <div style="text-align:center;" class="alert alert-warning" role="alert"><?php echo $error; ?></div>
+        <!-- error div -->
         <!-- second bar start -->
         <div class="container hello" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;">
             <div id="register-form">
@@ -188,7 +242,7 @@
                             </div>
                             <div class="form-group">
                                 <div>
-                                    <button type="button" class="btn form-control" name="signup-button" style="color:white;"
+                                    <button type="submit" class="btn form-control" name="signup-button" style="color:white;"
                                         id="login-button">Create a Account</button>
                                 </div>
                             </div>
@@ -196,7 +250,6 @@
                         <p style="text-align:center;">By signing up, you agree to our <a href="term">Terms of Use</a>
                             and<a href="policy"> Privacy Policy.</a></p>
                         <p style="text-align:center;">Already have an account?<a href="#" class="more">Login in</a></p>
-                        <div id="error"><?php echo $error; ?></div>
                     </div>
                 </div>
             </div>
@@ -209,7 +262,7 @@
                 </div>
                 <div style="width:100%; margin-top: 30px;">
                     <div style="width:35%; margin:auto;">
-                        <form>
+                        <form method="post">
                             <fieldset class="form-group">
                                 <div class="input-group-prepend" id="field-outerDiv">
                                     <span class="input-group-text iconradius" id="logobg"> <i class="fa fa-envelope"
@@ -228,8 +281,8 @@
                             </fieldset>
                             <div class="form-group">
                                 <div>
-                                    <button type="button" class="btn form-control" style="color:white;"
-                                        id="login-button">LOGIN</button>
+                                    <button type="submit" class="btn form-control" style="color:white;"
+                                        id="login-button" name="login-buttong">LOGIN</button>
                                 </div>
                             </div>
                         </form>
@@ -253,6 +306,9 @@
         <!-- mobile view header start -->
         <div id="header-mob"></div>
         <!-- mobile view header end -->
+        <!-- error bar start -->
+        <div style="text-align:center;" class="alert alert-warning" role="alert"><?php echo $error; ?></div>
+        <!-- error bar end -->
         <!-- second bar start -->
         <div class="container" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;">
             <div id="register-form-mob">
@@ -264,7 +320,7 @@
                 </div>
                 <div style="width:100%; margin-top: 30px;">
                     <div style="width:90%; margin:auto;">
-                        <form>
+                        <form method="post">
                             <fieldset class="form-group">
                                 <div class="input-group-prepend" id="field-outerDiv">
                                     <span class="input-group-text iconradius" id="logobg"><i class="fa fa-user"
@@ -312,7 +368,7 @@
                             </div>
                             <div class="form-group">
                                 <div>
-                                    <button type="button" class="btn form-control" style="color:white;"
+                                    <button type="submit" class="btn form-control" style="color:white;"
                                         id="login-button">Create a Account</button>
                                 </div>
                             </div>
