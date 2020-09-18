@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 17, 2020 at 06:03 PM
+-- Generation Time: Sep 16, 2020 at 03:20 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.2.32
 
@@ -24,15 +24,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Table structure for table `contactus`
 --
 
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `email` varchar(200) NOT NULL,
-  `number` int(200) NOT NULL,
-  `password` int(200) NOT NULL,
-  `confirm password` int(200) NOT NULL
+CREATE TABLE `contactus` (
+  `ID` int(200) NOT NULL,
+  `Name` text NOT NULL,
+  `Phone` int(200) NOT NULL,
+  `Email` varchar(200) NOT NULL,
+  `MSG` varchar(200) NOT NULL,
+  `time` varchar(200) NOT NULL,
+  `from_ip` varchar(200) NOT NULL,
+  `from_browser` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -40,20 +43,20 @@ CREATE TABLE `user` (
 --
 
 --
--- Indexes for table `user`
+-- Indexes for table `contactus`
 --
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `contactus`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT for table `contactus`
 --
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `contactus`
+  MODIFY `ID` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

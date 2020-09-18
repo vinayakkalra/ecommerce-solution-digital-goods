@@ -61,6 +61,10 @@
             $query = "SELECT id FROM `user` WHERE email = '".mysqli_real_escape_string($conn,$_POST['login-email'])."' AND password = '".mysqli_real_escape_string($conn,$_POST['login-password'])."'  ";
             $result = mysqli_query($conn,$query);
             if (mysqli_num_rows($result) > 0) {
+                $row = mysqli_fetch_assoc($result);
+                setcookie("id", $row['id'], time() + 60*60*3); //   cookie
+                session_start();
+                $_SESSION['id'] = $row['id'];// session
                 $error = "login done";
             } else {
                 $error = "invalid email and password";
@@ -187,7 +191,12 @@
         <!-- desktop header end -->
 
         <!-- error div -->
-        <div style="text-align:center;" class="alert alert-warning" role="alert"><?php echo $error; ?></div>
+        <div id="error">
+            <?php if ($error!="") {
+                  echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
+                  
+              } ?>
+          </div>
         <!-- error div -->
         <!-- second bar start -->
         <div class="container hello" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;">
@@ -313,7 +322,12 @@
         <div id="header-mob"></div>
         <!-- mobile view header end -->
         <!-- error bar start -->
-        <div style="text-align:center;" class="alert alert-warning" role="alert"><?php echo $error; ?></div>
+        <div id="error">
+            <?php if ($error!="") {
+                  echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
+                  
+              } ?>
+          </div>
         <!-- error bar end -->
         <!-- second bar start -->
         <div class="container" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;">
