@@ -3,6 +3,12 @@
     include("./php/config.php");
     $error = "";
     if (array_key_exists("signup-button",$_POST)) {
+
+        $data = array();  
+        $from_ip = $_SERVER['REMOTE_ADDR'];
+        $from_browser = $_SERVER['HTTP_USER_AGENT'];
+        date_default_timezone_set("Asia/Calcutta");
+        $date_now = date("r");
         
         if (!$_POST['signup-name']) {
             $error .= "Name is requried<br>";
@@ -30,7 +36,7 @@
             if (mysqli_num_rows($result) > 0) {
                 $error = "email is already taken";
             } else {
-                $query = "INSERT INTO `user`(`name`,`email`,`number`,`password`,`confirm password`) VALUES ('".mysqli_real_escape_string($conn,$_POST['signup-name'])."','".mysqli_real_escape_string($conn,$_POST['signup-email'])."','".mysqli_real_escape_string($conn,$_POST['signup-phone'])."','".mysqli_real_escape_string($conn,$_POST['signup-password'])."','".mysqli_real_escape_string($conn,$_POST['confirm-password'])."') ";
+                $query = "INSERT INTO `user`(`name`,`email`,`number`,`password`,`confirm password`,`from_ip`,`from_browser`,`time`) VALUES ('".mysqli_real_escape_string($conn,$_POST['signup-name'])."','".mysqli_real_escape_string($conn,$_POST['signup-email'])."','".mysqli_real_escape_string($conn,$_POST['signup-phone'])."','".mysqli_real_escape_string($conn,$_POST['signup-password'])."','".mysqli_real_escape_string($conn,$_POST['confirm-password'])."','$from_ip','$from_browser','$date_now' ) ";
                 if(!mysqli_query($conn,$query)) {
                     $error = "<p>could not sign you up</p>";
                 } else {
