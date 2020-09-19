@@ -12,20 +12,9 @@
         </div>
         <div id="top-bar-right" class="container-sm">
 
-            <?php
-                if ( (array_key_exists("dataexporid", $_SESSION) and
-                 $_SESSION['dataexporid'] and $_SESSION['dataexportmail'])
-                  or (array_key_exists("dataexporid", $_COOKIE) and
-                   $_COOKIE['dataexporid']  and $_COOKIE['dataexportmail'])) {
-            ?>
-            <a href="index?logout=1" class="font-Lato-Regular">Logout</a>
-            <?php
-            } else {
-            ?>
-            <a href="signup?Type=login" class="font-Lato-Regular">Login</a>
-            <?php
-            }
-            ?>
+            
+            <a href="signup" class="font-Lato-Regular">Login</a>
+            
 
 
 
