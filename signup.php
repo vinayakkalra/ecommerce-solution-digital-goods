@@ -349,7 +349,7 @@
         <!-- second bar start -->
         <div class="container" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;">
         <!-- error -->
-        <div id="error" style="width:50%;margin: 0 auto;">
+        <div id="error" style="width:90%;margin: 0 auto;">
             <?php if ($error!="") {
                 echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
                     
