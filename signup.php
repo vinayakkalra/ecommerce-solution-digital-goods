@@ -47,7 +47,7 @@
                     $error = "<p>form submitted successfully</p>";
                     $_SESSION['id'] = mysqli_insert_id($conn);
                     if ($_POST['register-check'] == 1) {
-                        setcookie("id", mysqli_insert_id($conn), time() + 60*60*3);
+                        setcookie("id", mysqli_insert_id($conn), time() + 60*60*24*365);
                     }
 
                 }
@@ -77,8 +77,8 @@
                 $_SESSION['id'] = $row['id'];
                 $_SESSION['email'] = $row['email'];// session
                 if ($_POST['register-check'] == 1) {  
-                    setcookie("id", $row['id'], time() + 60*60*3);
-                    setcookie("email", $row['email'], time() + 60*60*3); //   cookie
+                    setcookie("id", $row['id'], time() + 60*60*24*365);
+                    setcookie("email", $row['email'], time() + 60*60*24*365); //   cookie
                 }
             } else {
                 $error = "invalid email and password";
