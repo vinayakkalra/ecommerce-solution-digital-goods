@@ -47,11 +47,11 @@
                     $error = "<p>form submitted successfully</p>";
                     $row = mysqli_fetch_assoc($result);
                     $mail = $_POST['signup-email'];
-                    $_SESSION['id'] = mysqli_insert_id($conn);
-                    $_SESSION['mail'] = $mail;
+                    $_SESSION['dataexporid'] = mysqli_insert_id($conn);
+                    $_SESSION['dataexportmail'] = $mail;
                     if ($_POST['register-check'] == 1) {
-                        setcookie("id", mysqli_insert_id($conn), time() + 60*60*24*365);
-                        setcookie("mail",$mail, time() + 60*60*24*365);
+                        setcookie("dataexporid", mysqli_insert_id($conn), time() + 60*60*24*365);
+                        setcookie("dataexportmail",$mail, time() + 60*60*24*365);
                     }
 
                 }
@@ -78,12 +78,12 @@
             if (mysqli_num_rows($result) > 0) {
                 $row = mysqli_fetch_assoc($result);
                 $error = "login done";
-                $_SESSION['id'] = $row['id'];
+                $_SESSION['dataexporid'] = $row['id'];
                 $mailg = $_POST['login-email'];
-                $_SESSION['mail'] = $mailg;
+                $_SESSION['dataexportmail'] = $mailg;
                 if ($_POST['login-check'] == 1) {  
-                    setcookie("id", $row['id'], time() + 60*60*24*365);
-                    setcookie("mail",$mailg, time() + 60*60*24*365);
+                    setcookie("dataexporid", $row['id'], time() + 60*60*24*365);
+                    setcookie("dataexportmail",$mailg, time() + 60*60*24*365);
                 }
             } else {
                 $error = "invalid email and password";
