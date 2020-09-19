@@ -1,5 +1,9 @@
+<html>
+    <head>
 
-<div id="top-bar" class="container-fluid">
+    </head>
+    <body>
+    <div id="top-bar" class="container-fluid">
     <div id="top-bar-center" class="container-sm">
         <div id="top-bar-left" class="container-sm">
             <p class="font-Lato-Regular">
@@ -7,7 +11,24 @@
             </p>
         </div>
         <div id="top-bar-right" class="container-sm">
-            <a href="signup" class="font-Lato-Regular">Login</a>
+
+            <?php
+                if ( (array_key_exists("dataexporid", $_SESSION) and
+                 $_SESSION['dataexporid'] and $_SESSION['dataexportmail'])
+                  or (array_key_exists("dataexporid", $_COOKIE) and
+                   $_COOKIE['dataexporid']  and $_COOKIE['dataexportmail'])) {
+            ?>
+            <a href="index?logout=1" class="font-Lato-Regular">Logout</a>
+            <?php
+            } else {
+            ?>
+            <a href="signup?Type=login" class="font-Lato-Regular">Login</a>
+            <?php
+            }
+            ?>
+
+
+
             <a href="about.php" role="button" class="font-Lato-Regular">About us</a>
             <a href="contact" role="button" class="font-Lato-Regular">Contace us</a>
             <a id="shop" href="#" role="button" class="font-Lato-Regular">Shop</a>
@@ -35,10 +56,6 @@
 
     </div>
 </div>
-
-<!-- modal -->
-<!-- Button trigger modal -->
-
-
-<!-- Modal -->
+    </body>
+</html>
 
