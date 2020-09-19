@@ -287,7 +287,7 @@
                         </form>
                         <p style="text-align:center;">By signing up, you agree to our <a href="term">Terms of Use</a>
                             and<a href="policy"> Privacy Policy.</a></p>
-                        <p style="text-align:center;">Already have an account?<a href="#" class="more">Login in</a></p>
+                        <p style="text-align:center;">Already have an account?<a href="#" class="more">Log In Now</a></p>
                     </div>
                 </div>
             </div>
@@ -424,7 +424,7 @@
                         </form>
                         <p style="text-align:center;">By signing up, you agree to our <a href="term">Terms of Use</a>
                             and<a href="policy"> Privacy Policy.</a></p>
-                        <p style="text-align:center;">Already have an account?<a href="#" class="more-mob">Login in</a>
+                        <p style="text-align:center;">Already have an account?<a href="#" class="more-mob">Log In Now</a>
                         </p>
                     </div>
                 </div>
