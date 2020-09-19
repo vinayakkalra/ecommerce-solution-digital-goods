@@ -45,9 +45,13 @@
                     $error = "<p>could not sign you up</p>";
                 } else {
                     $error = "<p>form submitted successfully</p>";
+                    $row = mysqli_fetch_assoc($result);
+                    $mail = $_POST['signup-email'];
                     $_SESSION['id'] = mysqli_insert_id($conn);
+                    $_SESSION['mail'] = $mail;
                     if ($_POST['register-check'] == 1) {
                         setcookie("id", mysqli_insert_id($conn), time() + 60*60*24*365);
+                        setcookie("mail",$mail, time() + 60*60*24*365);
                     }
 
                 }
@@ -75,10 +79,11 @@
                 $row = mysqli_fetch_assoc($result);
                 $error = "login done";
                 $_SESSION['id'] = $row['id'];
-                $_SESSION['email'] = $row['email'];// session
-                if ($_POST['register-check'] == 1) {  
+                $mailg = $_POST['login-email'];
+                $_SESSION['mail'] = $mailg;
+                if ($_POST['login-check'] == 1) {  
                     setcookie("id", $row['id'], time() + 60*60*24*365);
-                    setcookie("email", $row['email'], time() + 60*60*24*365); //   cookie
+                    setcookie("mail",$mailg, time() + 60*60*24*365);
                 }
             } else {
                 $error = "invalid email and password";
@@ -413,7 +418,7 @@
                             <div class="form-group">
                                 <div>
                                     <button type="submit" class="btn form-control" style="color:white;"
-                                        id="login-button">Create a Account</button>
+                                        id="login-button" name="signup-button" >Create a Account</button>
                                 </div>
                             </div>
                         </form>
