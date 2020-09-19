@@ -85,6 +85,8 @@
                     setcookie("dataexporid", $row['id'], time() + 60*60*24*365);
                     setcookie("dataexportmail",$mailg, time() + 60*60*24*365);
                 }
+                header('location:index.php');
+                
             } else {
                 $error = "invalid email and password";
             }
@@ -163,11 +165,11 @@
             font-family: Font Awesome\ 5 Free;
         }
 
-        #login-button:hover {
+        .login-button:hover {
             background-color: #24436e;
         }
 
-        #login-button {
+        .login-button {
             background-color: #2f507e;
         }
 
@@ -210,20 +212,18 @@
         <!-- desktop header end -->
 
         <!-- error div -->
-        <div class="container">
-            
-        </div>
         <!-- error div -->
         <!-- second bar start -->
         <div class="container hello" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;">
-        <!-- error -->
-        <div id="error" style="width:35%;margin: 0 auto;">
-            <?php if ($error!="") {
-                echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
+            <!-- error -->
+            <div id="error" style="width:35%;margin: 0 auto;">
+                <?php if ($error!="") {
+                    echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
                     
-            } ?>
-        </div>
-        <!-- error -->
+                } ?>
+            </div>
+            <!-- error -->
+        
             <div id="register-form">
                 <div style="width:100%;">
                     <h1 style="color:#2b2b2b; text-align:center; font-size: 1.25em;border-bottom: 2px solid rgba(0,0,0,0.1);padding-bottom: 7.5px; font-weight:700; margin:0px 0px 24px; width:30%; margin:auto;"
@@ -280,14 +280,13 @@
                             </div>
                             <div class="form-group">
                                 <div>
-                                    <button type="submit" class="btn form-control" name="signup-button" style="color:white;"
-                                        id="login-button">Create a Account</button>
+                                    <button type="submit" class="btn form-control login-button" name="signup-button" style="color:white;">Create a Account</button>
                                 </div>
                             </div>
                         </form>
                         <p style="text-align:center;">By signing up, you agree to our <a href="term">Terms of Use</a>
                             and<a href="policy"> Privacy Policy.</a></p>
-                        <p style="text-align:center;">Already have an account?<a href="#" class="more">Log In Now</a></p>
+                        <p style="text-align:center;">Already have an account? <a href="#" class="more"> Log In Now</a></p>
                     </div>
                 </div>
             </div>
@@ -323,8 +322,8 @@
                             </div>
                             <div class="form-group">
                                 <div>
-                                    <button type="submit" class="btn form-control" style="color:white;"
-                                        id="login-button" name="login-buttong">LOGIN</button>
+                                    <button type="submit" class="btn form-control login-button" style="color:white;"
+                                        name="login-buttong">LOGIN</button>
                                 </div>
                             </div>
                         </form>
@@ -333,7 +332,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <!-- second bar end -->
 
@@ -353,14 +351,14 @@
         <!-- error bar end -->
         <!-- second bar start -->
         <div class="container" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;">
-        <!-- error -->
-        <div id="error" style="width:90%;margin: 0 auto;">
-            <?php if ($error!="") {
+            <!-- error -->
+            <div id="error" style="width:90%;margin: 0 auto;">
+                <?php if ($error!="") {
                 echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
                     
-            } ?>
-        </div>
-        <!-- error -->
+                } ?>
+            </div>
+            <!-- error -->
             <div id="register-form-mob">
                 <div style="width:100%;" class="hello">
                     <h1 style="color:#2b2b2b; text-align:center; font-size: 1.25em;border-bottom: 2px solid rgba(0,0,0,0.1);padding-bottom: 7.5px; font-weight:700; margin:0px 0px 24px; width:50%; margin:auto;"
@@ -412,19 +410,19 @@
                                 </div>
                             </fieldset>
                             <div class="form-group form-check" style="margin:12px">
-                                <input type="checkbox" class="form-check-input" id="Check1" name="register-check">
+                                <input type="checkbox" class="form-check-input" id="Check1" name="register-check" value=1>
                                 <label class="form-check-label" for="Check1">Stay logged in</label>
                             </div>
                             <div class="form-group">
                                 <div>
-                                    <button type="submit" class="btn form-control" style="color:white;"
-                                        id="login-button" name="signup-button" >Create a Account</button>
+                                    <button type="submit" class="btn form-control login-button" style="color:white;"
+                                        name="signup-button" >Create a Account</button>
                                 </div>
                             </div>
                         </form>
                         <p style="text-align:center;">By signing up, you agree to our <a href="term">Terms of Use</a>
                             and<a href="policy"> Privacy Policy.</a></p>
-                        <p style="text-align:center;">Already have an account?<a href="#" class="more-mob">Log In Now</a>
+                        <p style="text-align:center;">Already have an account? <a href="#" class="more-mob"> Log In Now</a>
                         </p>
                     </div>
                 </div>
@@ -461,8 +459,8 @@
                             </div>
                             <div class="form-group">
                                 <div>
-                                    <button type="submit" class="btn form-control" style="color:white;"
-                                        id="login-button" name="login-buttong">LOGIN</button>
+                                    <button type="submit" class="btn form-control login-button" style="color:white;"
+                                        name="login-buttong">LOGIN</button>
                                 </div>
                             </div>
                         </form>

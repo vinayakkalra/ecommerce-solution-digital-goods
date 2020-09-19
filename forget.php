@@ -96,11 +96,11 @@
             overflow: hidden;
             margin-right: 20px;
         }*/
-        #login-button:hover {
+        .login-button:hover {
             background-color: #24436e;
         }
 
-        #login-button {
+        .login-button {
             background-color: #2f507e;
         }
     </style>
@@ -157,8 +157,8 @@
                         </fieldset>
                         <div class="form-group">
                             <div>
-                                <button type="submit" class="btn form-control" style="color:white;"
-                                    id="login-button" name="forget-buttong">Change Password</button>
+                                <button type="submit" class="btn form-control login-button" style="color:white;"
+                                 name="forget-buttong">Change Password</button>
                             </div>
                         </div>
                     </form>
@@ -181,15 +181,15 @@
          <!-- second bar start -->
          <div class="container" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;">
             <!-- error -->
-        <div id="error" style="width:90%;margin: 0 auto;">
-            <?php if ($error!="") {
-                echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
+            <div id="error" style="width:90%;margin: 0 auto;">
+                <?php if ($error!="") {
+                    echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
                     
-            } ?>
-        </div>
-        <!-- error -->
+                } ?>
+            </div>
+            <!-- error -->
             <div style="width:100%;" class="hello">
-                <h1 style="color:#2b2b2b; text-align:center; font-size: 1.25em;border-bottom: 2px solid rgba(0,0,0,0.1);padding-bottom: 7.5px; font-weight:700; margin:0px 0px 24px; width:30%; margin:auto;" class="font-Lato-Regular">
+                <h1 style="color:#2b2b2b; text-align:center; font-size: 1.25em;border-bottom: 2px solid rgba(0,0,0,0.1);padding-bottom: 7.5px; font-weight:700; margin:0px 0px 24px; width:50%; margin:auto;" class="font-Lato-Regular">
                     Forget Password
                 </h1>
             </div>
@@ -222,15 +222,15 @@
                         </fieldset>
                         <div class="form-group">
                             <div>
-                                <button type="submit" class="btn form-control" style="color:white;"
-                                    id="login-button" name="forget-buttong">Change Password</button>
+                                <button type="submit" class="btn form-control login-button" style="color:white;"
+                                 name="forget-buttong">Change Password</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        </div>
+    
 
         <!-- mobile view footer -->
         <div id="footer-mob"></div>

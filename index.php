@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    include("./php/config.php");
+    if ((array_key_exists("dataexporid",$_SESSION) and $_SESSION['dataexporid']) or (array_key_exists("dataexporid",$_COOKIE) and $_COOKIE['dataexporid']) ) {
+
+    } else {
+        header('location : signup');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
