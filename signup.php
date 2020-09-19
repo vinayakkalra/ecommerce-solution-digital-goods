@@ -1,4 +1,5 @@
 <?php
+    session_start();
 // register form
     include("./php/config.php");
     $error = "";
@@ -43,7 +44,11 @@
                 if(!mysqli_query($conn,$query)) {
                     $error = "<p>could not sign you up</p>";
                 } else {
-                    $error = $hashpasswordg;
+                    $error = "<p>form submitted successfully</p>";
+                    $_SESSION['id'] = mysqli_insert_id($conn);
+                    if ($_POST['register-check'] == 1) {
+                        setcookie("id", mysqli_insert_id($conn), time() + 60*60*3);
+                    }
 
                 }
             }
@@ -68,10 +73,13 @@
             $result = mysqli_query($conn,$query);
             if (mysqli_num_rows($result) > 0) {
                 $row = mysqli_fetch_assoc($result);
-                setcookie("id", $row['id'], time() + 60*60*3); //   cookie
-                session_start();
-                $_SESSION['id'] = $row['id'];// session
                 $error = "login done";
+                $_SESSION['id'] = $row['id'];
+                $_SESSION['email'] = $row['email'];// session
+                if ($_POST['register-check'] == 1) {  
+                    setcookie("id", $row['id'], time() + 60*60*3);
+                    setcookie("email", $row['email'], time() + 60*60*3); //   cookie
+                }
             } else {
                 $error = "invalid email and password";
             }
@@ -198,16 +206,19 @@
 
         <!-- error div -->
         <div class="container">
-            <div id="error" style="width:35%;margin: 0 auto;">
-                <?php if ($error!="") {
-                    echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
-                    
-                } ?>
-            </div>
+            
         </div>
         <!-- error div -->
         <!-- second bar start -->
         <div class="container hello" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;">
+        <!-- error -->
+        <div id="error" style="width:35%;margin: 0 auto;">
+            <?php if ($error!="") {
+                echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
+                    
+            } ?>
+        </div>
+        <!-- error -->
             <div id="register-form">
                 <div style="width:100%;">
                     <h1 style="color:#2b2b2b; text-align:center; font-size: 1.25em;border-bottom: 2px solid rgba(0,0,0,0.1);padding-bottom: 7.5px; font-weight:700; margin:0px 0px 24px; width:30%; margin:auto;"
@@ -259,9 +270,8 @@
                                 </div>
                             </fieldset>
                             <div class="form-group form-check" style="margin:12px">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">I’m in for emails with exciting
-                                    discounts and personalized recommendations</label>
+                                <input type="checkbox" class="form-check-input" id="Check1" name="register-check" value=1>
+                                <label class="form-check-label" for="Check1">Stay logged in</label>
                             </div>
                             <div class="form-group">
                                 <div>
@@ -302,6 +312,10 @@
                                         placeholder="password" id="inputField">
                                 </div>
                             </fieldset>
+                            <div class="form-group form-check" style="margin:12px">
+                                <input type="checkbox" class="form-check-input" id="Check1" name="login-check" value=1>
+                                <label class="form-check-label" for="Check1">Stay logged in</label>
+                            </div>
                             <div class="form-group">
                                 <div>
                                     <button type="submit" class="btn form-control" style="color:white;"
@@ -309,7 +323,7 @@
                                 </div>
                             </div>
                         </form>
-                        <p style="text-align:center;">or <a href="">Forgot Password</a></p>
+                        <p style="text-align:center;">or <a href="forget">Forgot Password</a></p>
                         <p style="text-align:center;">Don't have an account? <a href="#" class="more">Sign up</a></p>
                     </div>
                 </div>
@@ -330,15 +344,18 @@
         <div id="header-mob"></div>
         <!-- mobile view header end -->
         <!-- error bar start -->
-        <div id="error">
-            <?php if ($error!="") {
-                  echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
-                  
-              } ?>
-          </div>
+        
         <!-- error bar end -->
         <!-- second bar start -->
         <div class="container" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;">
+        <!-- error -->
+        <div id="error" style="width:50%;margin: 0 auto;">
+            <?php if ($error!="") {
+                echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
+                    
+            } ?>
+        </div>
+        <!-- error -->
             <div id="register-form-mob">
                 <div style="width:100%;" class="hello">
                     <h1 style="color:#2b2b2b; text-align:center; font-size: 1.25em;border-bottom: 2px solid rgba(0,0,0,0.1);padding-bottom: 7.5px; font-weight:700; margin:0px 0px 24px; width:50%; margin:auto;"
@@ -390,9 +407,8 @@
                                 </div>
                             </fieldset>
                             <div class="form-group form-check" style="margin:12px">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">I’m in for emails with exciting
-                                    discounts and personalized recommendations</label>
+                                <input type="checkbox" class="form-check-input" id="Check1" name="register-check">
+                                <label class="form-check-label" for="Check1">Stay logged in</label>
                             </div>
                             <div class="form-group">
                                 <div>
@@ -434,6 +450,10 @@
                                         placeholder="password" id="inputField">
                                 </div>
                             </fieldset>
+                            <div class="form-group form-check" style="margin:12px">
+                                <input type="checkbox" class="form-check-input" id="Check1" name="login-check" value=1>
+                                <label class="form-check-label" for="Check1">Stay logged in</label>
+                            </div>
                             <div class="form-group">
                                 <div>
                                     <button type="submit" class="btn form-control" style="color:white;"
@@ -441,7 +461,7 @@
                                 </div>
                             </div>
                         </form>
-                        <p style="text-align:center;">or <a href="">Forgot Password</a></p>
+                        <p style="text-align:center;">or <a href="forget">Forgot Password</a></p>
                         <p style="text-align:center;">Don't have an account? <a href="#" class="more-mob">Sign up</a>
                         </p>
                     </div>
