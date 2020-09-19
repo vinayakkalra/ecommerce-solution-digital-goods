@@ -1,8 +1,8 @@
-<html>
-    <head>
-
-    </head>
-    <body>
+ <!-- header -->
+ <?php
+        session_start();
+        include("../php/config.php");
+        ?>
     <div id="top-bar" class="container-fluid">
     <div id="top-bar-center" class="container-sm">
         <div id="top-bar-left" class="container-sm">
@@ -12,9 +12,18 @@
         </div>
         <div id="top-bar-right" class="container-sm">
 
-            
+
+            <?php
+                if ((array_key_exists("dataexporid", $_SESSION) and $_SESSION['dataexporid'] and $_SESSION['dataexportmail']) or (array_key_exists("dataexporid", $_COOKIE) and $_COOKIE['dataexporid']  and $_COOKIE['dataexportmail'])) {
+            ?> 
+            <a href="index?logout=1" class="font-Lato-Regular">Log out</a>
+            <?php
+                } else {
+            ?>
             <a href="signup" class="font-Lato-Regular">Login</a>
-            
+            <?php
+                }
+            ?>
 
 
 
@@ -45,6 +54,5 @@
 
     </div>
 </div>
-    </body>
-</html>
+   
 

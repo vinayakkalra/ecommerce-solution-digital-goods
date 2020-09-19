@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include("../php/config.php");
+?>
 <html>
     <head>
 
@@ -33,7 +37,22 @@
                     <a href="about.php" class="text font-Lato-Regular" style="text-align: left;">ABOUT US</a>
                     <a href="contact" class="text font-Lato-Regular" style="text-align: left;">CONTACT US</a>
                     <a href="#" class="text font-Lato-Regular" style="text-align: left;">SHOP</a>
+
+                    <?php
+                        if ((array_key_exists("dataexporid", $_SESSION) and $_SESSION['dataexporid'] and $_SESSION['dataexportmail']) or (array_key_exists("dataexporid", $_COOKIE) and $_COOKIE['dataexporid']  and $_COOKIE['dataexportmail'])) {
+                    ?>
+                    <a href="index?logout=1" class="text font-Lato-Regular" style="text-align: left;">LOG OUT</a>
+                    <?php
+                        } else {
+                    ?>
+
+
                     <a href="signup" class="text font-Lato-Regular" style="text-align: left;">LOGIN</a>
+
+                    
+                    <?php
+                    }
+                    ?>
                   </div>
                   
                   <!-- Use any element to open the sidenav -->
