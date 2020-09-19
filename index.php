@@ -1,12 +1,24 @@
 <?php
-    session_start();
-    include("./php/config.php");
-    if ((array_key_exists("dataexporid",$_SESSION) and $_SESSION['dataexporid']) or (array_key_exists("dataexporid",$_COOKIE) and $_COOKIE['dataexporid']) ) {
-
-    } else {
-        header('location : signup');
-    }
-?>
+  session_start();
+  require_once('./php/config.php');
+  if (array_key_exists("logout", $_GET)) {
+      // check logout value 1 or not
+              
+               $_COOKIE["dataexportmail"] = "";  
+               $_COOKIE["dataexporid"] = "";
+              
+              session_destroy();
+              
+              setcookie("dataexportmail", "", time() - 60*60);
+              setcookie("dataexporid", "", time() - 60*60);
+              header('location:index');
+              // header("Refresh:0; url=client_dashboard");
+      //        $_COOKIE["id"] = "";  
+      // destroy cookie and session
+          }
+ 
+        
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
