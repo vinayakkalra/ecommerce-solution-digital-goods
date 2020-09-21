@@ -204,13 +204,13 @@
                         <div>
                             <button type="button" class="btn"
                                 style="background-color: #ef561e; color: white;border-radius: 0%; font-weight: bold;font-size: 1em;margin-bottom: 1em;padding: 0 1.2em;min-height: 2.5em;"
-                                id="cartButton">ADD TO CART</button>
+                                id="cartButton">BUY NOW</button>
                         </div>
-                        <div>
+                        <!-- <div>
                             <button type="button" class="btn"
                                 style="background-color:#24436e;color:white;border-radius: 0%; font-weight: bold; font-size: .7em;"
                                 id="downloadButton"><span>DOWNLOAD SAMPLE DATA</span></button>
-                        </div>
+                        </div> -->
                         <div style="margin-top:15px;font-weight: 400;font-size: .8em;" class="font-Lato-Regular"
                             id="tagLink">
                             <p>Category:<a href=""> All India Database</a></p>
@@ -230,10 +230,10 @@
                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
                         aria-controls="home" aria-selected="true">DESCRIPTION </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
                         aria-controls="profile" aria-selected="false">REVIEWS</a>
-                </li>
+                </li> -->
             </ul>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
