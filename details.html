@@ -84,6 +84,9 @@
         #returnShop:hover {
             background-color: #24436e !important;
         }
+        #cartButton:hover {
+            box-shadow: inset 0 0 0 100px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 
@@ -111,11 +114,13 @@
                 </ul>
             </div>
             <div>
-                <div class="container" style="margin-top: 20px;">
-                    <div class="row">
-                        <div class="col-6">
-                            <p>BILLING DETAILS</p>
-                            <div>
+                <div class="container" style="margin-top: 20px;" class="font-Lato-Regular" style="font-weight: bold;">
+                    <p style="font-size: 16px; font-weight: 400; margin-bottom: 2px;">Returning customer? <a href="login">Click here to login</a></p>
+                    <p style="font-size: 16px; font-weight: 400;">Have a coupon?<a href="">Click here to enter your code</a></p>
+                    <div class="row" style="font-weight: bold;">
+                        <div class="col-6" style="border-top:1px solid rgb(218, 211, 211)">
+                            <h3 style="font-size: 1.1em; margin-top: 25px;">BILLING DETAILS</h3>
+                            <div style="font-size: .9em;">
                                 <form>
                                     <div class="row">
                                         <div class="col">
@@ -187,23 +192,66 @@
                                     <div class="row" style="margin-top: 5px; margin-left: 5px;">
                                         <div class="col">
                                             <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                            <label class="form-check-label" for="gridCheck1">
+                                            <label class="form-check-label" for="gridCheck1" style="font-weight: normal;">
                                                 Create an account?
                                             </label>
                                         </div>
                                     </div>
                                     <div class="row" style="margin-top: 5px;">
                                         <div class="col">
-                                            <h6>ADDITIONAL INFORMATION</h6>
+                                            <h6 style="font-weight: bold; font-size: 1.1em;">ADDITIONAL INFORMATION</h6>
                                             <label for="exampleInputEmail1">Order notes (optional)</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                rows="3"></textarea>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
-                        <div class="col-6">
-                            One of three columns
+                        <div class="col-5" style="border:2px solid #24436e; height: 50%; padding: 10px;">
+                            <h3 style="font-size: 1.1em; margin-top: 15px;">YOUR ORDER</h3>
+                            <div class="container" style="font-size: .9em;">
+                                <div class="row">
+                                    <div class="col-6">
+                                        PRODUCT
+                                    </div>
+                                    <div class="col-6" style="text-align: right;">
+                                        SUBTOTAL
+                                    </div>
+                                </div>
+                                <div class="row" style="font-size: 85%;">
+                                    <div class="col-6" style="font-weight: normal;">
+                                        Advocates/Lawyers Database×1
+                                    </div>
+                                    <div class="col-6" style="text-align: right;">
+                                        ₹299.00
+                                    </div>
+                                </div>
+                                <div class="row" style="font-size: 85%;">
+                                    <div class="col-6">
+                                        Subtotal
+                                    </div>
+                                    <div class="col-6" style="text-align: right;">
+                                        ₹299.00
+                                    </div>
+                                </div>
+                                <div class="row" style="font-size: 85%;">
+                                    <div class="col-6">
+                                        Total
+                                    </div>
+                                    <div class="col-6" style="text-align: right;">
+                                        ₹299.00
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="font-size: .9em;">
+                                <p style="margin-top: 15px; margin-bottom: 0;font-size: .9em;">Credit Card/Debit Card/NetBanking</p>
+                                <p style="font-size: .9em;font-weight:normal">Pay securely by Credit or Debit card or Internet Banking through Razorpay.</p>
+                                <button type="button" class="btn"
+                                style="background-color: #ef561e; color: white;border-radius: 0%; font-weight: bold;font-size: 1em;margin-bottom: 1em;padding: 0 1.2em;min-height: 2.5em;"
+                                id="cartButton">PLACE ORDER</button>
+                                <p style="font-size: .9em;font-weight:normal">Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a href="">privacy policy.</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -224,28 +272,165 @@
         <!-- mobile view header end -->
         <!-- second bar start -->
         <div class="container" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;">
-            <div style="width:100%;padding: 0 15px 30px;">
-                <h1 style=" margin :0px 0px 24px ;color:#2b2b2b; font-size: 1.25em;border-bottom: 2px solid rgba(0,0,0,0.1);padding-bottom: 7.5px; font-weight:700;"
-                    class="font-Lato-Regular">
-                    ABOUT US
-                </h1>
-                <p class="font-Lato-Regular" style="color:#2b2b2b; margin: 0px 0px 20.8px;">
-                    With unified effort of an industry that’s built with people of like-minds, we’ve all it takes to
-                    assist organizations, individuals, companies, hospitals, doctors etc., to urge all their need within
-                    a brief time. DataExport.in lives because you exist, and that we exist because we would like to
-                    determine your goals and objectives.
-                </p>
-                <p class="font-Lato-Regular" style="color: #2b2b2b;">
-                    Transforming the planet with marketing strategies is our motto. we’ve the facility of remodeling the
-                    planet of selling industry. DataExport.in is made on the trusted foundation of helping individuals
-                    to urge what they need .
-                </p>
-                <p class="font-Lato-Regular" style="color: #2b2b2b;">
-                    DataExport.in creates unified rooms for industrial attractions, spam , and telemarketing procedures
-                    that give aiming to the general need of people .
-                </p>
+            <div class="container font-Lato-Regular" style="width: 100%;">
+                <ul class="nav">
+                    <!-- <li class="nav-item" style="margin-right: 0px;">
+                        <a class="nav-link" href="#">SHOPPING CART<span style="margin-left: 30px;">></span></a>
+                    </li> -->
+                    <li class="nav-item" style="margin-left: 0px; margin-right: 0px; margin: auto;">
+                        <a class="nav-link active" href="#">CHECKOUT DETAILS</a>
+                    </li>
+                    <!-- <li class="nav-item" style="margin-left: 0px;">
+                        <a class="nav-link disabled" href="#">ORDER COMPLETE </a>
+                    </li> -->
+                </ul>
+            </div>
+            <div>
+                <div class="container" style="margin-top: 20px;" class="font-Lato-Regular" style="font-weight: bold;">
+                    <p style="font-size: 16px; font-weight: 400; margin-bottom: 2px; text-align: center;">Returning customer? <a href="login">Click here to login</a></p>
+                    <p style="font-size: 16px; font-weight: 400; text-align: center;">Have a coupon?<a href="">Click here to enter your code</a></p>
+                    <div class="row" style="font-weight: bold;">
+                        <div class="col-12" style="border-top:1px solid rgb(218, 211, 211)">
+                            <h3 style="font-size: 1.1em; margin-top: 25px;">BILLING DETAILS</h3>
+                            <div style="font-size: .9em;">
+                                <form>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="exampleInputEmail1">First Name*</label>
+                                            <input type="text" class="form-control" placeholder="First name">
+                                        </div>
+                                        <div class="col">
+                                            <label for="exampleInputEmail1">Last Name</label>
+                                            <input type="text" class="form-control" placeholder="Last name">
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 5px;">
+                                        <div class="col">
+                                            <label for="exampleInputEmail1">Country/Region*</label>
+                                            <select id="inputState" class="form-control">
+                                                <option selected>Choose...</option>
+                                                <option>india</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 5px;">
+                                        <div class="col">
+                                            <label for="exampleInputEmail1">Street address*</label>
+                                            <input type="text" class="form-control"
+                                                placeholder="House number and street name">
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 5px;">
+                                        <div class="col">
+                                            <label for="exampleInputEmail1">Town/City*</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 5px;">
+                                        <div class="col">
+                                            <label for="exampleInputEmail1">State/County*</label>
+                                            <select id="inputState" class="form-control">
+                                                <option selected>Choose...</option>
+                                                <option>State</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 5px;">
+                                        <div class="col">
+                                            <label for="exampleInputEmail1">Postcode/ZIP*</label>
+                                            <input type="number" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 5px;">
+                                        <div class="col">
+                                            <label for="exampleInputEmail1">Phone*</label>
+                                            <input type="number" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 5px;">
+                                        <div class="col">
+                                            <label for="exampleInputEmail1">Email address*</label>
+                                            <input type="email" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 5px; margin-left: 5px;">
+                                        <div class="col">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <label class="form-check-label" for="gridCheck1">
+                                                Subscribe to our newsletter
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 5px; margin-left: 5px;">
+                                        <div class="col">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <label class="form-check-label" for="gridCheck1" style="font-weight: normal;">
+                                                Create an account?
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 5px;">
+                                        <div class="col">
+                                            <h6 style="font-weight: bold; font-size: 1.1em;">ADDITIONAL INFORMATION</h6>
+                                            <label for="exampleInputEmail1">Order notes (optional)</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-12" style="border:2px solid #24436e;padding: 10px; margin-top: 20px;">
+                            <h3 style="font-size: 1.1em; margin-top: 15px;">YOUR ORDER</h3>
+                            <div class="container" style="font-size: .9em;">
+                                <div class="row">
+                                    <div class="col-6">
+                                        PRODUCT
+                                    </div>
+                                    <div class="col-6" style="text-align: right;">
+                                        SUBTOTAL
+                                    </div>
+                                </div>
+                                <div class="row" style="font-size: 85%;">
+                                    <div class="col-6" style="font-weight: normal;">
+                                        Advocates/Lawyers Database×1
+                                    </div>
+                                    <div class="col-6" style="text-align: right;">
+                                        ₹299.00
+                                    </div>
+                                </div>
+                                <div class="row" style="font-size: 85%;">
+                                    <div class="col-6">
+                                        Subtotal
+                                    </div>
+                                    <div class="col-6" style="text-align: right;">
+                                        ₹299.00
+                                    </div>
+                                </div>
+                                <div class="row" style="font-size: 85%;">
+                                    <div class="col-6">
+                                        Total
+                                    </div>
+                                    <div class="col-6" style="text-align: right;">
+                                        ₹299.00
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="font-size: .9em;">
+                                <p style="margin-top: 15px; margin-bottom: 0;font-size: .9em;">Credit Card/Debit Card/NetBanking</p>
+                                <p style="font-size: .9em;font-weight:normal">Pay securely by Credit or Debit card or Internet Banking through Razorpay.</p>
+                                <button type="button" class="btn"
+                                style="background-color: #ef561e; color: white;border-radius: 0%; font-weight: bold;font-size: 1em;margin-bottom: 1em;padding: 0 1.2em;min-height: 2.5em;"
+                                id="cartButton">PLACE ORDER</button>
+                                <p style="font-size: .9em;font-weight:normal">Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a href="">privacy policy.</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <!-- second bar end -->
 
         <!-- mobile view footer -->
         <div id="footer-mob"></div>
