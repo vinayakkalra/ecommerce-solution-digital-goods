@@ -106,12 +106,15 @@
         <!-- second bar start -->
         <div class="container" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;">
             <div class="container font-Lato-Regular" style="width: 100%;">
-                <ul class="nav">
+                <ul class="nav nav-tabs" id="nav-tab" role="tablist">
                     <li class="nav-item" style="margin-right: 0px;">
-                        <a class="nav-link active" href="#">SHOPPING CART<span style="margin-left: 30px;">></span></a>
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                            aria-controls="home" aria-selected="true">SHOPPING CART<span
+                                style="margin-left: 30px;">></span></a>
                     </li>
                     <li class="nav-item" style="margin-left: 0px; margin-right: 0px;">
-                        <a class="nav-link" href="#">CHECKOUT DETAILS <span style="margin-left: 30px;">></span></a>
+                        <a class="nav-link" href="details">CHECKOUT DETAILS <span
+                                style="margin-left: 30px;">></span></a>
                     </li>
                     <li class="nav-item" style="margin-left: 0px;">
                         <a class="nav-link disabled" href="#">ORDER COMPLETE </a>
@@ -119,115 +122,119 @@
                 </ul>
 
             </div>
-            <div class="font-Lato-Regular" style="text-align: center; margin-top: 2%;">
+            <div class="font-Lato-Regular\" style="text-align: center; margin-top: 2%;">
                 <!-- <p>Your cart is currently empty.</p> -->
-                <div>
-                    <div class="container" class="font-Lato-Regular" style="font-size:.9em; font-weight:600;">
-                        <div class="row">
-                            <div class="col">
-                                <!-- LEFT DIV -->
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-4">
-                                            PRODUCT
-                                            <div class="container" style="margin-top: 15px;">
-                                                <div class="row">
-                                                    <div class="col-5" style="margin-right: 0%;">
-                                                        <img src="img/data.png" style="width:180%">
-                                                    </div>
-                                                    <div class="col-6" style="margin-left: 0%;">
-                                                        <p><a href="" style="font-size: 70%;">Advocates/Lawyers
-                                                                Database</a></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            PRICE
-                                            <div class="container" style="margin-top: 15px;">
-                                                <div class="row">
-                                                    <div class="col-sm">
-                                                        <p>₹299.00</p>
+
+                <div class="tab-content" id="nav-tabContent">
+
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="container" class="font-Lato-Regular" style="font-size:.9em; font-weight:600;">
+                            <div class="row">
+                                <div class="col">
+                                    <!-- LEFT DIV -->
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                PRODUCT
+                                                <div class="container" style="margin-top: 15px;">
+                                                    <div class="row">
+                                                        <div class="col-5" style="margin-right: 0%;">
+                                                            <img src="img/data.png" style="width:180%">
+                                                        </div>
+                                                        <div class="col-6" style="margin-left: 0%;">
+                                                            <p><a href="" style="font-size: 70%;">Advocates/Lawyers
+                                                                    Database</a></p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col">
-                                            QUANTITY
-                                            <div class="container" style="margin-top: 15px;">
-                                                <div class="row">
-                                                    <div class="col-sm">
-                                                        <p>1</p>
+                                            <div class="col">
+                                                PRICE
+                                                <div class="container" style="margin-top: 15px;">
+                                                    <div class="row">
+                                                        <div class="col-sm">
+                                                            <p>₹299.00</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col">
-                                            SUBTOTAL
-                                            <div class="container" style="margin-top: 15px;">
-                                                <div class="row">
-                                                    <div class="col-sm">
-                                                        <p>₹299.00</p>
+                                            <div class="col">
+                                                QUANTITY
+                                                <div class="container" style="margin-top: 15px;">
+                                                    <div class="row">
+                                                        <div class="col-sm">
+                                                            <p>1</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                SUBTOTAL
+                                                <div class="container" style="margin-top: 15px;">
+                                                    <div class="row">
+                                                        <div class="col-sm">
+                                                            <p>₹299.00</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col">
-                                <!-- right div -->
-                                <div class="container" style="text-align: left;">
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <p>CART TOTALS</p>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-sm">
-                                                        <p style="font-weight: normal;">Subtotal</p>
+                                <div class="col">
+                                    <!-- right div -->
+                                    <div class="container" style="text-align: left;">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <p>CART TOTALS</p>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-sm">
+                                                            <p style="font-weight: normal;">Subtotal</p>
+                                                        </div>
+                                                        <div class="col-sm">
+                                                            <p>₹299.00</p>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-sm">
-                                                        <p>₹299.00</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm">
-                                                        <p style="font-weight: normal;">Total</p>
-                                                    </div>
-                                                    <div class="col-sm">
-                                                        <p>₹299.00</p>
+                                                    <div class="row">
+                                                        <div class="col-sm">
+                                                            <p style="font-weight: normal;">Total</p>
+                                                        </div>
+                                                        <div class="col-sm">
+                                                            <p>₹299.00</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-8">
-                                            <button type="button" class="btn"
-                                                style="min-height: 2.5em;background-color: #ef561e; color: white;border-radius: 0%; font-weight: bold;font-size: 1em;margin-bottom: 1em;padding: 0 1.2em; width: 100%;"
-                                                id="cartButton">PROCEED TO CHECKOUT</button>
+                                            <div class="col-8">
+                                                <button type="button" class="btn"
+                                                    style="min-height: 2.5em;background-color: #ef561e; color: white;border-radius: 0%; font-weight: bold;font-size: 1em;margin-bottom: 1em;padding: 0 1.2em; width: 100%;"
+                                                    id="cartButton">PROCEED TO CHECKOUT</button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="container" style="text-align: left;margin-top: 20px;">
-                                    <div class="row" style="margin-bottom:10px;">
-                                        <div class="col-8" style="margin-bottom: 10px;">
-                                            Coupon
-                                        </div>
-                                        <div class="col-8">
-                                            <div class="form-group">
+                                    <div class="container" style="text-align: left;margin-top: 20px;">
+                                        <div class="row" style="margin-bottom:10px;">
+                                            <div class="col-8" style="margin-bottom: 10px;">
+                                                Coupon
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-group">
 
-                                                <input type="text" class="form-control" id="exampleInputEmail1"
-                                                    aria-describedby="emailHelp" placeholder="Coupon code">
+                                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp" placeholder="Coupon code">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+
+                                                <button type="button" class="btn"
+                                                    style="color: #666;border-radius: 0%; font-weight: bold;font-size: 1em;margin-bottom: 1em;padding: 0 1.2em; width: 100%; border: 1px solid #ddd;    font-weight: normal;    min-height: 2.5em;"
+                                                    id="cartButton">APPLY COUPON</button>
 
                                             </div>
-                                        </div>
-                                        <div class="col-8">
-
-                                            <button type="button" class="btn"
-                                                style="color: #666;border-radius: 0%; font-weight: bold;font-size: 1em;margin-bottom: 1em;padding: 0 1.2em; width: 100%; border: 1px solid #ddd;    font-weight: normal;    min-height: 2.5em;"
-                                                id="cartButton">APPLY COUPON</button>
-
                                         </div>
                                     </div>
                                 </div>
@@ -235,6 +242,9 @@
                         </div>
                     </div>
                 </div>
+
+
+
             </div>
             <!-- <div class="font-Lato-Regular" style="text-align: center; margin-top: 2%;">
                 <button type="button" class="btn"
@@ -293,7 +303,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="col-6" style="text-align: right;">
                                             QUANTITY
                                             <div class="container" style="margin-top: 15px;">
@@ -304,7 +314,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                       
+
                                     </div>
                                 </div>
                             </div>
