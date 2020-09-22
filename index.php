@@ -127,7 +127,7 @@
         }
 
         hr {}
-
+        
 
 
         #button-bar {
@@ -252,7 +252,9 @@
             margin-right: auto;
             width: 100%;
         }
-
+        .xyz:hover {
+            text-decoration : none !important;
+        }
 
 
         html,
@@ -1350,7 +1352,7 @@
                     <div class="card f">
                         <img class="card-img-top center" src="./img/f.PNG" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title"><a href="#" style="color:#2b2b2b;font-weight: 700;" class="font-Lato-Regular">Data Accuracy</a></h5>
+                            <h5 class="card-title" style="text-transform: uppercase;"><a href="#" style="color:#2b2b2b;font-weight: 700;" class="font-Lato-Regular xyz">Data Accuracy</a></h5>
                             <p class="card-text font-Lato-Regular" style="color:#282828;font-weight: 400;">Our verified email and mobile number lists have the accurate and
                                 updated information you would like to make a reliable business database.</p>
                         </div>
@@ -1358,7 +1360,7 @@
                     <div class="card f">
                         <img class="card-img-top" src="./img/one.PNG" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title"><a href="#" style="color: #2b2b2b;font-weight: 700;" class="font-Lato-Regular">Cheapest Price Ever</a></h5>
+                            <h5 class="card-title" style="text-transform: uppercase;"><a href="#" style="color: #2b2b2b;font-weight: 700;" class="font-Lato-Regular xyz">Cheapest Price Ever</a></h5>
                             <p class="card-text font-Lato-Regular" style="color:#282828;font-weight: 400;">We are offering the cheapest price ever on the web for such a huge
                                 data. You are getting more than 50% OFF than any competitor found on the web.</p>
                         </div>
@@ -1366,7 +1368,7 @@
                     <div class="card f">
                         <img class="card-img-top" src="./img/two.PNG" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title"><a href="#" style="color:#2b2b2b; font-weight: 700;" class="font-Lato-Regular">Weekly Update</a></h5>
+                            <h5 class="card-title" style="text-transform: uppercase;"><a href="#" style="color:#2b2b2b; font-weight: 700;" class="font-Lato-Regular xyz">Weekly Update</a></h5>
                             <p class="card-text font-Lato-Regular" style="color:#282828;font-weight: 400;">We update all database on weekly basis. You will always get the latest
                                 data sorted by our hard working team. You can compare our data with any other data.</p>
                         </div>
@@ -1660,7 +1662,7 @@
                             <div class="card f">
                                 <img class="card-img-top center" src="./img/f.PNG" alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="#" style="color:#2b2b2b;font-weight: 700;" class="text font-Lato-Regular">Data Accuracy</a></h5>
+                                    <h5 class="card-title" style="text-transform: uppercase;"><a href="#" style="color:#2b2b2b;font-weight: 700;" class="text font-Lato-Regular xyz">Data Accuracy</a></h5>
                                     <p class="card-text font-Lato-Regular" style="color:#282828;font-weight: 400;">Our verified email and mobile number lists have the
                                         accurate
                                         and
@@ -1672,7 +1674,7 @@
                             <div class="card f">
                                 <img class="card-img-top" src="./img/one.PNG" alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="#" style="color:#2b2b2b;font-weight: 700;" class="text font-Lato-Regular">Cheapest Price Ever</a>
+                                    <h5 class="card-title" style="text-transform: uppercase;"><a href="#" style="color:#2b2b2b;font-weight: 700;" class="text font-Lato-Regular xyz">Cheapest Price Ever</a>
                                     </h5>
                                     <p class="card-text font-Lato-Regular" style="color:#282828;font-weight: 400;">We are offering the cheapest price ever on the web for such
                                         a
@@ -1687,7 +1689,7 @@
                             <div class="card f">
                                 <img class="card-img-top" src="./img/two.PNG" alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="#" style="color:#2b2b2b;font-weight: 700;" class="text font-Lato-Regular">Weekly Update</a></h5>
+                                    <h5 class="card-title" style="text-transform: uppercase;"><a href="#" style="color:#2b2b2b;font-weight: 700;" class="text font-Lato-Regular xyz">Weekly Update</a></h5>
                                     <p class="card-text font-Lato-Regular" style="color:#282828;font-weight: 400;">We update all database on weekly basis. You will always get
                                         the
                                         latest
