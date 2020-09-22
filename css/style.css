@@ -209,7 +209,7 @@ body {
 #top-bar-center {
     background-color: #24436e;
     height: 100%;
-    width: 80%;
+    width: 100%;
 
 }
 
@@ -227,7 +227,7 @@ body {
 #top-bar-right {
     background-color: #24436e;
     height: 100%;
-    width: 30%;
+    width: 100%;
     float: right;
 }
 

@@ -16,6 +16,7 @@
             <?php
                 if ((array_key_exists("dataexporid", $_SESSION) and $_SESSION['dataexporid'] and $_SESSION['dataexportmail']) or (array_key_exists("dataexporid", $_COOKIE) and $_COOKIE['dataexporid']  and $_COOKIE['dataexportmail'])) {
             ?> 
+            <a href="order" role="button" class="font-Lato-Regular">My Account</a>
             <a href="index?logout=1" class="font-Lato-Regular">Log out</a>
             <?php
                 } else {
