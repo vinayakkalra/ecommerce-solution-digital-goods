@@ -179,7 +179,7 @@
                                 All India Complete Database
                             </h1>
                         </div>
-                        <div class="font-Lato-Regular" style="margin: .5em 0;">
+                        <div class="font-Lato-Regular" style="margin:.5em 0;">
                             <span style="font-size: 1.5em; color:#808080;font-weight: normal;">
                                 <del>₹12,890.00&nbsp;</del>
                             </span>
