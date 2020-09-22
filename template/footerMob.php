@@ -15,7 +15,7 @@
                 <div class="col-sm mt2" id="footlink">
                     <p id="bhead" class="text font-Lato-Regular" style="text-align: left;">Important Links
                     </p>
-                    <p class="font-Lato-Regular"><a  href="">Shop</a></p>
+                    <!-- <p class="font-Lato-Regular"><a  href="">Shop</a></p> -->
                     <p class="font-Lato-Regular"><a href="">Cart</a></p>
                     <p class="font-Lato-Regular"><a href="about">About Us</a></p>
                     <p class="font-Lato-Regular"><a href="">Blog</a></p>

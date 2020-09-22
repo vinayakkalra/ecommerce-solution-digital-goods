@@ -17,7 +17,7 @@
                     <div style="width:98%;margin:0 auto;" >
                         <p id="bhead" class="font-Lato-Regular">Important Links
                         </p>
-                        <p class="font-Lato-Regular"><a  href="">Shop</a></p>
+                        <!-- <p class="font-Lato-Regular"><a  href="">Shop</a></p> -->
                         <p class="font-Lato-Regular"><a href="">Cart</a></p>
                         <p class="font-Lato-Regular"><a href="about">About Us</a></p>
                         <p class="font-Lato-Regular"><a href="">Blog</a></p>

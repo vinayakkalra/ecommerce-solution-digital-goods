@@ -16,7 +16,7 @@
             <?php
                 if ((array_key_exists("dataexporid", $_SESSION) and $_SESSION['dataexporid'] and $_SESSION['dataexportmail']) or (array_key_exists("dataexporid", $_COOKIE) and $_COOKIE['dataexporid']  and $_COOKIE['dataexportmail'])) {
             ?> 
-            <a href="order" role="button" class="font-Lato-Regular">My Account</a>
+            <a href="order" role="button" class="font-Lato-Regular">My Orders</a>
             <a href="index?logout=1" class="font-Lato-Regular">Log out</a>
             <?php
                 } else {
@@ -30,7 +30,7 @@
 
             <a href="about.php" role="button" class="font-Lato-Regular">About us</a>
             <a href="contact" role="button" class="font-Lato-Regular">Contace us</a>
-            <a id="shop" href="#" role="button" class="font-Lato-Regular">Shop</a>
+            <!-- <a id="shop" href="#" role="button" class="font-Lato-Regular">Shop</a> -->
         </div>
     </div>
 </div>
@@ -49,9 +49,9 @@
             <a href="product-category?Product=5"  class="font-Lato-Regular list-group-itemssheader">ALL INDIA</a>
             <a href="product-category?Product=6"  class="font-Lato-Regular list-group-itemssheader">OTHER DATABASES</a>
         </div>
-        <div id="second-bar-right" class="container-sm">
+        <!-- <div id="second-bar-right" class="container-sm">
             <a href="#"><img src="./img/right.PNG"></a>
-        </div>
+        </div> -->
 
     </div>
 </div>
