@@ -65,9 +65,9 @@
             <div class="col-sm">
                 <img src="./img/logo.png" width="100%" height="100%">
             </div>
-            <div class="col-sm text-center" >
+            <!-- <div class="col-sm text-center" >
                 <img src="./img/mob.PNG" style="height: 30%; width: 30%;">
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
