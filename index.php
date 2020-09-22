@@ -1356,7 +1356,7 @@
                         </div>
                     </div>
                     <div class="card f">
-                        <img class="card-img-top" src="./img/f.PNG" alt="Card image cap">
+                        <img class="card-img-top" src="./img/one.PNG" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title"><a href="#" style="color: black;" class="font-Lato-Regular">Cheapest Price Ever</a></h5>
                             <p class="card-text" class="font-Lato-Regular">We are offering the cheapest price ever on the web for such a huge
@@ -1364,7 +1364,7 @@
                         </div>
                     </div>
                     <div class="card f">
-                        <img class="card-img-top" src="./img/f.PNG" alt="Card image cap">
+                        <img class="card-img-top" src="./img/two.PNG" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title"><a href="#" style="color: black;" class="font-Lato-Regular">Weekly Update</a></h5>
                             <p class="card-text" class="font-Lato-Regular">We update all database on weekly basis. You will always get the latest
@@ -1670,7 +1670,7 @@
                         </div>
                         <div class="col-sm">
                             <div class="card f">
-                                <img class="card-img-top" src="./img/f.PNG" alt="Card image cap">
+                                <img class="card-img-top" src="./img/one.PNG" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title"><a href="#" style="color: black;" class="text font-Lato-Regular">Cheapest Price Ever</a>
                                     </h5>
@@ -1685,7 +1685,7 @@
                         </div>
                         <div class="col-sm">
                             <div class="card f">
-                                <img class="card-img-top" src="./img/f.PNG" alt="Card image cap">
+                                <img class="card-img-top" src="./img/two.PNG" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title"><a href="#" style="color: black;" class="text font-Lato-Regular">Weekly Update</a></h5>
                                     <p class="card-text" class="text font-Lato-Regular">We update all database on weekly basis. You will always get
