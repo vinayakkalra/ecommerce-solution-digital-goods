@@ -91,6 +91,54 @@
         }
 
         /* desktop product css end */
+        /* product css start */
+        .hv:hover .over {
+            height: 100%;
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        .over {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            transition: .5s ease;
+            opacity: 0.8;
+        }
+
+        .icon {
+            width: 15%;
+            height: 20%;
+            text-align: center;
+            margin-left: 15px;
+        }
+
+        .s {
+            height: 10px;
+        }
+
+        #text-bg {
+            background-color: #24436e;
+            width: 100%;
+            color: white;
+            /* height: 50px; */
+        }
+
+        #product-link a:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* product css end */
     </style>
 </head>
 
@@ -179,22 +227,96 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="row" style="margin-top: 20px;">
+                                            <div class="col">
+                                                <p style="text-align: left;">You may be interested in…</p>
+                                                <div class="container">
+                                                    <div class="row  mx-md-n5">
+                                                        <div class="col-5 px-md-5">
+                                                            <div class="row" style="text-align:left; ">
+                                                                <div class="col-12">
+                                                                    <div class="hv">
+                                                                        <img class="card-img-top center"
+                                                                            src="./img/data.png" alt="Card image cap">
+                                                                        <div class="over"
+                                                                            style="display: flex;align-items: flex-end;">
+                                                                            <div style="width: 100%;">
+                                                                                <div class="icon-bg">
+                                                                                    <div class="icon">
+                                                                                        <img src="./img/icon.PNG"
+                                                                                            style="width: 30px;">
+                                                                                    </div>
+                                                                                    <div class="s"></div>
+                                                                                </div>
+                                                                                <div id="text-bg"
+                                                                                    style="display: flex;align-items: center;text-align: center;justify-content: center;">
+                                                                                    <div class="text font-Lato-Regular">
+                                                                                        QUICK VIEW</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mt-2">
+                                                                <h6 style="text-align: left;"><a href="#"
+                                                                        class="font-Lato-Regular">All India
+                                                                        Complete Database</a><br>₹1,299.00</h6>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-5 px-md-5">
+                                                            <div class="row" style="text-align:left; ">
+                                                                <div class="col-12">
+                                                                    <div class="hv">
+                                                                        <img class="card-img-top center"
+                                                                            src="./img/data.png" alt="Card image cap">
+                                                                        <div class="over"
+                                                                            style="display: flex;align-items: flex-end;">
+                                                                            <div style="width: 100%;">
+                                                                                <div class="icon-bg">
+                                                                                    <div class="icon">
+                                                                                        <img src="./img/icon.PNG"
+                                                                                            style="width: 30px;">
+                                                                                    </div>
+                                                                                    <div class="s"></div>
+                                                                                </div>
+                                                                                <div id="text-bg"
+                                                                                    style="display: flex;align-items: center;text-align: center;justify-content: center;">
+                                                                                    <div class="text font-Lato-Regular">
+                                                                                        QUICK VIEW</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mt-2">
+                                                                <h6 style="text-align: left;"><a href="#"
+                                                                        class="font-Lato-Regular">All India
+                                                                        Complete Database</a><br>₹1,299.00</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <!-- right div -->
                                     <div class="container" style="text-align: left;">
                                         <div class="row">
-                                            <div class="col-8">
-                                                <p>CART TOTALS</p>
+                                            <div class="col-7">
+                                                <p style="border-bottom:1px solid rgb(211, 197, 197)">CART TOTALS</p>
                                             </div>
-                                            <div class="col-12">
+                                            <div class="col-7">
                                                 <div class="container">
                                                     <div class="row">
                                                         <div class="col-sm">
                                                             <p style="font-weight: normal;">Subtotal</p>
                                                         </div>
-                                                        <div class="col-sm">
+                                                        <div class="col-sm" style="text-align: end;">
                                                             <p>₹299.00</p>
                                                         </div>
                                                     </div>
@@ -202,13 +324,13 @@
                                                         <div class="col-sm">
                                                             <p style="font-weight: normal;">Total</p>
                                                         </div>
-                                                        <div class="col-sm">
+                                                        <div class="col-sm" style="text-align:end;">
                                                             <p>₹299.00</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-8">
+                                            <div class="col-7">
                                                 <button type="button" class="btn"
                                                     style="min-height: 2.5em;background-color: #ef561e; color: white;border-radius: 0%; font-weight: bold;font-size: 1em;margin-bottom: 1em;padding: 0 1.2em; width: 100%;"
                                                     id="cartButton">PROCEED TO CHECKOUT</button>
@@ -217,10 +339,12 @@
                                     </div>
                                     <div class="container" style="text-align: left;margin-top: 20px;">
                                         <div class="row" style="margin-bottom:10px;">
-                                            <div class="col-8" style="margin-bottom: 10px;">
-                                                Coupon
+                                            <div class="col-7" style="margin-bottom: 10px;">
+                                                <p
+                                                    style="border-bottom:1px solid rgb(231, 228, 228); padding-bottom: 8px;">
+                                                    Coupon</p>
                                             </div>
-                                            <div class="col-8">
+                                            <div class="col-7">
                                                 <div class="form-group">
 
                                                     <input type="text" class="form-control" id="exampleInputEmail1"
@@ -228,7 +352,7 @@
 
                                                 </div>
                                             </div>
-                                            <div class="col-8">
+                                            <div class="col-7">
 
                                                 <button type="button" class="btn"
                                                     style="color: #666;border-radius: 0%; font-weight: bold;font-size: 1em;margin-bottom: 1em;padding: 0 1.2em; width: 100%; border: 1px solid #ddd;    font-weight: normal;    min-height: 2.5em;"
@@ -315,6 +439,80 @@
                                             </div>
                                         </div>
 
+                                    </div>
+                                    <div class="row" style="margin-top: 20px;">
+                                        <div class="col">
+                                            <p style="text-align: left;">You may be interested in…</p>
+                                            <div class="container">
+                                                <div class="row  mx-md-n5">
+                                                    <div class="col-5 px-md-5">
+                                                        <div class="row" style="text-align:left; ">
+                                                            <div class="col-12">
+                                                                <div class="hv">
+                                                                    <img class="card-img-top center"
+                                                                        src="./img/data.png" alt="Card image cap">
+                                                                    <div class="over"
+                                                                        style="display: flex;align-items: flex-end;">
+                                                                        <div style="width: 100%;">
+                                                                            <div class="icon-bg">
+                                                                                <div class="icon">
+                                                                                    <img src="./img/icon.PNG"
+                                                                                        style="width: 30px;">
+                                                                                </div>
+                                                                                <div class="s"></div>
+                                                                            </div>
+                                                                            <div id="text-bg"
+                                                                                style="display: flex;align-items: center;text-align: center;justify-content: center;">
+                                                                                <div class="text font-Lato-Regular">
+                                                                                    QUICK VIEW</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-2">
+                                                            <h6 style="text-align: left;"><a href="#"
+                                                                    class="font-Lato-Regular">All India
+                                                                    Complete Database</a><br>₹1,299.00</h6>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-5 px-md-5">
+                                                        <div class="row" style="text-align:left; ">
+                                                            <div class="col-12">
+                                                                <div class="hv">
+                                                                    <img class="card-img-top center"
+                                                                        src="./img/data.png" alt="Card image cap">
+                                                                    <div class="over"
+                                                                        style="display: flex;align-items: flex-end;">
+                                                                        <div style="width: 100%;">
+                                                                            <div class="icon-bg">
+                                                                                <div class="icon">
+                                                                                    <img src="./img/icon.PNG"
+                                                                                        style="width: 30px;">
+                                                                                </div>
+                                                                                <div class="s"></div>
+                                                                            </div>
+                                                                            <div id="text-bg"
+                                                                                style="display: flex;align-items: center;text-align: center;justify-content: center;">
+                                                                                <div class="text font-Lato-Regular">
+                                                                                    QUICK VIEW</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-2">
+                                                            <h6 style="text-align: left;"><a href="#"
+                                                                    class="font-Lato-Regular">All India
+                                                                    Complete Database</a><br>₹1,299.00</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
