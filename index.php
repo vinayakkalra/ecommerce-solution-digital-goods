@@ -1040,6 +1040,7 @@
                                 while( $row = mysqli_fetch_array($result)){
                                     $table_name = $row['table_name'];
                                     $product_category = $row['product_category'];
+                                    $proId = $row['id'];
                                     $query1 = "SELECT * FROM `$table_name` WHERE `id` =  $id" ;
                                     if ($result1 = mysqli_query($conn, $query1)) {
                                         if( ! mysqli_num_rows($result1) ) {
@@ -1056,7 +1057,7 @@
                         //   }
                          
                     ?>
-                    <div class="" style="width:11%; margin-left:35px;">
+                    <div class="col-3 px-md-5" onclick="location.href='desc?Product=<?=$proId ?>';" style="cursor: pointer;">
 
                         <div class="row">
                             <div class="col">
@@ -1096,126 +1097,9 @@
         <!-- product element end -->
 
         <!-- product element row2 -->
-        <div id="card-bar" class="container-fluid">
-            <div id="card-bar-center" class="container">
-                <div class="row mx-md-n5">
-                    <div class="col-3 px-md-5">
-                        <div class="row">
-                            <div class="col">
-                                <div class="hv">
-                                    <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                                    <div class="over" style="display: flex;align-items: flex-end;">
-                                        <div style="width: 100%;">
-                                            <div class="icon-bg">
-                                                <div class="icon">
-                                                    <img src="./img/icon.PNG" style="width: 30px;">
-                                                </div>
-                                                <div class="s"></div>
-                                            </div>
-                                            <div id="text-bg"
-                                                style="display: flex;align-items: center;text-align: center;justify-content: center;">
-                                                <div class="text font-Lato-Regular">QUICK VIEW</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row">
-                            <h6 style="text-align: left;"><a href="#" class="font-Lato-Regular">All India Complete Database</a><br>₹1,299.00</h6>
-                        </div>
-
-                    </div>
-                    <div class="col-3 px-md-5">
-                        <div class="row">
-                            <div class="col">
-                                <div class="hv">
-                                    <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                                    <div class="over" style="display: flex;align-items: flex-end;">
-                                        <div style="width: 100%;">
-                                            <div class="icon-bg">
-                                                <div class="icon">
-                                                    <img src="./img/icon.PNG" style="width: 30px;">
-                                                </div>
-                                                <div class="s"></div>
-                                            </div>
-                                            <div id="text-bg"
-                                                style="display: flex;align-items: center;text-align: center;justify-content: center;">
-                                                <div class="text" class="font-Lato-Regular">QUICK VIEW</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row">
-                            <h6 style="text-align: left;"><a href="#" class="font-Lato-Regular">All India Complete Database</a><br>₹1,299.00</h6>
-                        </div>
-
-                    </div>
-                    <div class="col-3 px-md-5">
-                        <div class="row">
-                            <div class="col">
-                                <div class="hv">
-                                    <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                                    <div class="over" style="display: flex;align-items: flex-end;">
-                                        <div style="width: 100%;">
-                                            <div class="icon-bg">
-                                                <div class="icon">
-                                                    <img src="./img/icon.PNG" style="width: 30px;">
-                                                </div>
-                                                <div class="s"></div>
-                                            </div>
-                                            <div id="text-bg"
-                                                style="display: flex;align-items: center;text-align: center;justify-content: center;">
-                                                <div class="text" class="font-Lato-Regular">QUICK VIEW</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row">
-                            <h6 style="text-align: left;"><a href="#" class="font-Lato-Regular">All India Complete Database</a><br>₹1,299.00</h6>
-                        </div>
-
-                    </div>
-                    <div class="col-3 px-md-5">
-                        <div class="row">
-                            <div class="col">
-                                <div class="hv">
-                                    <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                                    <div class="over" style="display: flex;align-items: flex-end;">
-                                        <div style="width: 100%;">
-                                            <div class="icon-bg">
-                                                <div class="icon">
-                                                    <img src="./img/icon.PNG" style="width: 30px;">
-                                                </div>
-                                                <div class="s"></div>
-                                            </div>
-                                            <div id="text-bg"
-                                                style="display: flex;align-items: center;text-align: center;justify-content: center;">
-                                                <div class="text" class="font-Lato-Regular">QUICK VIEW</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row">
-                            <h6 style="text-align: left;"><a href="#" class="font-Lato-Regular"> All India Complete Database</a><br>₹1,299.00</h6>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <!-- product element row2 end -->
-        <div id="button-bar" class="container-fluid">
+        <div id="button-bar" class="container-fluid" style="margin-top:20%">
             <div id="button-bar-center" class="container" style="padding-top: 20px; ">
                 <button type="button" class="btn font-Lato-Regular" id="button-color"
                     style=" transition: transform .3s, box-shadow .3s, background-color .3s, color .3s, opacity .3s;box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.22); ">SHOW
@@ -1240,46 +1124,80 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="card-group">
-                                <div class="card hv2">
-                                    <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
+                                <?php
+                                    $id = 1;
+                                    $query = "SELECT * FROM `Product` LIMIT 3";
+                                    if ($result = mysqli_query($conn, $query)) {
+                                        if( ! mysqli_num_rows($result) ) {
+                                            //header("Location: index");
+                                        } else {
+                                            while( $row = mysqli_fetch_array($result)){
+                                            $table_name = $row['table_name'];
+                                            $product_category = $row['product_category'];
+                                            $proId = $row['id'];
+                                            $query1 = "SELECT * FROM `$table_name` WHERE `id` =  $id" ;
+                                            if ($result1 = mysqli_query($conn, $query1)) {
+                                                if( ! mysqli_num_rows($result1) ) {
+
+                                                } else {
+                                                    while( $row = mysqli_fetch_array($result1)){
+                                                        $img= $row['image'];
+                                                        $des = $row['description'];
+                                                        $o_price = $row['original price'];
+                                                        $d_price = $row['discounted price'];
+                                ?>
+                                <div class="card hv2" onclick="location.href='desc?Product=<?=$proId ?>';" style="cursor: pointer;">
+                                    <img class="card-img" src="<?=$img ?>" alt="Card image" id="main-img">
                                     <div class="card-img-overlay" id="cbody">
-                                        <p class="mb-0 card-title font-Lato-Regular">WHATSAPP NUMBER DATABASE</p>
+                                        <p class="mb-0 card-title font-Lato-Regular"><?=$des ?></p>
                                     </div>
                                 </div>
-                                <div class="card hv2">
-                                    <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
-                                    <div class="card-img-overlay" id="cbody">
-                                        <p class="mb-0 card-title font-Lato-Regular">WHATSAPP NUMBER DATABASE</p>
-                                    </div>
-                                </div>
-                                <div class="card hv2">
-                                    <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
-                                    <div class="card-img-overlay" id="cbody">
-                                        <p class="mb-0 card-title font-Lato-Regular">WHATSAPP NUMBER DATABASE</p>
-                                    </div>
-                                </div>
+                                <?php
+                                            }}}
+                                        }}}
+                                ?>
+                                
+                                
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="card-group">
-                                <div class="card hv2">
-                                    <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
+                                
+                            <?php
+                                $id = 1;
+                                $query = "SELECT * FROM `Product` WHERE `id` >  3 LIMIT 3";
+                                if ($result = mysqli_query($conn, $query)) {
+                                    if( ! mysqli_num_rows($result) ) {
+                                        //header("Location: index");
+                                    } else {
+                                        while( $row = mysqli_fetch_array($result)){
+                                            $table_name = $row['table_name'];
+                                            $product_category = $row['product_category'];
+                                            $proId = $row['id'];
+                                            $query1 = "SELECT * FROM `$table_name` WHERE `id` =  $id" ;
+                                            if ($result1 = mysqli_query($conn, $query1)) {
+                                                if( ! mysqli_num_rows($result1) ) {
+
+                                            } else {
+                                                while( $row = mysqli_fetch_array($result1)){
+                                                    $img= $row['image'];
+                                                    $des = $row['description'];
+                                                    $o_price = $row['original price'];
+                                                    $d_price = $row['discounted price'];
+                                ?>
+                                
+                                <div class="card hv2" onclick="location.href='desc?Product=<?=$proId ?>';">
+                                    <img class="card-img" src="<?=$img ?>" alt="Card image" id="main-img">
                                     <div class="card-img-overlay" id="cbody">
-                                        <p class="mb-0 card-title font-Lato-Regular">WHATSAPP NUMBER DATABASE</p>
+                                        <p class="mb-0 card-title font-Lato-Regular"><?=$des ?></p>
                                     </div>
                                 </div>
-                                <div class="card hv2">
-                                    <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
-                                    <div class="card-img-overlay" id="cbody">
-                                        <p class="mb-0 card-title font-Lato-Regular">WHATSAPP NUMBER DATABASE</p>
-                                    </div>
-                                </div>
-                                <div class="card hv2">
-                                    <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
-                                    <div class="card-img-overlay" id="cbody">
-                                        <p class="mb-0 card-title font-Lato-Regular">WHATSAPP NUMBER DATABASE</p>
-                                    </div>
-                                </div>
+
+                                <?php
+                                                    }}}
+                                                }}}
+                                ?>
+                                
                             </div>
                         </div>
                     </div>
@@ -1422,86 +1340,55 @@
         <!-- card start -->
         <div id="card-bar-mob" class="container-fluid">
             <div id="card-bar-center-mob" class="container-sm ">
-                <div class="row row mx-md-n5">
-                    <div class="col-6 px-md-5">
+            <div class="row row mx-md-n5">
+            <?php
+                        $id = 1;
+                         $query = "SELECT * FROM `Product`";
+                         if ($result = mysqli_query($conn, $query)) {
+                            if( ! mysqli_num_rows($result) ) {
+                                //header("Location: index");
+                            } else {
+                                while( $row = mysqli_fetch_array($result)){
+                                    $table_name = $row['table_name'];
+                                    $product_category = $row['product_category'];
+                                    $proId = $row['id'];
+                                    $query1 = "SELECT * FROM `$table_name` WHERE `id` =  $id" ;
+                                    if ($result1 = mysqli_query($conn, $query1)) {
+                                        if( ! mysqli_num_rows($result1) ) {
+
+                                        } else {
+                                            while( $row = mysqli_fetch_array($result1)){
+                                                $img= $row['image'];
+                                                $des = $row['description'];
+                                                $o_price = $row['original price'];
+                                                $d_price = $row['discounted price'];
+                                          
+                        //         }
+                        //     }
+                        //   }
+                         
+                    ?>
+                    <div class="col-6 px-md-5" onclick="location.href='desc?Product=<?=$proId ?>';" style="cursor: pointer;">
                         <div class="row">
-                            <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
+                            <img class="card-img-top center" src="<?=$img ?>" alt="Card image cap">
                         </div>
                         <div class="row mt-2">
-                            <p style="text-align: left; font-size: 12px; font-weight: bold; color:black;"class="text font-Lato-Regular" ><a href="#">All India
-                                    Complete
-                                    Database</a><br>₹1,299.00</p>
+                            <p style="text-align: left; font-size: 12px; font-weight: bold; color:black;"class="text font-Lato-Regular" ><a href="#"><?=$des ?></a><br>₹<?=$d_price ?></p>
                         </div>
                     </div>
-                    <div class="col-6 px-md-5">
-                        <div class="row">
-                            <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                        </div>
-                        <div class="row mt-2">
-                            <p style="text-align: left; font-size: 12px; font-weight: bold; color:black;" class="text font-Lato-Regular"><a href="#">All India
-                                    Complete
-                                    Database</a><br>₹1,299.00</p>
-                        </div>
-                    </div>
+                    <?php
+                                            }}}
+                                        }}};
+                    ?>
                 </div>
             </div>
         </div>
         <!-- card end -->
         <!-- card start -->
-        <div id="card-bar-mob" class="container-fluid">
-            <div id="card-bar-center-mob" class="container-sm ">
-                <div class="row row mx-md-n5">
-                    <div class="col-6 px-md-5">
-                        <div class="row">
-                            <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                        </div>
-                        <div class="row mt-2">
-                            <p style="text-align: left; font-size: 12px; font-weight: bold;color:black; " class="text font-Lato-Regular"><a href="#">All India
-                                    Complete
-                                    Database</a><br>₹1,299.00</p>
-                        </div>
-                    </div>
-                    <div class="col-6 px-md-5">
-                        <div class="row">
-                            <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                        </div>
-                        <div class="row mt-2">
-                            <p style="text-align: left; font-size: 12px; font-weight: bold;color:black;" class="text font-Lato-Regular"><a href="#">All India
-                                    Complete
-                                    Database</a><br>₹1,299.00</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <!-- card end -->
         <!-- card start -->
-        <div id="card-bar-mob" class="container-fluid">
-            <div id="card-bar-center-mob" class="container-sm ">
-                <div class="row row mx-md-n5">
-                    <div class="col-6 px-md-5">
-                        <div class="row">
-                            <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                        </div>
-                        <div class="row mt-2">
-                            <p style="text-align: left; font-size: 12px; font-weight: bold; color:black;" class="text font-Lato-Regular"><a href="#">All India
-                                    Complete
-                                    Database</a><br>₹1,299.00</p>
-                        </div>
-                    </div>
-                    <div class="col-6 px-md-5">
-                        <div class="row">
-                            <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                        </div>
-                        <div class="row mt-2">
-                            <p style="text-align: left; font-size: 12px; font-weight: bold;color:black;" class="text font-Lato-Regular"><a href="#">All India
-                                    Complete
-                                    Database</a><br>₹1,299.00</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <!-- card end -->
         <!-- button start -->
         <div id="button-bar" class="container-fluid">
@@ -1535,52 +1422,85 @@
                         <div class="carousel-item active">
                             <div class="card-group">
                                 <div class="row row-cols-2">
-                                    <div class="col-sm sss">
+                                    
+                                <?php
+                                    $id = 1;
+                                    $query = "SELECT * FROM `Product` LIMIT 2";
+                                    if ($result = mysqli_query($conn, $query)) {
+                                        if( ! mysqli_num_rows($result) ) {
+                                            //header("Location: index");
+                                        } else {
+                                            while( $row = mysqli_fetch_array($result)){
+                                            $table_name = $row['table_name'];
+                                            $product_category = $row['product_category'];
+                                            $proId = $row['id'];
+                                            $query1 = "SELECT * FROM `$table_name` WHERE `id` =  $id" ;
+                                            if ($result1 = mysqli_query($conn, $query1)) {
+                                                if( ! mysqli_num_rows($result1) ) {
+
+                                                } else {
+                                                    while( $row = mysqli_fetch_array($result1)){
+                                                        $img= $row['image'];
+                                                        $des = $row['description'];
+                                                        $o_price = $row['original price'];
+                                                        $d_price = $row['discounted price'];
+                                ?>
+                                    <div class="col sss" onclick="location.href='desc?Product=<?=$proId ?>';">
                                         <div class="card">
-                                            <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
+                                            <img class="card-img" src="<?=$img ?>" alt="Card image" id="main-img">
                                             <div id="cbody-mob">
                                                 <p class="card-title mb-0 text font-Lato-Regular"
-                                                    style="padding: 10px;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">
-                                                    WHATSAPP NUMBER DATABASE</p>
+                                                    style="padding: 10px;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;"><?=$des ?></p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm sss">
-                                        <div class="card">
-                                            <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
-                                            <div id="cbody-mob">
-                                                <p class="card-title mb-0 text font-Lato-Regular"
-                                                    style="padding: 10px;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">
-                                                    WHATSAPP NUMBER DATABASE</p>
-                                            </div>
-                                        </div>
-                                    </div>
+
+                                    <?php
+                                                    }}}
+                                                }}}
+                                    ?>
+
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="card-group">
                                 <div class="row row-cols-2">
-                                    <div class="col-sm sss">
+                                <?php
+    $id = 1;
+    $query = "SELECT * FROM `Product` WHERE `id` >  2 LIMIT 2";
+    if ($result = mysqli_query($conn, $query)) {
+        if( ! mysqli_num_rows($result) ) {
+            //header("Location: index");
+        } else {
+            while( $row = mysqli_fetch_array($result)){
+            $table_name = $row['table_name'];
+            $product_category = $row['product_category'];
+            $proId = $row['id'];
+            $query1 = "SELECT * FROM `$table_name` WHERE `id` =  $id" ;
+            if ($result1 = mysqli_query($conn, $query1)) {
+                if( ! mysqli_num_rows($result1) ) {
+
+                } else {
+                    while( $row = mysqli_fetch_array($result1)){
+                        $img= $row['image'];
+                        $des = $row['description'];
+                        $o_price = $row['original price'];
+                        $d_price = $row['discounted price'];
+?>
+                                    <div class="col sss" onclick="location.href='desc?Product=<?=$proId ?>';">
                                         <div class="card">
-                                            <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
+                                            <img class="card-img" src="<?=$img ?>" alt="Card image" id="main-img">
                                             <div id="cbody-mob">
                                                 <p class="card-title mb-0 text font-Lato-Regular"
-                                                    style="padding: 10px;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">
-                                                    WHATSAPP NUMBER DATABASE</p>
+                                                    style="padding: 10px;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;"><?=$des ?></p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm sss">
-                                        <div class="card ">
-                                            <img class="card-img" src="./img/data.png" alt="Card image" id="main-img">
-                                            <div id="cbody-mob">
-                                                <p class="card-title mb-0 text font-Lato-Regular"
-                                                    style="padding: 10px;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">
-                                                    WHATSAPP NUMBER DATABASE</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <?php
+                    }}}
+                }}}
+                                ?>
                                 </div>
                             </div>
                         </div>
