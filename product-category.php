@@ -16,6 +16,7 @@
             while( $row = mysqli_fetch_array($result)){
                 $table_name = $row['table_name'];
                 $product_category = $row['product_category'];
+                $proId = $row['id'];
             }
         }
       }
@@ -224,12 +225,13 @@
 
                                     while( $row = mysqli_fetch_array($result)){
                                         $img= $row['image'];
-                                        $des = $row['description'];
-                                        $o_price = $row['original price'];
-                                        $d_price = $row['discounted price'];
+                                        $des = $row['category'];
+                                        $o_price = $row['original_price'];
+                                        $d_price = $row['discounted_price'];
+                                        $productId = $row['id'];
                         ?>
 
-                        <div class="col-4 px-md-5" style="margin-top: 5px; margin-bottom: 5px;">
+                        <div class="col-4 px-md-5" style="margin-top: 5px; margin-bottom: 5px;" onclick="location.href='desc?Type=<?=$proId ?>&Product=<?=$productId ?>';" style="cursor: pointer;">
                             <div class="row">
                                 <div class="col">
                                     <div class="hv">
@@ -255,14 +257,14 @@
                             <div class="row mt-2">
                                 <div class="col">
                                     <p style="font-size: 11px;opacity: .7;margin-top: .1em;
-                                        margin-bottom: .1em;font-weight: 400; color: #282828;" class="font-Lato-Regular">
+                                        margin-bottom: .1em;font-weight: 400; color: #282828;text-transform: uppercase;" class="font-Lato-Regular">
                                         <?=$des ?>
                                     </p>
                                 </div>
                                 <div class="w-100"></div>
                                 <div class="col">
                                     <h6 style="text-align: left;" id="product-link">
-                                        <a href="#" class="font-Lato-Regular" style="font-size: 13px;">
+                                        <a href="#" class="font-Lato-Regular" style="font-size: 13px;text-transform: uppercase;">
                                             <?=$des ?>
                                         </a>
                                        
@@ -330,28 +332,29 @@
                                     }else{
                                         while( $row = mysqli_fetch_array($result)){
                                             $img= $row['image'];
-                                            $des = $row['description'];
-                                            $o_price = $row['original price'];
-                                            $d_price = $row['discounted price']
+                                            $des = $row['category'];
+                                            $o_price = $row['original_price'];
+                                            $d_price = $row['discounted_price'];
+                                            $productId = $row['id'];
                             ?>
 
 
 
-                        <div class="col-6 px-md-5" style="margin-top: 5px; margin-bottom: 5px;">
+                        <div class="col-6 px-md-5" style="margin-top: 5px; margin-bottom: 5px;" onclick="location.href='desc?Type=<?=$proId ?>&Product=<?=$productId ?>';" style="cursor: pointer;">
                             <div class="row">
                                 <img class="card-img-top center" src="<?=$img ?>" alt="Card image cap">
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
                                     <p style="font-size: 10px; opacity: 0.7;margin-top: .1em;
-                                margin-bottom: .1em;font-weight: 400; color: #282828;" class="font-Lato-Regular">
+                                margin-bottom: .1em;font-weight: 400; color: #282828;text-transform: uppercase;" class="font-Lato-Regular">
                                         <?=$des ?>
                                     </p>
                                 </div>
                                 <div class="w-100"></div>
                                 <div class="col">
                                     <h6 style="text-align: left; font-size: 12px;" id="product-link">
-                                        <a href="#" class="font-Lato-Regular">
+                                        <a href="#" class="font-Lato-Regular" style="text-transform: uppercase;">
                                             <?=$des ?>
                                         </a>
                                         <p style="font-weight:bold; color:#111;font-size: .9em;margin-top:5px;"

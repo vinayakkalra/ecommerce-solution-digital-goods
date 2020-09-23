@@ -1040,7 +1040,7 @@
                                 while( $row = mysqli_fetch_array($result)){
                                     $table_name = $row['table_name'];
                                     $product_category = $row['product_category'];
-                                    $proId = $row['id'];
+                                    $proId = $row['id']; // product type id
                                     $query1 = "SELECT * FROM `$table_name` WHERE `id` =  $id" ;
                                     if ($result1 = mysqli_query($conn, $query1)) {
                                         if( ! mysqli_num_rows($result1) ) {
@@ -1048,16 +1048,17 @@
                                         } else {
                                             while( $row = mysqli_fetch_array($result1)){
                                                 $img= $row['image'];
-                                                $des = $row['description'];
-                                                $o_price = $row['original price'];
-                                                $d_price = $row['discounted price'];
+                                                $des = $row['category'];
+                                                $o_price = $row['original_price'];
+                                                $d_price = $row['discounted_price'];
+                                                $productId = $row['id'];
                                           
                         //         }
                         //     }
                         //   }
                          
                     ?>
-                    <div class="col-3 px-md-5" onclick="location.href='desc?Product=<?=$proId ?>';" style="cursor: pointer;">
+                    <div class="col-3 px-md-5" onclick="location.href='desc?Type=<?=$proId ?>&Product=<?=$productId ?>';" style="cursor: pointer;">
 
                         <div class="row">
                             <div class="col">
@@ -1082,7 +1083,7 @@
 
                         </div>
                         <div class="row mt-2">
-                            <h6 style="text-align: left;"><a href="#" class="font-Lato-Regular"><?=$des ?></a><br>₹<?=$d_price ?></h6>
+                            <h6 style="text-align: left;"><a href="#" class="font-Lato-Regular" style="text-transform: uppercase;"><?=$des ?></a><br>₹<?=$d_price ?></h6>
                         </div>
 
                     </div>
@@ -1142,14 +1143,15 @@
                                                 } else {
                                                     while( $row = mysqli_fetch_array($result1)){
                                                         $img= $row['image'];
-                                                        $des = $row['description'];
-                                                        $o_price = $row['original price'];
-                                                        $d_price = $row['discounted price'];
+                                                        $des = $row['category'];
+                                                        $o_price = $row['original_price'];
+                                                        $d_price = $row['discounted_price'];
+                                                        $productId = $row['id'];
                                 ?>
-                                <div class="card hv2" onclick="location.href='desc?Product=<?=$proId ?>';" style="cursor: pointer;">
+                                <div class="card hv2" onclick="location.href='desc?Type=<?=$proId ?>&Product=<?=$productId ?>';" style="cursor: pointer;">
                                     <img class="card-img" src="<?=$img ?>" alt="Card image" id="main-img">
                                     <div class="card-img-overlay" id="cbody">
-                                        <p class="mb-0 card-title font-Lato-Regular"><?=$des ?></p>
+                                        <p class="mb-0 card-title font-Lato-Regular" style="text-transform: uppercase;"><?=$des ?></p>
                                     </div>
                                 </div>
                                 <?php
@@ -1181,15 +1183,16 @@
                                             } else {
                                                 while( $row = mysqli_fetch_array($result1)){
                                                     $img= $row['image'];
-                                                    $des = $row['description'];
-                                                    $o_price = $row['original price'];
-                                                    $d_price = $row['discounted price'];
+                                                    $des = $row['category'];
+                                                    $o_price = $row['original_price'];
+                                                    $d_price = $row['discounted_price'];
+                                                    $productId = $row['id'];
                                 ?>
                                 
-                                <div class="card hv2" onclick="location.href='desc?Product=<?=$proId ?>';">
+                                <div class="card hv2" onclick="location.href='desc?Type=<?=$proId ?>&Product=<?=$productId ?>';">
                                     <img class="card-img" src="<?=$img ?>" alt="Card image" id="main-img">
                                     <div class="card-img-overlay" id="cbody">
-                                        <p class="mb-0 card-title font-Lato-Regular"><?=$des ?></p>
+                                        <p class="mb-0 card-title font-Lato-Regular" style="text-transform: uppercase;"><?=$des ?></p>
                                     </div>
                                 </div>
 
@@ -1359,21 +1362,22 @@
                                         } else {
                                             while( $row = mysqli_fetch_array($result1)){
                                                 $img= $row['image'];
-                                                $des = $row['description'];
-                                                $o_price = $row['original price'];
-                                                $d_price = $row['discounted price'];
+                                                $des = $row['category'];
+                                                $o_price = $row['original_price'];
+                                                $d_price = $row['discounted_price'];
+                                                $productId = $row['id'];
                                           
                         //         }
                         //     }
                         //   }
                          
                     ?>
-                    <div class="col-6 px-md-5" onclick="location.href='desc?Product=<?=$proId ?>';" style="cursor: pointer;">
+                    <div class="col-6 px-md-5" onclick="location.href='desc?Type=<?=$proId ?>&Product=<?=$productId ?>';" style="cursor: pointer;">
                         <div class="row">
                             <img class="card-img-top center" src="<?=$img ?>" alt="Card image cap">
                         </div>
                         <div class="row mt-2">
-                            <p style="text-align: left; font-size: 12px; font-weight: bold; color:black;"class="text font-Lato-Regular" ><a href="#"><?=$des ?></a><br>₹<?=$d_price ?></p>
+                            <p style="text-align: left; font-size: 12px; font-weight: bold; color:black;"class="text font-Lato-Regular" ><a href="#" style="text-transform: uppercase;"><?=$des ?></a><br>₹<?=$d_price ?></p>
                         </div>
                     </div>
                     <?php
@@ -1441,16 +1445,17 @@
                                                 } else {
                                                     while( $row = mysqli_fetch_array($result1)){
                                                         $img= $row['image'];
-                                                        $des = $row['description'];
-                                                        $o_price = $row['original price'];
-                                                        $d_price = $row['discounted price'];
+                                                        $des = $row['category'];
+                                                        $o_price = $row['original_price'];
+                                                        $d_price = $row['discounted_price'];
+                                                        $productId = $row['id'];
                                 ?>
-                                    <div class="col sss" onclick="location.href='desc?Product=<?=$proId ?>';">
+                                    <div class="col sss" onclick="location.href='desc?Type=<?=$proId ?>&Product=<?=$productId ?>';">
                                         <div class="card">
                                             <img class="card-img" src="<?=$img ?>" alt="Card image" id="main-img">
                                             <div id="cbody-mob">
                                                 <p class="card-title mb-0 text font-Lato-Regular"
-                                                    style="padding: 10px;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;"><?=$des ?></p>
+                                                    style="padding: 10px;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;text-transform: uppercase;"><?=$des ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -1484,16 +1489,17 @@
                 } else {
                     while( $row = mysqli_fetch_array($result1)){
                         $img= $row['image'];
-                        $des = $row['description'];
-                        $o_price = $row['original price'];
-                        $d_price = $row['discounted price'];
+                        $des = $row['category'];
+                        $o_price = $row['original_price'];
+                        $d_price = $row['discounted_price'];
+                        $productId = $row['id'];
 ?>
-                                    <div class="col sss" onclick="location.href='desc?Product=<?=$proId ?>';">
+                                    <div class="col sss" onclick="location.href='desc?Type=<?=$proId ?>&Product=<?=$productId ?>';">
                                         <div class="card">
                                             <img class="card-img" src="<?=$img ?>" alt="Card image" id="main-img">
                                             <div id="cbody-mob">
                                                 <p class="card-title mb-0 text font-Lato-Regular"
-                                                    style="padding: 10px;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;"><?=$des ?></p>
+                                                    style="padding: 10px;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;text-transform: uppercase;"><?=$des ?></p>
                                             </div>
                                         </div>
                                     </div>
