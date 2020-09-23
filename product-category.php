@@ -221,11 +221,12 @@
                                 if( ! mysqli_num_rows($result) ) {
                                     header("Location: index");
                                 }else{
+
                                     while( $row = mysqli_fetch_array($result)){
                                         $img= $row['image'];
                                         $des = $row['description'];
                                         $o_price = $row['original price'];
-                                        $d_price = $row['discounted price']
+                                        $d_price = $row['discounted price'];
                         ?>
 
                         <div class="col-4 px-md-5" style="margin-top: 5px; margin-bottom: 5px;">

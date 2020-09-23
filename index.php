@@ -1029,11 +1029,39 @@
         <div id="card-bar" class="container-fluid">
             <div id="card-bar-center" class="container">
                 <div class="row mx-md-n5">
-                    <div class="col-3 px-md-5">
+
+                    <?php
+                        $id = 1;
+                         $query = "SELECT * FROM `Product`";
+                         if ($result = mysqli_query($conn, $query)) {
+                            if( ! mysqli_num_rows($result) ) {
+                                //header("Location: index");
+                            } else {
+                                while( $row = mysqli_fetch_array($result)){
+                                    $table_name = $row['table_name'];
+                                    $product_category = $row['product_category'];
+                                    $query1 = "SELECT * FROM `$table_name` WHERE `id` =  $id" ;
+                                    if ($result1 = mysqli_query($conn, $query1)) {
+                                        if( ! mysqli_num_rows($result1) ) {
+
+                                        } else {
+                                            while( $row = mysqli_fetch_array($result1)){
+                                                $img= $row['image'];
+                                                $des = $row['description'];
+                                                $o_price = $row['original price'];
+                                                $d_price = $row['discounted price'];
+                                          
+                        //         }
+                        //     }
+                        //   }
+                         
+                    ?>
+                    <div class="" style="width:11%; margin-left:35px;">
+
                         <div class="row">
                             <div class="col">
                                 <div class="hv">
-                                    <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
+                                    <img class="card-img-top center" src="<?=$img ?>" alt="Card image cap">
                                     <div class="over" style="display: flex;align-items: flex-end;">
                                         <div style="width: 100%;">
                                             <div class="icon-bg">
@@ -1053,94 +1081,15 @@
 
                         </div>
                         <div class="row mt-2">
-                            <h6 style="text-align: left;"><a href="#" class="font-Lato-Regular">All India Complete Database</a><br>₹1,299.00</h6>
+                            <h6 style="text-align: left;"><a href="#" class="font-Lato-Regular"><?=$des ?></a><br>₹<?=$d_price ?></h6>
                         </div>
 
                     </div>
-                    <div class="col-3 px-md-5">
-                        <div class="row">
-                            <div class="col">
-                                <div class="hv">
-                                    <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                                    <div class="over" style="display: flex;align-items: flex-end;">
-                                        <div style="width: 100%;">
-                                            <div class="icon-bg">
-                                                <div class="icon">
-                                                    <img src="./img/icon.PNG" style="width: 30px;">
-                                                </div>
-                                                <div class="s"></div>
-                                            </div>
-                                            <div id="text-bg"
-                                                style="display: flex;align-items: center;text-align: center;justify-content: center;">
-                                                <div class="text font-Lato-Regular">QUICK VIEW</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <?php   
+                                            }}}           
+                             }}};
+                    ?>
 
-                        </div>
-                        <div class="row mt-2">
-                            <h6 style="text-align: left;"><a href="#" class="font-Lato-Regular">All India Complete Database</a><br>₹1,299.00</h6>
-                        </div>
-
-                    </div>
-                    <div class="col-3 px-md-5">
-                        <div class="row">
-                            <div class="col">
-                                <div class="hv">
-                                    <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                                    <div class="over" style="display: flex;align-items: flex-end;">
-                                        <div style="width: 100%;">
-                                            <div class="icon-bg">
-                                                <div class="icon">
-                                                    <img src="./img/icon.PNG" style="width: 30px;">
-                                                </div>
-                                                <div class="s"></div>
-                                            </div>
-                                            <div id="text-bg"
-                                                style="display: flex;align-items: center;text-align: center;justify-content: center;">
-                                                <div class="text font-Lato-Regular">QUICK VIEW</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row mt-2">
-                            <h6 style="text-align: left;"><a href="#" class="font-Lato-Regular">All India Complete Database</a><br>₹1,299.00</h6>
-                        </div>
-
-                    </div>
-                    <div class="col-3 px-md-5">
-                        <div class="row">
-                            <div class="col">
-                                <div class="hv">
-                                    <img class="card-img-top center" src="./img/data.png" alt="Card image cap">
-                                    <div class="over" style="display: flex;align-items: flex-end;">
-                                        <div style="width: 100%;">
-                                            <div class="icon-bg">
-                                                <div class="icon">
-                                                    <img src="./img/icon.PNG" style="width: 30px;">
-                                                </div>
-                                                <div class="s"></div>
-                                            </div>
-                                            <div id="text-bg"
-                                                style="display: flex;align-items: center;text-align: center;justify-content: center;">
-                                                <div class="text" class="font-Lato-Regular">QUICK VIEW</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row">
-                            <h6 style="text-align: left;"><a href="#" class="font-Lato-Regular">All India Complete Database</a><br>₹1,299.00</h6>
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </div>
