@@ -1,6 +1,7 @@
 <?php
-    session_start();
-    require_once('./php/config.php');
+session_start();
+
+include("./php/config.php");
     if(!isset($_GET['Product'] )){
         $Product = 1 ;
       }else{
@@ -8,7 +9,7 @@
          $Product = $_GET['Product'];
       }
       $index = $Product;
-      $query = "SELECT * FROM `Product`  WHERE `id` =  $Product";
+      $query = "SELECT * FROM `product`  WHERE `id` =  $Product";
       if ($result = mysqli_query($conn, $query)) {
         if( ! mysqli_num_rows($result) ) {
             header("Location: index");
@@ -191,7 +192,7 @@
                         <hr>
                     </div>
                     <?php
-                        $querysec = "SELECT * FROM `Product` ";
+                        $querysec = "SELECT * FROM `product` ";
                         if ($result = mysqli_query($conn, $querysec)) {
                           if( ! mysqli_num_rows($result) ) {
                             //   header("Location: index");
