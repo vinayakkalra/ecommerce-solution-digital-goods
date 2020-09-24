@@ -1,7 +1,7 @@
 <?php
-  // $conn= new mysqli("localhost","root","","test_data_export");
+  $conn= new mysqli("localhost","root","","test_data_export");
     // bulkdatabaseprovider
-  $conn= new mysqli("localhost","bulkdatabaseprov","jd9vjmt0jE1r","bulkdatabaseprovider");
+  // $conn= new mysqli("localhost","bulkdatabaseprov","jd9vjmt0jE1r","bulkdatabaseprovider");
   // $conn= new mysqli("localhost","parvinder","pzxuTAmsgGR3","test_content_engine");
   
   if($conn->connect_error){
