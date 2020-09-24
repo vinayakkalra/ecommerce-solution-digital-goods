@@ -1,3 +1,50 @@
+<?php
+    session_start();
+    require_once('./php/config.php');
+    if(!isset($_GET['Type'] )){
+        $type = 1 ;
+      }else{
+     
+         $type = $_GET['Type'];
+      }
+      if(!isset($_GET['Product'] )){
+        $Product = 1 ;
+      }else{
+     
+         $Product = $_GET['Product'];
+      }
+      $index = $type;
+      $query = "SELECT * FROM `product`  WHERE `id` =  $type";
+      if ($result = mysqli_query($conn, $query)) {
+        if( ! mysqli_num_rows($result) ) {
+            header("Location: index");
+        } else {
+            while( $row = mysqli_fetch_array($result)){
+                $table_name = $row['table_name'];
+                $product_category = $row['product_category'];
+            }
+        }
+      }
+      $query = "SELECT * FROM `$table_name` where `id` =  $Product ";
+      if ($result = mysqli_query($conn, $query)) {
+          if( ! mysqli_num_rows($result) ) {
+              header("Location: index");
+          }else{
+
+              while( $row = mysqli_fetch_array($result)){
+                  $img = $row['image'];
+                  $category = $row['category'];
+                  $original_price = $row['original_price'];
+                  $discounted_price = $row['discounted_price'];
+                  $full_description = $row['full_description'];
+                  $available_field = $row['available_field'];
+                  $records = $row['records'];
+                  $discount_percentage = $row['discount_percentage'];
+              }
+            }
+        }
+
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -156,16 +203,16 @@
             <div class="container font-Lato-Regular" style="width: 100%;">
                 <ul class="nav nav-tabs" id="nav-tab" role="tablist">
                     <li class="nav-item" style="margin-right: 0px;">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                        <a class="nav-link active" id="home-tab" data-toggle="tab"  role="tab"
                             aria-controls="home" aria-selected="true">SHOPPING CART<span
                                 style="margin-left: 30px;">></span></a>
                     </li>
                     <li class="nav-item" style="margin-left: 0px; margin-right: 0px;">
-                        <a class="nav-link" href="details">CHECKOUT DETAILS <span
+                        <a class="nav-link" >CHECKOUT DETAILS <span
                                 style="margin-left: 30px;">></span></a>
                     </li>
                     <li class="nav-item" style="margin-left: 0px;">
-                        <a class="nav-link disabled" href="#">ORDER COMPLETE </a>
+                        <a class="nav-link disabled">ORDER COMPLETE </a>
                     </li>
                 </ul>
 
@@ -177,51 +224,60 @@
 
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="container" class="font-Lato-Regular" style="font-size:.9em; font-weight:600;">
-                            <div class="row">
+                            <div class="row" >
                                 <div class="" style="width: 60%;">
                                     <!-- LEFT DIV -->
                                     <div class="container">
-                                        <div class="row">
-                                            <div class="col-6" style="text-align: left;">
+                                        <div class="row" style="height:auto;">
+                                            <div class="col-6" style="text-align: left;height:100%;">
                                                 <span style="text-align: left;">PRODUCT</span>
+                                            </div>
+                                            <div class="col-2" style="justify-content: center;height:100%;" >
+                                              <span style="text-align: left;">PRICE</span>
+                                            </div>
+                                            <div class="col-2" style="justify-content: center;height:100%;">
+                                                <span style="text-align: left;">QUANTITY</span>
+                                            </div>
+                                            <div class="col-2" style="justify-content: center;height:100%;">
+                                                <span style="text-align: left;">SUBTOTAL</span>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="height:auto;">
+                                            <div class="col-6" style="text-align: left;height:100%;">
                                                 <div class="container" style="margin-top: 15px;">
                                                     <div class="row">
-                                                        <div class="col-3" style="margin-right: 0%;padding-left: 0%; padding-right: 20px;">
-                                                            <img src="img/data.png" style="width:180%;">
+                                                        <div class="col-4" style="margin-right: 0%;padding-left: 0%;padding: 0;/* padding-right: 20px; */">
+                                                            <img src="<?=$img?>" style="width: 100%;">
                                                         </div>
-                                                        <div class="col-9" style="margin-left: 0%;">
-                                                            <p><a href="" style="font-size: 100%; line-height: 80px;">Advocates/Lawyers
-                                                                    Database</a></p>
+                                                        <div class="col-8" style="margin-left: 0%;padding: 0 0 0 10px;">
+                                                            <p style="margin-bottom: 0;height: 100%;display: flex;align-items: center;"><a href="desc?Type=<?=$type?>&Product=<?=$Product?>" style="font-size: 100%;"><?=$category?></a></p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col">
-                                                PRICE
-                                                <div class="container" style="margin-top: 15px;">
-                                                    <div class="row">
-                                                        <div class="col-sm">
-                                                            <p style="line-height: 80px;">₹299.00</p>
+                                            <div class="col-2"  >
+                                                <div class="container" style="height: 100%;">
+                                                    <div class="row"  style="height: 100%;">
+                                                        <div class="col-sm p-0">
+                                                            <p  style="margin-bottom: 0;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">₹<?=number_format($discounted_price)?></p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col">
-                                                QUANTITY
-                                                <div class="container" style="margin-top: 15px;">
-                                                    <div class="row">
-                                                        <div class="col-sm">
-                                                            <p style="line-height: 80px;">1</p>
+                                            <div class="col-2"  >
+                                                <div class="container" style="height: 100%;">
+                                                    <div class="row"  style="height: 100%;">
+                                                        <div class="col-sm p-0">
+                                                            <p  style="margin-bottom: 0;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">1</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col">
-                                                SUBTOTAL
-                                                <div class="container" style="margin-top: 15px;">
-                                                    <div class="row">
-                                                        <div class="col-sm">
-                                                            <p style="line-height: 80px;">₹299.00</p>
+                                            <div class="col-2"  >
+                                                <div class="container" style="height: 100%;">
+                                                    <div class="row"  style="height: 100%;">
+                                                        <div class="col-sm p-0">
+                                                            <p  style="margin-bottom: 0;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">₹<?=number_format($discounted_price)?></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -230,10 +286,28 @@
                                         <div class="row" style="margin-top: 20px;">
                                             <div class="col">
                                                 <p style="text-align: left;">You may be interested in…</p>
-                                                <div class="container">
-                                                    <div class="row  mx-md-n5">
-                                                        <div class="col-5 px-md-5">
-                                                            <div class="row" style="text-align:left; ">
+                                                <div class="container p-0">
+                                                    <div class="row ">
+                                                    <!--  -->
+                                                    <?php
+                                       $query = "SELECT * FROM `$table_name` where `id` !=  $Product limit 4 ";
+                                       if ($result = mysqli_query($conn, $query)) {
+                                           if( ! mysqli_num_rows($result) ) {
+                                               header("Location: index");
+                                           }else{
+                                 
+                                               while( $row = mysqli_fetch_array($result)){
+                                                   $img = $row['image'];
+                                                   $productid = $row['id'];
+                                                   $category = $row['category'];
+                                                   $original_price = $row['original_price'];
+                                                   $discounted_price = $row['discounted_price'];
+                                                   $full_description = $row['full_description'];
+                                                   $available_field = $row['available_field'];
+                                                   $records = $row['records'];
+                                                   ?>
+                                                        <div class="col-3" style="padding:3px;cursor: pointer;">
+                                                            <div class="row" style="text-align:left;margin:5px;">
                                                                 <div class="col-12">
                                                                     <div class="hv">
                                                                         <img class="card-img-top center"
@@ -258,44 +332,19 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="row mt-2">
-                                                                <h6 style="text-align: left;"><a href="#"
+                                                            <div class="row mt-2" style="margin:5px;">
+                                                                <h6 style="text-align: left;"><a href="desc?Type=<?=$type?>&Product=<?=$productid ?>"
                                                                         class="font-Lato-Regular">All India
                                                                         Complete Database</a><br>₹1,299.00</h6>
                                                             </div>
                                                         </div>
-                                                        <div class="col-5 px-md-5">
-                                                            <div class="row" style="text-align:left; ">
-                                                                <div class="col-12">
-                                                                    <div class="hv">
-                                                                        <img class="card-img-top center"
-                                                                            src="./img/data.png" alt="Card image cap">
-                                                                        <div class="over"
-                                                                            style="display: flex;align-items: flex-end;">
-                                                                            <div style="width: 100%;">
-                                                                                <div class="icon-bg">
-                                                                                    <div class="icon">
-                                                                                        <img src="./img/icon.PNG"
-                                                                                            style="width: 30px;">
-                                                                                    </div>
-                                                                                    <div class="s"></div>
-                                                                                </div>
-                                                                                <div id="text-bg"
-                                                                                    style="display: flex;align-items: center;text-align: center;justify-content: center;">
-                                                                                    <div class="text font-Lato-Regular">
-                                                                                        QUICK VIEW</div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row mt-2">
-                                                                <h6 style="text-align: left;"><a href="#"
-                                                                        class="font-Lato-Regular">All India
-                                                                        Complete Database</a><br>₹1,299.00</h6>
-                                                            </div>
-                                                        </div>
+
+                                                    <?php
+                                               }
+                                             }
+                                         }
+                                    ?>
+                                                    <!--  -->
                                                     </div>
 
                                                 </div>
@@ -314,30 +363,38 @@
                                                 <div class="container">
                                                     <div class="row">
                                                         <div class="col-sm">
-                                                            <p style="font-weight: normal;">Subtotal</p>
+                                                            <p style="font-weight: normal;">Orignal Price</p>
                                                         </div>
                                                         <div class="col-sm" style="text-align: end;">
-                                                            <p>₹299.00</p>
+                                                            <p>₹<?=number_format($original_price)?></p>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-sm">
+                                                            <p style="font-weight: normal;">Discount</p>
+                                                        </div>
+                                                        <div class="col-sm" style="text-align: end;">
+                                                            <p><?=$discount_percentage?>% OFF</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" style="padding-top: 5px;border-top: 1px solid rgb(211, 197, 197);">
+                                                        <div class="col-sm">
                                                             <p style="font-weight: normal;">Total</p>
                                                         </div>
                                                         <div class="col-sm" style="text-align:end;">
-                                                            <p>₹299.00</p>
+                                                            <p>₹<?=number_format($discounted_price)?></p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-12">
-                                                <button type="button" class="btn"
+                                                <button type="button" class="btn" onclick="location.href='checkout?Type=<?=$type?>&Product=<?=$Product?>';"
                                                     style="min-height: 2.5em;background-color: #ef561e; color: white;border-radius: 0%; font-weight: bold;font-size: 1em;margin-bottom: 1em;padding: 0 1.2em; width: 100%;"
                                                     id="cartButton">PROCEED TO CHECKOUT</button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="container" style="text-align: left;margin-top: 20px;">
+                                    <!-- <div class="container" style="text-align: left;margin-top: 20px;">
                                         <div class="row" style="margin-bottom:10px;">
                                             <div class="col-12" style="margin-bottom: 10px;">
                                                 <p
@@ -360,19 +417,19 @@
 
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="font-Lato-Regular">
+                    <!-- <div class="font-Lato-Regular">
                         <p>Your cart is currently empty.</p>
                         <div>
                             <button type="button" class="btn"
                                 style="background-color:#24436e;color:white;border-radius: 0%; font-weight: bold; font-size: .7em;"
                                 id="downloadButton"><span>RETURN TO SHOP</span></button>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
 
@@ -400,7 +457,7 @@
             <div class="container font-Lato-Regular" style="width: 100%;">
                 <ul class="nav">
                     <li class="nav-item" style="margin: auto;">
-                        <a class="nav-link active" href="#">SHOPPING CART</a>
+                        <a class="nav-link active" >SHOPPING CART</a>
                     </li>
                 </ul>
             </div>
@@ -419,145 +476,151 @@
                         <div class="row">
                             <div class="col-12">
                                 <!-- LEFT DIV -->
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-9" style="text-align: left;">
-                                            PRODUCT
-                                            <div class="container" style="margin-top: 15px;">
-                                                <div class="row">
-                                                    <div class="col-3" style="margin-right: 0%; padding-left: 0%;">
-                                                        <img src="img/data.png" style="width:180%">
+                                <div class="container ">
+                                        <div class="row" style="height:auto;">
+                                            <div class="col-9" style="text-align: left;height:100%;">
+                                                <span style="text-align: left;">PRODUCT</span>
+                                            </div>
+                                            <div class="col-3" style="justify-content: center;height:100%;" >
+                                              <span style="text-align: left;">PRICE</span>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="height:auto;margin-bottom:20px;">
+                                            <div class="col-9" style="text-align: left;height:100%;">
+                                                <div class="container" style="margin-top: 15px;">
+                                                    <div class="row">
+                                                        <div class="col-4" style="margin-right: 0%;padding-left: 0%;padding: 0;/* padding-right: 20px; */">
+                                                            <img src="<?=$img?>" style="width: 100%;">
+                                                        </div>
+                                                        <div class="col-8" style="margin-left: 0%;padding: 0 0 0 10px;">
+                                                            <p style="margin-bottom: 0;height: 100%;display: flex;align-items: center;"><a href="desc?Type=<?=$type?>&Product=<?=$Product?>" style="font-size: 100%;"><?=$category?></a></p>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-9" style="margin-left: 0%;">
-                                                        <p><a href="" style="font-size: 70%;line-height: 5.5;" >Advocates/Lawyers Database</a></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-3"  >
+                                                <div class="container" style="height: 100%;">
+                                                    <div class="row"  style="height: 100%;">
+                                                        <div class="col-sm p-0">
+                                                            <p  style="margin-bottom: 0;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">₹<?=number_format($discounted_price)?></p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div class="col-2" style="text-align: right;">
-                                            QUANTITY
-                                            <div class="container" style="margin-top: 15px;">
-                                                <div class="row">
-                                                    <div class="col-sm" style="line-height: 5.5;">
-                                                        <p>1</p>
-                                                    </div>
-                                                </div>
+                                    <!--  -->
+                                    <!-- slider start -->
+        <div class="container font-Lato-Regular" style="width:100%;margin:0 auto;border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;padding-top:0px;"
+            id="commentBar">
+            <h3 style="text-align:left;padding-top: 15px;padding-bottom: 15px;font-weight: 700;font-size: 1.25em;">
+            You may be interested in…
+            </h3>
+            <div>
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <!-- first slide -->
+                            <!-- product start -->
+                            <div id="card-bar-mob" class="container-fluid p-0">
+                                <div id="card-bar-center-mob" class="container-sm ">
+                                    <div class="row row mx-md-n5">
+                                    <?php
+                                       $query = "SELECT * FROM `$table_name` where `id` !=  $Product limit 2 ";
+                                       if ($result = mysqli_query($conn, $query)) {
+                                           if( ! mysqli_num_rows($result) ) {
+                                               header("Location: index");
+                                           }else{
+                                 
+                                               while( $row = mysqli_fetch_array($result)){
+                                                   $img = $row['image'];
+                                                   $productid = $row['id'];
+                                                   $category = $row['category'];
+                                                   $original_price = $row['original_price'];
+                                                   $discounted_price = $row['discounted_price'];
+                                                   $full_description = $row['full_description'];
+                                                   $available_field = $row['available_field'];
+                                                   $records = $row['records'];
+                                                   ?>
+                                        <div class="col-6 px-md-5" onclick="location.href='desc?Type=<?=$type?>&Product=<?=$productid ?>';">
+                                            <div class="row">
+                                                <img class="card-img-top center" src="<?=$img?>"
+                                                    alt="Card image cap">
+                                            </div>
+                                            <div class="row mt-2">
+                                                <p style="text-align: left; font-size: 12px; font-weight: bold; color:black;"
+                                                    class="text font-Lato-Regular"><a href="desc?Type=<?=$type?>&Product=<?=$productid ?>"><?=$product_category?></a><br>₹<?=number_format($discounted_price)?></p>
                                             </div>
                                         </div>
-
+                                                        <?php
+                                               }
+                                             }
+                                         }
+                                    ?>
                                     </div>
-                                    <div class="row" style="margin-top: 20px;">
-                                        <div class="col">
-                                            <p style="text-align: left;">You may be interested in…</p>
-                                            <div class="container">
-                                                <div class="row  mx-md-n5">
-                                                    <div class="col-6 px-md-5">
-                                                        <div class="row" style="text-align:left; ">
-                                                            <div class="col-12">
-                                                                <div class="hv">
-                                                                    <img class="card-img-top center"
-                                                                        src="./img/data.png" alt="Card image cap">
-                                                                    <div class="over"
-                                                                        style="display: flex;align-items: flex-end;">
-                                                                        <div style="width: 100%;">
-                                                                            <div class="icon-bg">
-                                                                                <div class="icon">
-                                                                                    <img src="./img/icon.PNG"
-                                                                                        style="width: 30px;">
-                                                                                </div>
-                                                                                <div class="s"></div>
-                                                                            </div>
-                                                                            <div id="text-bg"
-                                                                                style="display: flex;align-items: center;text-align: center;justify-content: center;">
-                                                                                <div class="text font-Lato-Regular">
-                                                                                    QUICK VIEW</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mt-2">
-                                                            <h6 style="text-align: left;"><a href="#"
-                                                                    class="font-Lato-Regular">All India
-                                                                    Complete Database</a><br>₹1,299.00</h6>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6 px-md-5">
-                                                        <div class="row" style="text-align:left; ">
-                                                            <div class="col-12">
-                                                                <div class="hv">
-                                                                    <img class="card-img-top center"
-                                                                        src="./img/data.png" alt="Card image cap">
-                                                                    <div class="over"
-                                                                        style="display: flex;align-items: flex-end;">
-                                                                        <div style="width: 100%;">
-                                                                            <div class="icon-bg">
-                                                                                <div class="icon">
-                                                                                    <img src="./img/icon.PNG"
-                                                                                        style="width: 30px;">
-                                                                                </div>
-                                                                                <div class="s"></div>
-                                                                            </div>
-                                                                            <div id="text-bg"
-                                                                                style="display: flex;align-items: center;text-align: center;justify-content: center;">
-                                                                                <div class="text font-Lato-Regular">
-                                                                                    QUICK VIEW</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mt-2">
-                                                            <h6 style="text-align: left;"><a href="#"
-                                                                    class="font-Lato-Regular">All India
-                                                                    Complete Database</a><br>₹1,299.00</h6>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                </div>
+                            </div>
+                            <!-- product end -->
 
-                                            </div>
-                                        </div>
-                                    </div>
+                        </div>
+                    </div>
+                    <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a> -->
+                </div>
+            </div>
+        </div>
+                                    <!--  -->
+                                  
                                 </div>
                             </div>
                             <div class="col-12">
                                 <!-- right div -->
-                                <div class="container" style="text-align: left; margin-top: 30px;">
+                                <div class="container" style="text-align: left; margin-top: 0px;">
                                     <div class="row">
                                         <div class="col-12">
-                                            <p>CART TOTALS</p>
+                                            <p style="padding-bottom: 5px;border-bottom: 1px solid rgb(211, 197, 197);">CART TOTALS</p>
                                         </div>
                                         <div class="col-12">
                                             <div class="container">
                                                 <div class="row">
                                                     <div class="col-6">
-                                                        <p style="font-weight: normal;">Subtotal</p>
+                                                        <p style="font-weight: normal;">Orignal Price</p>
                                                     </div>
                                                     <div class="col-6">
-                                                        <p style="text-align: right;">₹299.00</p>
+                                                        <p style="text-align: right;"><?=number_format($original_price)?></p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-6">
+                                                        <p style="font-weight: normal;">Discount</p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p style="text-align: right;"><?=$discount_percentage?>% OFF</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="padding-top: 5px;border-top: 1px solid rgb(211, 197, 197);">
+                                                    <div class="col-6">
                                                         <p style="font-weight: normal;">Total</p>
                                                     </div>
                                                     <div class="col-6">
-                                                        <p style="text-align: right;">₹299.00</p>
+                                                        <p style="text-align: right;">₹<?=number_format($discounted_price)?></p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <button type="button" class="btn"
+                                            <button type="button" class="btn" onclick="location.href='checkout?Type=<?=$type?>&Product=<?=$Product?>';"
                                                 style="min-height: 2.5em;background-color: #ef561e; color: white;border-radius: 0%; font-weight: bold;font-size: 1em;margin-bottom: 1em;padding: 0 1.2em; width: 100%;"
                                                 id="cartButton">PROCEED TO CHECKOUT</button>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="container" style="text-align: left;margin-top: 20px;">
+                                <!-- <div class="container" style="text-align: left;margin-top: 20px;">
                                     <div class="row" style="margin-bottom:10px;">
                                         <div class="col-12" style="margin-bottom: 10px;">
                                             Coupon
@@ -578,19 +641,19 @@
 
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="font-Lato-Regular">
+                <!-- <div class="font-Lato-Regular">
                     <p>Your cart is currently empty.</p>
                     <div>
                         <button type="button" class="btn"
                                 style="background-color:#24436e;color:white;border-radius: 0%; font-weight: bold; font-size: .7em;"
                                 id="downloadButton"><span>DOWNLOAD SAMPLE DATA</span></button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 

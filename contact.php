@@ -291,7 +291,7 @@
                             if (data.status == 201) {
                                 window.dataLayer = window.dataLayer || [];
                                 window.dataLayer.push({ 'event': 'contact-form' });
-                                window.location = 'ThankYou1';
+                                window.location = 'ThankYou';
 
                                 // $("#contact-success-desktop").css('display','block');
                                 // $("#contact-form-desktop").css('display','none');
@@ -383,7 +383,7 @@
                             if (data.status == 201) {
                                 window.dataLayer = window.dataLayer || [];
                                 window.dataLayer.push({ 'event': 'contact-form' });
-                                window.location = 'ThankYou1';
+                                window.location = 'ThankYou';
 
                                 // $("#contact-success-desktop").css('display','block');
                                 // $("#contact-form-desktop").css('display','none');

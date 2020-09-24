@@ -63,7 +63,7 @@
                 <!-- Hamburger Menu-End -->
             </div>
             <div class="col-sm">
-                <img src="./img/logo.png" width="100%" height="100%">
+                <img src="./images/head.png" width="100%" height="100%">
             </div>
             <!-- <div class="col-sm text-center" >
                 <img src="./img/mob.PNG" style="height: 30%; width: 30%;">
