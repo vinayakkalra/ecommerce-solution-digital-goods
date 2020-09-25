@@ -1,6 +1,7 @@
 <?php
-  session_start();
-  require_once('./php/config.php');
+session_start();
+
+include("./php/config.php");
   if (array_key_exists("logout", $_GET)) {
       // check logout value 1 or not
               
@@ -961,7 +962,7 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active" id="high">
-                    <img class="d-block w-100" src="./img/slide1.PNG" alt="First slide">
+                    <img class="d-block w-100" src="./img/slide1.png" alt="First slide">
                     <div class="carousel-caption" style="display: flex;align-items: center;transform: translateY(-50%);top: 50%;padding-bottom: 0px !important;padding-top: 0px !important;">
                         <div id="slide1-center" style="padding-top: 0px !important;">
                             <div id="slider1-center-top" style="font-size: 2em;">
@@ -983,7 +984,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" id="high">
-                    <img class="d-block w-100" src="./img/slide2.PNG" alt="Second slide">
+                    <img class="d-block w-100" src="./img/slide2.png" alt="Second slide">
                     <div class="carousel-caption d-none d-md-block"
                         style="right: 50%;display:flex !important;align-items: center; transform: translateY(-50%);position:absolute;right: none; bottom: none; top:50%;left:15%;z-index:10;padding-top:none;padding-bottom: none; text-align: center;">
                         <div id="slide2-center">
@@ -1032,7 +1033,7 @@
 
                     <?php
                         $id = 1;
-                         $query = "SELECT * FROM `Product`";
+                         $query = "SELECT * FROM `product`";
                          if ($result = mysqli_query($conn, $query)) {
                             if( ! mysqli_num_rows($result) ) {
                                 //header("Location: index");
@@ -1127,7 +1128,7 @@
                             <div class="card-group">
                                 <?php
                                     $id = 1;
-                                    $query = "SELECT * FROM `Product` LIMIT 3";
+                                    $query = "SELECT * FROM `product` LIMIT 3";
                                     if ($result = mysqli_query($conn, $query)) {
                                         if( ! mysqli_num_rows($result) ) {
                                             //header("Location: index");
@@ -1167,7 +1168,7 @@
                                 
                             <?php
                                 $id = 1;
-                                $query = "SELECT * FROM `Product` WHERE `id` >  3 LIMIT 3";
+                                $query = "SELECT * FROM `product` WHERE `id` >  3 LIMIT 3";
                                 if ($result = mysqli_query($conn, $query)) {
                                     if( ! mysqli_num_rows($result) ) {
                                         //header("Location: index");
@@ -1228,7 +1229,7 @@
                         </div>
                     </div>
                     <div class="card f">
-                        <img class="card-img-top" src="./img/one.PNG" alt="Card image cap">
+                        <img class="card-img-top" src="./img/one.png" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title" style="text-transform: uppercase;"><a href="#" style="color: #2b2b2b;font-weight: 700;" class="font-Lato-Regular xyz">Cheapest Price Ever</a></h5>
                             <p class="card-text font-Lato-Regular" style="color:#282828;font-weight: 400;">We are offering the cheapest price ever on the web for such a huge
@@ -1236,7 +1237,7 @@
                         </div>
                     </div>
                     <div class="card f">
-                        <img class="card-img-top" src="./img/two.PNG" alt="Card image cap">
+                        <img class="card-img-top" src="./img/two.png" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title" style="text-transform: uppercase;"><a href="#" style="color:#2b2b2b; font-weight: 700;" class="font-Lato-Regular xyz">Weekly Update</a></h5>
                             <p class="card-text font-Lato-Regular" style="color:#282828;font-weight: 400;">We update all database on weekly basis. You will always get the latest
@@ -1267,7 +1268,7 @@
 
                     <div class="carousel-inner">
                         <div class="carousel-item active" style="height: 100%;">
-                            <img class="d-block w-100" src="./img/slide1.PNG" alt="First slide">
+                            <img class="d-block w-100" src="./img/slide1.png" alt="First slide">
                             <div class="carousel-caption"
                             style="bottom:unset;padding-top:0px;padding-bottom: 0px;transform : translateY(-50%);position: absolute;right: 15%;top: 50%;left:15%;z-index: 10;height: auto;">
                                 <div id="slide1-center-mob">
@@ -1290,7 +1291,7 @@
                             </div>
                         </div>
                         <div class="carousel-item" style="height: 100%;">
-                            <img class="d-block w-100" src="./img/slide2.PNG" alt="Second slide">
+                            <img class="d-block w-100" src="./img/slide2.png" alt="Second slide">
                             <div class="carousel-caption"
                             style="bottom:unset;padding-top:0px;padding-bottom: 0px;transform : translateY(-50%);position: absolute;right: 15%;top: 50%;left:15%;z-index: 10;height: auto;">
                                 <div id="slide2-center-mob">
@@ -1346,7 +1347,7 @@
             <div class="row row mx-md-n5">
             <?php
                         $id = 1;
-                         $query = "SELECT * FROM `Product`";
+                         $query = "SELECT * FROM `product`";
                          if ($result = mysqli_query($conn, $query)) {
                             if( ! mysqli_num_rows($result) ) {
                                 //header("Location: index");
@@ -1429,7 +1430,7 @@
                                     
                                 <?php
                                     $id = 1;
-                                    $query = "SELECT * FROM `Product` LIMIT 2";
+                                    $query = "SELECT * FROM `product` LIMIT 2";
                                     if ($result = mysqli_query($conn, $query)) {
                                         if( ! mysqli_num_rows($result) ) {
                                             //header("Location: index");
@@ -1473,7 +1474,7 @@
                                 <div class="row row-cols-2">
                                 <?php
     $id = 1;
-    $query = "SELECT * FROM `Product` WHERE `id` >  2 LIMIT 2";
+    $query = "SELECT * FROM `product` WHERE `id` >  2 LIMIT 2";
     if ($result = mysqli_query($conn, $query)) {
         if( ! mysqli_num_rows($result) ) {
             //header("Location: index");
@@ -1547,7 +1548,7 @@
                         </div>
                         <div class="col-sm">
                             <div class="card f">
-                                <img class="card-img-top" src="./img/one.PNG" alt="Card image cap">
+                                <img class="card-img-top" src="./img/one.png" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title" style="text-transform: uppercase;"><a href="#" style="color:#2b2b2b;font-weight: 700;" class="text font-Lato-Regular xyz">Cheapest Price Ever</a>
                                     </h5>
@@ -1562,7 +1563,7 @@
                         </div>
                         <div class="col-sm">
                             <div class="card f">
-                                <img class="card-img-top" src="./img/two.PNG" alt="Card image cap">
+                                <img class="card-img-top" src="./img/two.png" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title" style="text-transform: uppercase;"><a href="#" style="color:#2b2b2b;font-weight: 700;" class="text font-Lato-Regular xyz">Weekly Update</a></h5>
                                     <p class="card-text font-Lato-Regular" style="color:#282828;font-weight: 400;">We update all database on weekly basis. You will always get
