@@ -174,7 +174,7 @@ include("./php/config.php");
         <div class="container" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;">
             <div style="width:100%;">
                 <h1 style="color: rgba(102,102,102,0.7); font-size: 18.4px;" class="font-Lato-Regular">
-                    HOME /
+                    <a href="index" style="color: rgba(102,102,102,0.7); text-decoration:none;" >HOME</a> /
                     <span style="color: #222222; font-weight: bold;text-transform: uppercase;">
                         <?=$product_category ?>
                     </span>
@@ -309,7 +309,7 @@ include("./php/config.php");
         <div class="container" style="border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;">
             <div style="width:100%; text-align: center;">
                 <h1 style="color: rgba(102,102,102,0.7); font-size: 16px;" class="font-Lato-Regular">
-                    HOME /
+                    <a href="index" style="color: rgba(102,102,102,0.7);text-decoration:none;">HOME</a> /
                     <span style="color: #222222; font-weight: bold;text-transform: uppercase;">
                         <?=$product_category ?>
                     </span>
