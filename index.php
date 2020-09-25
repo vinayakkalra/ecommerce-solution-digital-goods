@@ -1103,7 +1103,7 @@ include("./php/config.php");
         <!-- product element row2 end -->
         <div id="button-bar" class="container-fluid" style="margin-top:20%">
             <div id="button-bar-center" class="container" style="padding-top: 20px; ">
-                <button type="button" class="btn font-Lato-Regular" id="button-color"
+                <button type="button" onclick="location.href='product-category?Product=1'" class="btn font-Lato-Regular" id="button-color"
                     style=" transition: transform .3s, box-shadow .3s, background-color .3s, color .3s, opacity .3s;box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.22); ">SHOW
                     ALL</button>
             </div>
@@ -1398,7 +1398,7 @@ include("./php/config.php");
         <!-- button start -->
         <div id="button-bar" class="container-fluid">
             <div id="button-bar-center" class="container" style="padding-top: 0; ">
-                <button type="button" class="btn text font-Lato-Regular" id="button-color"
+                <button type="button" onclick="location.href='product-category?Product=1'"  class="btn text font-Lato-Regular" id="button-color"
                     style=" transition: transform .3s, box-shadow .3s, background-color .3s, color .3s, opacity .3s;box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.22); ">SHOW
                     ALL</button>
             </div>
