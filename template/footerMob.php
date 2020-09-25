@@ -16,9 +16,9 @@
                     <p id="bhead" class="text font-Lato-Regular" style="text-align: left;">Important Links
                     </p>
                     <!-- <p class="font-Lato-Regular"><a  href="">Shop</a></p> -->
-                    <p class="font-Lato-Regular"><a href="">Cart</a></p>
+                    <!-- <p class="font-Lato-Regular"><a href="">Cart</a></p> -->
                     <p class="font-Lato-Regular"><a href="about">About Us</a></p>
-                    <p class="font-Lato-Regular"><a href="">Blog</a></p>
+                    <!-- <p class="font-Lato-Regular"><a href="">Blog</a></p> -->
                 </div>
                 <div class="col-sm mt-2" id="footlink">
                     <p id="bhead" class="text font-Lato-Regular" style="text-align: left;">Other Links</p>
@@ -48,7 +48,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <p class="text font-Lato-Regular" style="font-size: 10px; text-align: center; font-weight: bold; color: rgba(153, 143, 143, 0.979); height: 2px;"> ABOUT US CONTACT US SHOP</p>
+                    <p class="text font-Lato-Regular" style="font-size: 10px; text-align: center; font-weight: bold; color: rgba(153, 143, 143, 0.979); height: 2px;"><a href="about" style="color :rgba(153, 143, 143, 0.979);text-decoration:none;">ABOUT US</a>&nbsp;&nbsp; <a href="contact" style="color :rgba(153, 143, 143, 0.979);text-decoration:none;">CONTACT US</a></p>
                 </div>
             </div>
             <div class="row">

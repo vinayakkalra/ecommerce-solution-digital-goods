@@ -49,7 +49,7 @@
     <div class="container-fluid" id="footbg">
         <div class="container" id="foot-mid">
             <div id="foot-mid-left" class="container">
-                <p class="font-Lato-Regular"> ABOUT US CONTACT US SHOP</p>
+                <p class="font-Lato-Regular"> <a href="about" style="color :rgba(153, 143, 143, 0.979);text-decoration:none;">ABOUT US</a>&nbsp;&nbsp;<a href="contact" style="color :rgba(153, 143, 143, 0.979);text-decoration:none;">CONTACT US</a></p>
                 <p class="font-Lato-Regular">Copyright 2020 © Data Export</p>
             </div>
             <div id="foot-mid-right" class="container">
