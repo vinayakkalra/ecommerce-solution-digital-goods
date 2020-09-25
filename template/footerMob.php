@@ -6,11 +6,11 @@
                 <div class="col-sm mt-2" id="footlink">
                     <p id="bhead" class="text font-Lato-Regular" style="text-align: left;">Popular Databases
                     </p>
-                    <p class="font-Lato-Regular"><a href="">All India Complete Database</a></p>
-                    <p class="font-Lato-Regular"><a href="">B2B/B2C Indian Companies Database</a></p>
-                    <p class="font-Lato-Regular"><a href="">Government Employees Database</a></p>
-                    <p class="font-Lato-Regular"><a href="">All India Students Database</a></p>
-                    <p class="font-Lato-Regular"><a href="">All India Students Database</a></p>
+                    <p class="font-Lato-Regular"><a href="product-category?Product=5">All India Complete Database</a></p>
+                        <p class="font-Lato-Regular" style="font-size:15px"><a href="product-category?Product=1">B2B/B2C Indian Companies Database</a></p>
+                        <p class="font-Lato-Regular"><a href="product-category?Product=2">Government Employees Database</a></p>
+                        <p class="font-Lato-Regular"><a href="product-category?Product=3">All India Students Database</a></p>
+                        <p class="font-Lato-Regular"><a href="product-category?Product=4">Job Seekers Database</a></p>
                 </div>
                 <div class="col-sm mt2" id="footlink">
                     <p id="bhead" class="text font-Lato-Regular" style="text-align: left;">Important Links
