@@ -978,7 +978,7 @@ include("./php/config.php");
                                 <hr>
                             </div>
                             <div id="slider1-center-footer">
-                                <input type="button" id="slider-button" value="BUY NOW">
+                                <input type="button" onclick="location.href='desc?Type=5&Product=1'" id="slider-button" value="BUY NOW">
                             </div>
                         </div>
                     </div>
@@ -1003,7 +1003,7 @@ include("./php/config.php");
                                 <br>
                             </div>
                             <div id="slider2-center-footer">
-                                <input type="button" id="slider2-button" value="SHOP NOW">
+                                <input type="button" onclick="location.href='desc?Type=5&Product=1'" id="slider2-button" value="SHOP NOW">
                             </div>
                         </div>
                     </div>
@@ -1285,7 +1285,7 @@ include("./php/config.php");
                                         <hr>
                                     </div>
                                     <div id="slider1-center-footer-mob">
-                                        <input type="button" id="slider-button-mob" value="BUY NOW">
+                                        <input type="button" onclick="location.href='desc?Type=5&Product=1'" id="slider-button-mob" value="BUY NOW">
                                     </div>
                                 </div>
                             </div>
@@ -1309,7 +1309,7 @@ include("./php/config.php");
                                         <br>
                                     </div>
                                     <div id="slider2-center-footer-mob">
-                                        <input type="button" id="slider2-button-mob" value="SHOP NOW">
+                                        <input type="button" onclick="location.href='desc?Type=5&Product=1'" id="slider2-button-mob" value="SHOP NOW">
                                     </div>
                                 </div>
                             </div>
