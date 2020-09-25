@@ -164,7 +164,7 @@
                     Contact Us
                 </h2>
                 <p class="font-Lato-Regular" style="color:#2b2b2b; margin:0px 0px 20.8px">
-                    If you have any questions about this Privacy Policy, please <a href="">contact us.</a>
+                    If you have any questions about this Privacy Policy, please <a href="contact">contact us.</a>
                 </p>
             </div>
         </div>
@@ -271,7 +271,7 @@
                     Contact Us
                 </h2>
                 <p class="font-Lato-Regular" style="color:#2b2b2b; margin:0px 0px 20.8px">
-                    If you have any questions about this Privacy Policy, please <a href="">contact us.</a>
+                    If you have any questions about this Privacy Policy, please <a href="contact">contact us.</a>
                 </p>
             </div>
         </div>

@@ -218,7 +218,7 @@
                     <div class="col-7">
                         <div class="firstDiv">
                             <span>
-                                <a href="" class="firstLink">HOME</a>
+                                <a href="index" class="firstLink">HOME</a>
                             </span>
                             <span style="color:#808080">
                                 /
@@ -420,7 +420,7 @@
                     <div class="col-sm">
                         <div class="firstDiv">
                             <span>
-                                <a href="" class="firstLink">HOME</a>
+                                <a href="index" class="firstLink">HOME</a>
                             </span>
                             <span style="color:#808080">
                                 /

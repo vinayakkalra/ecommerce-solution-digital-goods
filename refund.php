@@ -87,7 +87,7 @@
                     The way our organization operates has it that, failure to specify and buying from DataExport.com, eventually you’ve got downloaded our products it’ll not be returned hereafter you’ve got purchased.
                 </p>
                 <p class="font-Lato-Regular" style="color:#2b2b2b; margin:0px 0px 20.8px">
-                    In case of failure download of digital product, you’ll <a href="">contact us</a> with this link.
+                    In case of failure download of digital product, you’ll <a href="contact">contact us</a> with this link.
                 </p>
             </div>
         </div>
@@ -117,7 +117,7 @@
                     The way our organization operates has it that, failure to specify and buying from DataExport.com, eventually you’ve got downloaded our products it’ll not be returned hereafter you’ve got purchased.
                 </p>
                 <p class="font-Lato-Regular" style="color:#2b2b2b; margin:0px 0px 20.8px">
-                    In case of failure download of digital product, you’ll <a href="">contact us</a> with this link.
+                    In case of failure download of digital product, you’ll <a href="contact">contact us</a> with this link.
                 </p>
             </div>
         </div>

@@ -306,12 +306,12 @@
                                                    $available_field = $row['available_field'];
                                                    $records = $row['records'];
                                                    ?>
-                                                        <div class="col-3" style="padding:3px;cursor: pointer;">
+                                                        <div class="col-3" style="padding:3px;cursor: pointer;" onclick="location.href='desc?Type=<?=$type?>&Product=<?=$productid ?>';">
                                                             <div class="row" style="text-align:left;margin:5px;">
                                                                 <div class="col-12">
                                                                     <div class="hv">
                                                                         <img class="card-img-top center"
-                                                                            src="./img/data.png" alt="Card image cap">
+                                                                            src="<?=$img?>" alt="Card image cap">
                                                                         <div class="over"
                                                                             style="display: flex;align-items: flex-end;">
                                                                             <div style="width: 100%;">
@@ -334,8 +334,7 @@
                                                             </div>
                                                             <div class="row mt-2" style="margin:5px;">
                                                                 <h6 style="text-align: left;"><a href="desc?Type=<?=$type?>&Product=<?=$productid ?>"
-                                                                        class="font-Lato-Regular">All India
-                                                                        Complete Database</a><br>₹1,299.00</h6>
+                                                                        class="font-Lato-Regular"><?=$category?></a><br>₹<?=$discounted_price?></h6>
                                                             </div>
                                                         </div>
 
