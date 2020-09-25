@@ -1591,7 +1591,7 @@ include("./php/config.php");
 
 
 
-    
+    </div>
     <!-- card end -->
 
 
