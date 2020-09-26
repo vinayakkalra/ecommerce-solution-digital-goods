@@ -36,8 +36,8 @@
                 <div style="width:25%" id="footlink">
                     <div style="width:98%;margin:0 auto;" >
                         <p id="bhead" class="font-Lato-Regular">DATABASE CATEGORIES</p>
-                        <p class="font-Lato-Regular" style="font-size:15px"><a href="">B2B/B2C Indian Companies Database</a></p>
-                        <p class="font-Lato-Regular"><a href="">Government Employees Database</a></p>
+                        <p class="font-Lato-Regular" style="font-size:15px"><a href="product-category?Product=1">B2B/B2C Indian Companies Database</a></p>
+                        <p class="font-Lato-Regular"><a href="product-category?Product=2>Government Employees Database</a></p>
                         <p class="font-Lato-Regular"><a href="">Facebook Users Database</a></p>
                         <p class="font-Lato-Regular"><a href="">OLX Users Database</a></p>
                         <p class="font-Lato-Regular"><a href="">IT Professionals Database</a></p>

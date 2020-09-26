@@ -38,7 +38,7 @@
 <div id="second-bar" class="container-fluid">
     <div id="second-bar-center" class="container-sm">
         <div id="second-bar-left" class="container-sm">
-            <img src="./images/head.png">
+            <img  style="cursor:pointer;" onclick="location.href='index';" src="./images/head.png">
         </div>
         <div id="second-bar-mid" class="container-sm">
             <a href="index" class="font-Lato-Regular">HOME</a>
