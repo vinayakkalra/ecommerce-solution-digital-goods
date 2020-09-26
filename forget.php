@@ -37,7 +37,7 @@
 <head>
 
     <!-- Enter a proper page title here -->
-    <title>Template | Example with all standards</title>
+    <title>Forget Password | BULKDATABASE PROVIDER</title>
 
     <!-- CSS to include bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css">

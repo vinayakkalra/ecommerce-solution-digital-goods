@@ -48,7 +48,7 @@ elseif (array_key_exists("dataexporid", $_SESSION) and $_SESSION['dataexporid'])
 <head>
 
     <!-- Enter a proper page title here -->
-    <title>Template | Example with all standards</title>
+    <title>My Orders | BULKDATABASE PROVIDER</title>
 
     <!-- CSS to include bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css">

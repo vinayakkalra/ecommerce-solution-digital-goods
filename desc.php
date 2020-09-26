@@ -51,7 +51,7 @@
 <head>
 
     <!-- Enter a proper page title here -->
-    <title>Description</title>
+    <title>Description | BULKDATABASE PROVIDER</title>
 
     <!-- CSS to include bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
