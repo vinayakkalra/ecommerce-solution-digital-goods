@@ -243,7 +243,7 @@
                                             </div>
                                         </div>
                                         <div class="row" style="height:auto;">
-                                            <div class="col-6" style="text-align: left;height:100%;">
+                                            <div class="col-6" style="text-align: left;height:100%;cursor: pointer;" onclick="location.href='desc?Type=<?=$type?>&Product=<?=$Product?>';">
                                                 <div class="container" style="margin-top: 15px;">
                                                     <div class="row">
                                                         <div class="col-4" style="margin-right: 0%;padding-left: 0%;padding: 0;/* padding-right: 20px; */">
@@ -485,7 +485,7 @@
                                             </div>
                                         </div>
                                         <div class="row" style="height:auto;margin-bottom:20px;">
-                                            <div class="col-9" style="text-align: left;height:100%;">
+                                            <div class="col-9" onclick="location.href='desc?Type=<?=$type?>&Product=<?=$Product?>';" style="text-align: left;height:100%;">
                                                 <div class="container" style="margin-top: 15px;">
                                                     <div class="row">
                                                         <div class="col-4" style="margin-right: 0%;padding-left: 0%;padding: 0;/* padding-right: 20px; */">
