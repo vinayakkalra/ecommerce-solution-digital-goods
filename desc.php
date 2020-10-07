@@ -250,9 +250,17 @@
                             </ul>
                         </div>
                         <div>
-                            <button type="button" class="btn" onclick="location.href='shopCart?Type=<?=$type?>&Product=<?=$Product?>';"
+                            <form method="post" action="shopCart?action=add&id=<?=$Product ?>&Type=<?=$type?>&Product=<?=$Product?>">
+                            <input type="hidden" name="hidden_type" value="<?= $type?>">
+                            <input type="hidden" name="hidden_product" value="<?= $Product?>">
+                            <input type="hidden" name="hidden_img" value="<?= $img?>">
+                            <input type="hidden" name="hidden_cat" value="<?= $category?>">
+                            <input type="hidden" name="hidden_dis" value="<?= $discounted_price?>">
+                            
+                            <input type="submit" class="btn" onclick="location.href='shopCart?Type=<?=$type?>&Product=<?=$Product?>';"
                                 style="background-color: #ef561e; color: white;border-radius: 0%; font-weight: bold;font-size: 1em;margin-bottom: 1em;padding: 0 1.2em;min-height: 2.5em;"
-                                id="cartButton">BUY NOW</button>
+                                id="cartButton" value="BUY NOW" name="add_to_cart">
+                            </form>
                         </div>
                         <!-- <div>
                             <button type="button" class="btn"

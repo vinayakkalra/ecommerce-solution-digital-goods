@@ -1,50 +1,97 @@
 <?php
-    session_start();
-    require_once('./php/config.php');
-    if(!isset($_GET['Type'] )){
-        $type = 1 ;
-      }else{
-     
-         $type = $_GET['Type'];
-      }
-      if(!isset($_GET['Product'] )){
-        $Product = 1 ;
-      }else{
-     
-         $Product = $_GET['Product'];
-      }
-      $index = $type;
-      $query = "SELECT * FROM `product`  WHERE `id` =  $type";
-      if ($result = mysqli_query($conn, $query)) {
-        if( ! mysqli_num_rows($result) ) {
-            header("Location: index");
+session_start();
+require_once('./php/config.php');
+if (!isset($_GET['Type'])) {
+    $type = 1;
+} else {
+
+    $type = $_GET['Type'];
+}
+if (!isset($_GET['Product'])) {
+    $Product = 1;
+} else {
+
+    $Product = $_GET['Product'];
+}
+$index = $type;
+$query = "SELECT * FROM `product`  WHERE `id` =  $type";
+if ($result = mysqli_query($conn, $query)) {
+    if (!mysqli_num_rows($result)) {
+        header("Location: index");
+    } else {
+        while ($row = mysqli_fetch_array($result)) {
+            $table_name = $row['table_name'];
+            $product_category = $row['product_category'];
+        }
+    }
+}
+$query = "SELECT * FROM `$table_name` where `id` =  $Product ";
+if ($result = mysqli_query($conn, $query)) {
+    if (!mysqli_num_rows($result)) {
+        header("Location: index");
+    } else {
+
+        while ($row = mysqli_fetch_array($result)) {
+            $img = $row['image'];
+            $category = $row['category'];
+            $original_price = $row['original_price'];
+            $discounted_price = $row['discounted_price'];
+            $full_description = $row['full_description'];
+            $available_field = $row['available_field'];
+            $records = $row['records'];
+            $discount_percentage = $row['discount_percentage'];
+        }
+    }
+}
+
+if (isset($_POST["add_to_cart"])) {
+    if (isset($_SESSION["shopping_cart"])) {
+        $item_array_id = array_column($_SESSION["shopping_cart"], "item_id");
+        $type_array = array_column($_SESSION["shopping_cart"], "item_type"); 
+        if (! ( in_array( $_GET["id"], $item_array_id) and in_array( $_GET["Type"], $type_array) )  ) {
+            $count = count($_SESSION["shopping_cart"]);
+            $item_array = array(
+                'type' => $_GET['Type'],
+                'item_id'            =>    $_GET["id"],
+                'item_type'            =>    $_POST["hidden_type"],
+                'item_product'        =>    $_POST["hidden_product"],
+                'item_img'        =>    $_POST["hidden_img"],
+                'item_cat'  => $_POST['hidden_cat'],
+                'item_price' => $_POST['hidden_dis'],
+            );
+            $_SESSION["shopping_cart"][$count] = $item_array;
         } else {
-            while( $row = mysqli_fetch_array($result)){
-                $table_name = $row['table_name'];
-                $product_category = $row['product_category'];
-            }
+            echo '<script>alert("Item Already Added")</script>';
         }
-      }
-      $query = "SELECT * FROM `$table_name` where `id` =  $Product ";
-      if ($result = mysqli_query($conn, $query)) {
-          if( ! mysqli_num_rows($result) ) {
-              header("Location: index");
-          }else{
-
-              while( $row = mysqli_fetch_array($result)){
-                  $img = $row['image'];
-                  $category = $row['category'];
-                  $original_price = $row['original_price'];
-                  $discounted_price = $row['discounted_price'];
-                  $full_description = $row['full_description'];
-                  $available_field = $row['available_field'];
-                  $records = $row['records'];
-                  $discount_percentage = $row['discount_percentage'];
-              }
-            }
-        }
-
-  ?>
+    } else {
+        $item_array = array(
+            'type' => $_GET['Type'],
+            'item_id'            =>    $_GET["id"],
+            'item_type'            =>    $_POST["hidden_type"],
+            'item_product'        =>    $_POST["hidden_product"],
+            'item_img'        =>    $_POST["hidden_img"],
+            'item_cat'  => $_POST['hidden_cat'],
+            'item_price' => $_POST['hidden_dis'],
+        );
+        $_SESSION["shopping_cart"][0] = $item_array;
+    }
+}
+if(isset($_GET["action"]))
+{
+	if($_GET["action"] == "delete")
+	{
+		foreach($_SESSION["shopping_cart"] as $keys => $values)
+		{
+			if($values["item_id"] == $_GET["id"] && $values["item_type"] == $_GET["Type"])
+			{
+				unset($_SESSION["shopping_cart"][$keys]);
+				echo '<script>alert("Item Removed")</script>';
+				echo '<script>window.location="shopCart.php"</script>';
+			}
+		}
+	}
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -203,13 +250,10 @@
             <div class="container font-Lato-Regular" style="width: 100%;">
                 <ul class="nav nav-tabs" id="nav-tab" role="tablist">
                     <li class="nav-item" style="margin-right: 0px;">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab"  role="tab"
-                            aria-controls="home" aria-selected="true">SHOPPING CART<span
-                                style="margin-left: 30px;">></span></a>
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true">SHOPPING CART<span style="margin-left: 30px;">></span></a>
                     </li>
                     <li class="nav-item" style="margin-left: 0px; margin-right: 0px;">
-                        <a class="nav-link" >CHECKOUT DETAILS <span
-                                style="margin-left: 30px;">></span></a>
+                        <a class="nav-link">CHECKOUT DETAILS <span style="margin-left: 30px;">></span></a>
                     </li>
                     <li class="nav-item" style="margin-left: 0px;">
                         <a class="nav-link disabled">ORDER COMPLETE </a>
@@ -224,7 +268,7 @@
 
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="container" class="font-Lato-Regular" style="font-size:.9em; font-weight:600;">
-                            <div class="row" >
+                            <div class="row">
                                 <div class="" style="width: 60%;">
                                     <!-- LEFT DIV -->
                                     <div class="container">
@@ -232,8 +276,8 @@
                                             <div class="col-6" style="text-align: left;height:100%;">
                                                 <span style="text-align: left;">PRODUCT</span>
                                             </div>
-                                            <div class="col-2" style="justify-content: center;height:100%;" >
-                                              <span style="text-align: left;">PRICE</span>
+                                            <div class="col-2" style="justify-content: center;height:100%;">
+                                                <span style="text-align: left;">PRICE</span>
                                             </div>
                                             <div class="col-2" style="justify-content: center;height:100%;">
                                                 <span style="text-align: left;">QUANTITY</span>
@@ -243,107 +287,119 @@
                                             </div>
                                         </div>
                                         <div class="row" style="height:auto;">
-                                            <div class="col-6" style="text-align: left;height:100%;cursor: pointer;" onclick="location.href='desc?Type=<?=$type?>&Product=<?=$Product?>';">
+                                        <?php
+                                            if(!empty($_SESSION["shopping_cart"]))
+                                            {
+                                            $total = 0;
+                                            foreach($_SESSION["shopping_cart"] as $keys => $values)
+                                            {
+                                        ?>
+                                            <!-- product start -->
+                                            <div class="col-12">
+                                            <button style="border-radius: 50%; background-color: Transparent;" onclick="location.href='shopCart?action=delete&id=<?=$values['item_product'] ?>&Type=<?=$values['item_type']?>&Product=<?=$values['item_product']?>' " >x</button>
+                                            </div>
+                                            <div class="col-6" style="text-align: left;height:100%;cursor: pointer;" onclick="location.href='desc?Type=<?= $values['item_type']; ?>&Product=<?= $values['item_product']; ?>';">
                                                 <div class="container" style="margin-top: 15px;">
                                                     <div class="row">
                                                         <div class="col-4" style="margin-right: 0%;padding-left: 0%;padding: 0;/* padding-right: 20px; */">
-                                                            <img src="<?=$img?>" style="width: 100%;">
+                                                            
+                                                            <img src="<?= $values['item_img']; ?>" style="width: 100%;">
                                                         </div>
                                                         <div class="col-8" style="margin-left: 0%;padding: 0 0 0 10px;">
-                                                            <p style="margin-bottom: 0;height: 100%;display: flex;align-items: center;"><a href="desc?Type=<?=$type?>&Product=<?=$Product?>" style="font-size: 100%;"><?=$category?></a></p>
+                                                            <p style="margin-bottom: 0;height: 100%;display: flex;align-items: center;"><a href="desc?Type=<?= $values['item_type']; ?>&Product=<?= $values['item_product']; ?>" style="font-size: 100%;"><?= $values['item_cat']; ?></a></p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-2"  >
+                                            <div class="col-2">
                                                 <div class="container" style="height: 100%;">
-                                                    <div class="row"  style="height: 100%;">
+                                                    <div class="row" style="height: 100%;">
                                                         <div class="col-sm p-0">
-                                                            <p  style="margin-bottom: 0;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">₹<?=number_format($discounted_price)?></p>
+                                                            <p style="margin-bottom: 0;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">₹<?= number_format($values['item_price']) ?></p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-2"  >
+                                            <div class="col-2">
                                                 <div class="container" style="height: 100%;">
-                                                    <div class="row"  style="height: 100%;">
+                                                    <div class="row" style="height: 100%;">
                                                         <div class="col-sm p-0">
-                                                            <p  style="margin-bottom: 0;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">1</p>
+                                                            <p style="margin-bottom: 0;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">1</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-2"  >
+                                            <div class="col-2">
                                                 <div class="container" style="height: 100%;">
-                                                    <div class="row"  style="height: 100%;">
+                                                    <div class="row" style="height: 100%;">
                                                         <div class="col-sm p-0">
-                                                            <p  style="margin-bottom: 0;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">₹<?=number_format($discounted_price)?></p>
+                                                            <p style="margin-bottom: 0;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">₹<?= number_format($values['item_price']) ?></p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <?php
+                                            }
+                                        }
+                                            ?>
+                                            <!-- product end -->
                                         </div>
                                         <div class="row" style="margin-top: 20px;">
                                             <div class="col">
                                                 <p style="text-align: left;">You may be interested in…</p>
                                                 <div class="container p-0">
                                                     <div class="row ">
-                                                    <!--  -->
-                                                    <?php
-                                       $query = "SELECT * FROM `$table_name` where `id` !=  $Product limit 4 ";
-                                       if ($result = mysqli_query($conn, $query)) {
-                                           if( ! mysqli_num_rows($result) ) {
-                                               header("Location: index");
-                                           }else{
-                                 
-                                               while( $row = mysqli_fetch_array($result)){
-                                                   $img = $row['image'];
-                                                   $productid = $row['id'];
-                                                   $category = $row['category'];
-                                                   $original_price = $row['original_price'];
-                                                   $discounted_price = $row['discounted_price'];
-                                                   $full_description = $row['full_description'];
-                                                   $available_field = $row['available_field'];
-                                                   $records = $row['records'];
-                                                   ?>
-                                                        <div class="col-3" style="padding:3px;cursor: pointer;" onclick="location.href='desc?Type=<?=$type?>&Product=<?=$productid ?>';">
-                                                            <div class="row" style="text-align:left;margin:5px;">
-                                                                <div class="col-12">
-                                                                    <div class="hv">
-                                                                        <img class="card-img-top center"
-                                                                            src="<?=$img?>" alt="Card image cap">
-                                                                        <div class="over"
-                                                                            style="display: flex;align-items: flex-end;">
-                                                                            <div style="width: 100%;">
-                                                                                <div class="icon-bg">
-                                                                                    <div class="icon">
-                                                                                        <img src="./img/icon.PNG"
-                                                                                            style="width: 30px;">
+                                                        <!--  -->
+                                                        <?php
+                                                        $query = "SELECT * FROM `$table_name` where `id` !=  $Product limit 4 ";
+                                                        if ($result = mysqli_query($conn, $query)) {
+                                                            if (!mysqli_num_rows($result)) {
+                                                                header("Location: index");
+                                                            } else {
+
+                                                                while ($row = mysqli_fetch_array($result)) {
+                                                                    $img = $row['image'];
+                                                                    $productid = $row['id'];
+                                                                    $category = $row['category'];
+                                                                    $original_price = $row['original_price'];
+                                                                    $discounted_price = $row['discounted_price'];
+                                                                    $full_description = $row['full_description'];
+                                                                    $available_field = $row['available_field'];
+                                                                    $records = $row['records'];
+                                                        ?>
+                                                                    <div class="col-3" style="padding:3px;cursor: pointer;" onclick="location.href='desc?Type=<?= $type ?>&Product=<?= $productid ?>';">
+                                                                        <div class="row" style="text-align:left;margin:5px;">
+                                                                            <div class="col-12">
+                                                                                <div class="hv">
+                                                                                    <img class="card-img-top center" src="<?= $img ?>" alt="Card image cap">
+                                                                                    <div class="over" style="display: flex;align-items: flex-end;">
+                                                                                        <div style="width: 100%;">
+                                                                                            <div class="icon-bg">
+                                                                                                <div class="icon">
+                                                                                                    <img src="./img/icon.PNG" style="width: 30px;">
+                                                                                                </div>
+                                                                                                <div class="s"></div>
+                                                                                            </div>
+                                                                                            <div id="text-bg" style="display: flex;align-items: center;text-align: center;justify-content: center;">
+                                                                                                <div class="text font-Lato-Regular">
+                                                                                                    QUICK VIEW</div>
+                                                                                            </div>
+                                                                                        </div>
                                                                                     </div>
-                                                                                    <div class="s"></div>
-                                                                                </div>
-                                                                                <div id="text-bg"
-                                                                                    style="display: flex;align-items: center;text-align: center;justify-content: center;">
-                                                                                    <div class="text font-Lato-Regular">
-                                                                                        QUICK VIEW</div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
+                                                                        <div class="row mt-2" style="margin:5px;">
+                                                                            <h6 style="text-align: left;"><a href="desc?Type=<?= $type ?>&Product=<?= $productid ?>" class="font-Lato-Regular"><?= $category ?></a><br>₹<?= $discounted_price ?></h6>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row mt-2" style="margin:5px;">
-                                                                <h6 style="text-align: left;"><a href="desc?Type=<?=$type?>&Product=<?=$productid ?>"
-                                                                        class="font-Lato-Regular"><?=$category?></a><br>₹<?=$discounted_price?></h6>
-                                                            </div>
-                                                        </div>
 
-                                                    <?php
-                                               }
-                                             }
-                                         }
-                                    ?>
-                                                    <!--  -->
+                                                        <?php
+                                                                }
+                                                            }
+                                                        }
+                                                        ?>
+                                                        <!--  -->
                                                     </div>
 
                                                 </div>
@@ -365,7 +421,7 @@
                                                             <p style="font-weight: normal;">Orignal Price</p>
                                                         </div>
                                                         <div class="col-sm" style="text-align: end;">
-                                                            <p>₹<?=number_format($original_price)?></p>
+                                                            <p>₹<?= number_format($original_price) ?></p>
                                                         </div>
                                                     </div>
                                                     <div class="row">
@@ -373,7 +429,7 @@
                                                             <p style="font-weight: normal;">Discount</p>
                                                         </div>
                                                         <div class="col-sm" style="text-align: end;">
-                                                            <p><?=$discount_percentage?>% OFF</p>
+                                                            <p><?= $discount_percentage ?>% OFF</p>
                                                         </div>
                                                     </div>
                                                     <div class="row" style="padding-top: 5px;border-top: 1px solid rgb(211, 197, 197);">
@@ -381,15 +437,13 @@
                                                             <p style="font-weight: normal;">Total</p>
                                                         </div>
                                                         <div class="col-sm" style="text-align:end;">
-                                                            <p>₹<?=number_format($discounted_price)?></p>
+                                                            <p>₹<?= number_format($discounted_price) ?></p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-12">
-                                                <button type="button" class="btn" onclick="location.href='checkout?Type=<?=$type?>&Product=<?=$Product?>';"
-                                                    style="min-height: 2.5em;background-color: #ef561e; color: white;border-radius: 0%; font-weight: bold;font-size: 1em;margin-bottom: 1em;padding: 0 1.2em; width: 100%;"
-                                                    id="cartButton">PROCEED TO CHECKOUT</button>
+                                                <button type="button" class="btn" onclick="location.href='checkout?Type=<?= $type ?>&Product=<?= $Product ?>';" style="min-height: 2.5em;background-color: #ef561e; color: white;border-radius: 0%; font-weight: bold;font-size: 1em;margin-bottom: 1em;padding: 0 1.2em; width: 100%;" id="cartButton">PROCEED TO CHECKOUT</button>
                                             </div>
                                         </div>
                                     </div>
@@ -456,7 +510,7 @@
             <div class="container font-Lato-Regular" style="width: 100%;">
                 <ul class="nav">
                     <li class="nav-item" style="margin: auto;">
-                        <a class="nav-link active" >SHOPPING CART</a>
+                        <a class="nav-link active">SHOPPING CART</a>
                     </li>
                 </ul>
             </div>
@@ -476,93 +530,90 @@
                             <div class="col-12">
                                 <!-- LEFT DIV -->
                                 <div class="container ">
-                                        <div class="row" style="height:auto;">
-                                            <div class="col-9" style="text-align: left;height:100%;">
-                                                <span style="text-align: left;">PRODUCT</span>
-                                            </div>
-                                            <div class="col-3" style="justify-content: center;height:100%;" >
-                                              <span style="text-align: left;">PRICE</span>
-                                            </div>
+                                    <div class="row" style="height:auto;">
+                                        <div class="col-9" style="text-align: left;height:100%;">
+                                            <span style="text-align: left;">PRODUCT</span>
                                         </div>
-                                        <div class="row" style="height:auto;margin-bottom:20px;">
-                                            <div class="col-9" onclick="location.href='desc?Type=<?=$type?>&Product=<?=$Product?>';" style="text-align: left;height:100%;">
-                                                <div class="container" style="margin-top: 15px;">
-                                                    <div class="row">
-                                                        <div class="col-4" style="margin-right: 0%;padding-left: 0%;padding: 0;/* padding-right: 20px; */">
-                                                            <img src="<?=$img?>" style="width: 100%;">
-                                                        </div>
-                                                        <div class="col-8" style="margin-left: 0%;padding: 0 0 0 10px;">
-                                                            <p style="margin-bottom: 0;height: 100%;display: flex;align-items: center;"><a href="desc?Type=<?=$type?>&Product=<?=$Product?>" style="font-size: 100%;"><?=$category?></a></p>
-                                                        </div>
+                                        <div class="col-3" style="justify-content: center;height:100%;">
+                                            <span style="text-align: left;">PRICE</span>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="height:auto;margin-bottom:20px;">
+                                        <div class="col-9" onclick="location.href='desc?Type=<?= $type ?>&Product=<?= $Product ?>';" style="text-align: left;height:100%;">
+                                            <div class="container" style="margin-top: 15px;">
+                                                <div class="row">
+                                                    <div class="col-4" style="margin-right: 0%;padding-left: 0%;padding: 0;/* padding-right: 20px; */">
+                                                        <img src="<?= $img ?>" style="width: 100%;">
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-3"  >
-                                                <div class="container" style="height: 100%;">
-                                                    <div class="row"  style="height: 100%;">
-                                                        <div class="col-sm p-0">
-                                                            <p  style="margin-bottom: 0;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">₹<?=number_format($discounted_price)?></p>
-                                                        </div>
+                                                    <div class="col-8" style="margin-left: 0%;padding: 0 0 0 10px;">
+                                                        <p style="margin-bottom: 0;height: 100%;display: flex;align-items: center;"><a href="desc?Type=<?= $type ?>&Product=<?= $Product ?>" style="font-size: 100%;"><?= $category ?></a></p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-3">
+                                            <div class="container" style="height: 100%;">
+                                                <div class="row" style="height: 100%;">
+                                                    <div class="col-sm p-0">
+                                                        <p style="margin-bottom: 0;height: 100%;display: flex;justify-content: center;text-align: center;align-items: center;">₹<?= number_format($discounted_price) ?></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <!--  -->
                                     <!-- slider start -->
-        <div class="container font-Lato-Regular" style="width:100%;margin:0 auto;border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;padding-top:0px;"
-            id="commentBar">
-            <h3 style="text-align:left;padding-top: 15px;padding-bottom: 15px;font-weight: 700;font-size: 1.25em;">
-            You may be interested in…
-            </h3>
-            <div>
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <!-- first slide -->
-                            <!-- product start -->
-                            <div id="card-bar-mob" class="container-fluid p-0">
-                                <div id="card-bar-center-mob" class="container-sm ">
-                                    <div class="row row mx-md-n5">
-                                    <?php
-                                       $query = "SELECT * FROM `$table_name` where `id` !=  $Product limit 2 ";
-                                       if ($result = mysqli_query($conn, $query)) {
-                                           if( ! mysqli_num_rows($result) ) {
-                                               header("Location: index");
-                                           }else{
-                                 
-                                               while( $row = mysqli_fetch_array($result)){
-                                                   $img = $row['image'];
-                                                   $productid = $row['id'];
-                                                   $category = $row['category'];
-                                                   $original_price = $row['original_price'];
-                                                   $discounted_price = $row['discounted_price'];
-                                                   $full_description = $row['full_description'];
-                                                   $available_field = $row['available_field'];
-                                                   $records = $row['records'];
-                                                   ?>
-                                        <div class="col-6 px-md-5" onclick="location.href='desc?Type=<?=$type?>&Product=<?=$productid ?>';">
-                                            <div class="row">
-                                                <img class="card-img-top center" src="<?=$img?>"
-                                                    alt="Card image cap">
-                                            </div>
-                                            <div class="row mt-2">
-                                                <p style="text-align: left; font-size: 12px; font-weight: bold; color:black;"
-                                                    class="text font-Lato-Regular"><a href="desc?Type=<?=$type?>&Product=<?=$productid ?>"><?=$product_category?></a><br>₹<?=number_format($discounted_price)?></p>
-                                            </div>
-                                        </div>
-                                                        <?php
-                                               }
-                                             }
-                                         }
-                                    ?>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- product end -->
+                                    <div class="container font-Lato-Regular" style="width:100%;margin:0 auto;border-top: 1px solid rgb(221, 221, 221); padding: 20px 0px;padding-top:0px;" id="commentBar">
+                                        <h3 style="text-align:left;padding-top: 15px;padding-bottom: 15px;font-weight: 700;font-size: 1.25em;">
+                                            You may be interested in…
+                                        </h3>
+                                        <div>
+                                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item active">
+                                                        <!-- first slide -->
+                                                        <!-- product start -->
+                                                        <div id="card-bar-mob" class="container-fluid p-0">
+                                                            <div id="card-bar-center-mob" class="container-sm ">
+                                                                <div class="row row mx-md-n5">
+                                                                    <?php
+                                                                    $query = "SELECT * FROM `$table_name` where `id` !=  $Product limit 2 ";
+                                                                    if ($result = mysqli_query($conn, $query)) {
+                                                                        if (!mysqli_num_rows($result)) {
+                                                                            header("Location: index");
+                                                                        } else {
 
-                        </div>
-                    </div>
-                    <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                                                            while ($row = mysqli_fetch_array($result)) {
+                                                                                $img = $row['image'];
+                                                                                $productid = $row['id'];
+                                                                                $category = $row['category'];
+                                                                                $original_price = $row['original_price'];
+                                                                                $discounted_price = $row['discounted_price'];
+                                                                                $full_description = $row['full_description'];
+                                                                                $available_field = $row['available_field'];
+                                                                                $records = $row['records'];
+                                                                    ?>
+                                                                                <div class="col-6 px-md-5" onclick="location.href='desc?Type=<?= $type ?>&Product=<?= $productid ?>';">
+                                                                                    <div class="row">
+                                                                                        <img class="card-img-top center" src="<?= $img ?>" alt="Card image cap">
+                                                                                    </div>
+                                                                                    <div class="row mt-2">
+                                                                                        <p style="text-align: left; font-size: 12px; font-weight: bold; color:black;" class="text font-Lato-Regular"><a href="desc?Type=<?= $type ?>&Product=<?= $productid ?>"><?= $product_category ?></a><br>₹<?= number_format($discounted_price) ?></p>
+                                                                                    </div>
+                                                                                </div>
+                                                                    <?php
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    ?>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- product end -->
+
+                                                    </div>
+                                                </div>
+                                                <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
@@ -570,11 +621,11 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a> -->
-                </div>
-            </div>
-        </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <!--  -->
-                                  
+
                                 </div>
                             </div>
                             <div class="col-12">
@@ -591,7 +642,7 @@
                                                         <p style="font-weight: normal;">Orignal Price</p>
                                                     </div>
                                                     <div class="col-6">
-                                                        <p style="text-align: right;"><?=number_format($original_price)?></p>
+                                                        <p style="text-align: right;"><?= number_format($original_price) ?></p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -599,7 +650,7 @@
                                                         <p style="font-weight: normal;">Discount</p>
                                                     </div>
                                                     <div class="col-6">
-                                                        <p style="text-align: right;"><?=$discount_percentage?>% OFF</p>
+                                                        <p style="text-align: right;"><?= $discount_percentage ?>% OFF</p>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="padding-top: 5px;border-top: 1px solid rgb(211, 197, 197);">
@@ -607,15 +658,13 @@
                                                         <p style="font-weight: normal;">Total</p>
                                                     </div>
                                                     <div class="col-6">
-                                                        <p style="text-align: right;">₹<?=number_format($discounted_price)?></p>
+                                                        <p style="text-align: right;">₹<?= number_format($discounted_price) ?></p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <button type="button" class="btn" onclick="location.href='checkout?Type=<?=$type?>&Product=<?=$Product?>';"
-                                                style="min-height: 2.5em;background-color: #ef561e; color: white;border-radius: 0%; font-weight: bold;font-size: 1em;margin-bottom: 1em;padding: 0 1.2em; width: 100%;"
-                                                id="cartButton">PROCEED TO CHECKOUT</button>
+                                            <button type="button" class="btn" onclick="location.href='checkout?Type=<?= $type ?>&Product=<?= $Product ?>';" style="min-height: 2.5em;background-color: #ef561e; color: white;border-radius: 0%; font-weight: bold;font-size: 1em;margin-bottom: 1em;padding: 0 1.2em; width: 100%;" id="cartButton">PROCEED TO CHECKOUT</button>
                                         </div>
                                     </div>
                                 </div>
@@ -672,15 +721,12 @@
     <script src="js/custom_mobile_header.js"></script>
     <script src="https://use.fontawesome.com/ebc80d226d.js"></script>
     <script>
-
         // Add custom javascript and jquery here
         // including header footer
         $("#header-desktop").load('template/header.php');
         $("#footer-desktop").load('template/footer.php');
         $("#footer-mob").load('template/footerMob.php');
         $("#header-mob").load('template/headerMob.php');
-
-
     </script>
 </body>
 
