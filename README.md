@@ -1,5 +1,3 @@
-# template for website structure
+# An ecommerce website for data
 
-This template has bootstrap, fontawesome, owl carousal and jquery pre downloaded and added. Please use the same for building a site.
-
-Always use downloaded fonts instead of CDN's
+This template has bootstrap, fontawesome, owl carousal and jquery pre downloaded and added.
